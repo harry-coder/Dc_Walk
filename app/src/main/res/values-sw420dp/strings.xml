@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">DC9 BOX</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="array_name">
+        <item> - Select Item -</item>
+        <item> Array Item One</item>
+        <item> Array Item Two</item>
+        <item> Array Item Three</item>
+    </string-array>
+
+
+    <string name="spinrfactproname"><font fgcolor="-#BEBEBE">Project Name</font></string>
+    <string name="spinrfacttkcname"><font fgcolor="-#00BEBEBE">TKC Name</font></string>
+    <string name="spinrfactinsreins"><font fgcolor="-#00BEBEBE">Inspection/Re-inspection</font></string>
+    <string name="spinrfactitemname"><font fgcolor="-#BEBEBE">Item Name</font></string>
+    <string name="spinrsitegeoarea"><font fgcolor="-#BEBEBE">Geographic Area </font></string>
+    <string name="spinrsitesubarea"><font fgcolor="-#BEBEBE">Sub-Area 1 </font></string>
+    <string name="spinrsitesubarea2"><font fgcolor="-#BEBEBE">Sub-Area 2</font></string>
+    <string name="spinrsitesubarea3"><font fgcolor="-#BEBEBE">Sub-Area 3</font></string>
+    <string name="spinrsitepassed"><font fgcolor="-#BEBEBE">Quantity Passed and Accepted</font></string>
+    <string name="title_activity_camera"><font>Title Activity Camera</font></string>
+</resources>

@@ -1,0 +1,251 @@
+<resources>
+    <string name="app_name">DC Walk</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="array_name">
+        <item> - Select Item -</item>
+        <item> Array Item One</item>
+        <item> Array Item Two</item>
+        <item> Array Item Three</item>
+    </string-array>
+
+    <string-array name="array_vendor">
+        <item>Select Supplier</item>
+        <item>Supplier 1</item>
+        <item>Supplier 2</item>
+        <item>Supplier 3</item>
+      </string-array>
+
+    <string name="google_maps_key">AIzaSyAcT7sZq_cTsMSYJimd1WHHLxjDISkZmyU</string>
+    <string name="spinrfactproname"><font fgcolor="-#BEBEBE">Project Name</font></string>
+    <string name="spinrfacttkcname"><font fgcolor="-#00BEBEBE">TKC Name</font></string>
+    <string name="spinrfactinsreins"><font fgcolor="-#00BEBEBE">Inspection/Re-inspection</font></string>
+    <string name="spinrfactitemname"><font fgcolor="-#BEBEBE">Item Name</font></string>
+    <string name="spinrsitegeoarea"><font fgcolor="-#BEBEBE">Geographic Area </font></string>
+    <string name="spinrsitesubarea"><font fgcolor="-#BEBEBE">Sub-Area 1 </font></string>
+    <string name="spinrsitesubarea2"><font fgcolor="-#BEBEBE">Sub-Area 2</font></string>
+    <string name="spinrsitesubarea3"><font fgcolor="-#BEBEBE">Sub-Area 3</font></string>
+    <string name="spinrsitepassed"><font fgcolor="-#BEBEBE">Quantity Passed and Accepted</font></string>
+    <string name="title_activity_camera">Camera Preview</string>
+
+    <string-array name="dummy_array">
+        <item>Select Hierarchy</item>
+        <item>Opt 1</item>
+        <item>Opt 2</item>
+        <item>Opt 3</item>
+        <item>Opt 4</item>
+        <item>Opt 5</item>
+        <item>Opt 6</item>
+
+    </string-array>
+    <string-array name="dummy_array2">
+        <item>Select Item</item>
+        <item>Opt 1</item>
+        <item>Opt 2</item>
+        <item>Opt 3</item>
+        <item>Opt 4</item>
+        <item>Opt 5</item>
+        <item>Opt 6</item>
+
+    </string-array>
+
+    <string-array name="level_zone">
+        <item>Select Zone</item>
+        <item>Ujjain</item>
+        <item>Gwalior</item>
+        <item>Rewa</item>
+        <item>Hosangabad</item>
+        <item>Indore</item>
+        <item>Bhopal</item>
+    </string-array>
+    <string-array name="level_city">
+        <item>Select City</item>
+        <item>City 1</item>
+        <item>City 2</item>
+        <item>City 3</item>
+        <item>City 4</item>
+    </string-array>
+    <string-array name="level_junction">
+        <item>Select Junction</item>
+        <item>Junction 1</item>
+        <item>Junction 2</item>
+        <item>Junction 3</item>
+        <item>Junction 4</item>
+    </string-array>
+    <string-array name="level_block">
+        <item>Select Block</item>
+        <item>Godiamau 1</item>
+        <item>Machertha 2</item>
+        <item>Pisawan 3</item>
+    </string-array>
+    <string-array name="level_village">
+        <item>Select Village</item>
+        <item>Village 1</item>
+        <item>Village 2</item>
+        <item>Village 3</item>
+        <item>Village 4</item>
+    </string-array>
+    <string-array name="level_habitation">
+        <item>Select Habitation</item>
+        <item>Habitation 1</item>
+        <item>Habitation 2</item>
+        <item>Habitation 3</item>
+        <item>Habitation 4</item>
+    </string-array>
+    <string-array name="from_city">
+        <item>From City</item>
+        <item>City 1</item>
+        <item>City 2</item>
+        <item>City 3</item>
+        <item>City 4</item>
+    </string-array>
+    <string-array name="to_city">
+        <item>To City</item>
+        <item>City 1</item>
+        <item>City 2</item>
+        <item>City 3</item>
+        <item>City 4</item>
+    </string-array>
+    <string-array name="item_name">
+        <item>Select Item</item>
+        <item>Pole</item>
+        <item>Cable</item>
+    </string-array>
+
+    <string-array name="issue_type">
+        <item>Select Internal/External</item>
+        <item>Internal</item>
+        <item>External</item>
+    </string-array>
+
+    <string-array name="issueof">
+        <item>Select Type</item>
+        <item>General</item>
+        <item>CCR</item>
+        <item>Junction</item>
+    </string-array>
+
+    <string-array name="issue_list">
+        <item>Select Issue</item>
+        <item>Issue1</item>
+        <item>Issue2</item>
+        <item>Issue3</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="project_id">
+        <item>Select Project</item>
+        <item>Jyoti Solar Project</item>
+        <item>Chennai Metro</item>
+    </string-array>
+    <string-array name="project_type">
+        <item>Select Project Type</item>
+        <item>Solar EPC</item>
+        <item>Solar Roof-top</item>
+        <item>Metro</item>
+    </string-array>
+    <string-array name="pono">
+        <item>Select PO No</item>
+        <item>PO0001</item>
+        <item>PO0002</item>
+        <item>PO0003</item>
+    </string-array>
+    <string-array name="itemcode">
+        <item>Select Item Code</item>
+        <item>ITM0001</item>
+        <item>ITM0002</item>
+        <item>ITM0003</item>
+    </string-array>
+    <string-array name="insp_stage">
+        <item>Select Stage</item>
+        <item>Fabrication</item>
+        <item>Assembly</item>
+        <item>Painting</item>
+    </string-array>
+    <string-array name="progress_stage">
+        <item>Select Stage</item>
+        <item>Opt 1</item>
+        <item>Opt 2</item>
+        <item>Opt 3</item>
+    </string-array>
+    <string-array name="progress_work">
+        <item>Select Work</item>
+        <item>Work 1</item>
+        <item>Work 2</item>
+        <item>Work 3</item>
+    </string-array>
+    <string-array name="progress_activity">
+        <item>Select Activity</item>
+        <item>Activity 1</item>
+        <item>Activity 2</item>
+        <item>Activity 3</item>
+    </string-array>
+    <string-array name="progress_subactivity">
+        <item>Select Sub-Activity</item>
+        <item>Sub-Activity 1</item>
+        <item>Sub-Activity 2</item>
+        <item>Sub-Activity 3</item>
+    </string-array>
+    <string-array name="insp_routine">
+        <item>Select Insp. Type</item>
+        <item>Routine</item>
+        <item>Overall Work</item>
+        <item>Project</item>
+    </string-array>
+    <string-array name="milestone">
+        <item>Select Type of Work</item>
+        <item>Preliminary Site Work(Site Preparation)</item>
+        <item>Civil Work</item>
+        <item>Electromechanical Works</item>
+        <item>Electrical Works</item>
+        <item>Testing &amp; Commissioning </item>
+    </string-array>
+    <string-array name="tostore">
+        <item>Select Receiving Store</item>
+        <item>Store 1</item>
+        <item>Store 2</item>
+        <item>Store 3</item>
+        <item>Store 4</item>
+    </string-array>
+    <string-array name="fromstore">
+        <item>From Store</item>
+        <item>Store 1</item>
+        <item>Store 2</item>
+        <item>Store 3</item>
+        <item>Store 4</item>
+    </string-array>
+    <string-array name="contractor">
+        <item>Select Contractor</item>
+        <item>Contractor 1</item>
+        <item>Contractor 2</item>
+        <item>Contractor 3</item>
+        <item>Contractor 4</item>
+    </string-array>
+    <string-array name="team">
+        <item>Select Team Name</item>
+        <item>Team 1</item>
+        <item>Team 2</item>
+        <item>Team 3</item>
+        <item>Team 4</item>
+    </string-array>
+    <string-array name="cdk">
+        <item>Select C.D. (kw)</item>
+        <item>0.5</item>
+        <item>1</item>
+        <item>1.5</item>
+        <item>2</item>
+        <item>2.5</item>
+        <item>3</item>
+        <item>3.5</item>
+        <item>4</item>
+        <item>4.5</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="tariff">
+        <item>Select Tariff</item>
+        <item>DOM</item>
+        <item>GPS</item>
+        <item>RGY</item>
+        <item>LT</item>
+        <item>OTH</item>
+    </string-array>
+</resources>

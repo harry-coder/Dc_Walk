@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/page_body">
+
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="13dp"
+            android:background="@android:color/transparent"
+            />
+
+
+        <LinearLayout
+            style="@style/inhead">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:background="@drawable/material_issued_logo"
+                style="@style/inhead_ico"/>
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/inhead_ttl"
+                android:text="Material Received"/>
+
+        </LinearLayout>
+        <Spinner
+            android:entries="@array/tostore"
+            style="@style/input_spiner" />
+        <Spinner
+            android:visibility="gone"
+            android:id="@+id/to_city_id"
+            style="@style/input_spiner" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+            <RadioGroup
+                android:id="@+id/radio_receiving_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.dc_walk.CustomClasses.CustomTextRadio
+                    android:id="@+id/radio_vendor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="11dp"
+                    android:text="From Supplier" />
+
+                <com.dc_walk.CustomClasses.CustomTextRadio
+                    android:id="@+id/radio_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="11dp"
+                    android:text="Field Return" />
+
+                <com.dc_walk.CustomClasses.CustomTextRadio
+                    android:id="@+id/radio_city_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="11dp"
+                    android:text="Stock Transfer" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Spinner
+            android:entries="@array/array_vendor"
+            android:id="@+id/ed_vendor"
+            style="@style/input_spiner" />
+
+        <!--<RelativeLayout-->
+            <!--style="@style/input_fieldset">-->
+            <!--<com.dcnine_box.CustomTextInput-->
+                <!--android:hint="Vendor Name"-->
+                <!--android:id="@+id/ed_vendor"-->
+                <!--android:text="Honeywell"-->
+                <!--style="@style/input_gen"/>-->
+        <!--</RelativeLayout>-->
+
+        <Spinner
+            android:visibility="gone"
+            android:entries="@array/team"
+            android:id="@+id/ed_field"
+            style="@style/input_spiner" />
+        <Spinner
+            android:visibility="gone"
+            android:id="@+id/stockstore"
+            android:entries="@array/fromstore"
+            style="@style/input_spiner" />
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/citystore_hold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Spinner
+                android:id="@+id/level_zone_id"
+                style="@style/input_spiner" />
+            <Spinner
+                android:id="@+id/level_city_id"
+                style="@style/input_spiner" />
+            <Spinner
+                android:id="@+id/store_id"
+                style="@style/input_spiner" />
+
+        </LinearLayout>
+
+        <Spinner
+            android:entries="@array/item_name"
+            style="@style/input_spiner" />
+        <Spinner
+            android:visibility="gone"
+            android:id="@+id/item_id"
+            style="@style/input_spiner" />
+        <LinearLayout
+            android:id="@+id/inhold"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Quantity "
+
+                    android:inputType="number"
+                    style="@style/input_gen"/>
+            </RelativeLayout>
+            <RelativeLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Doc No. (If any)"
+
+                    style="@style/input_gen"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/outhold"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Quantity on Receiving Document"
+                    android:id="@+id/ed_qty_doc"
+                    android:inputType="number"
+                    style="@style/input_gen"/>
+            </RelativeLayout>
+            <RelativeLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Actual Quantity Received"
+                    android:id="@+id/ed_qty_rec"
+                    android:inputType="number"
+                    style="@style/input_gen"/>
+            </RelativeLayout>
+            <RelativeLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Found Damaged/Unusable"
+                    android:id="@+id/ed_qty_damaged"
+                    android:inputType="number"
+                    style="@style/input_gen"/>
+            </RelativeLayout>
+            <FrameLayout
+                android:id="@+id/qty_sat_hold"
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Inspection Rejected"
+                    android:id="@+id/ed_qty_sat"
+                    android:inputType="number"
+                    style="@style/input_gen"/>
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/sat_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/button_pressed"
+                    android:text="SAT"
+                    android:textSize="14dp"
+                    android:layout_gravity="right"/>
+            </FrameLayout>
+            <RelativeLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    android:hint="Quantity Acceptable"
+                    android:id="@+id/ed_qty_accepted"
+                    android:inputType="number"
+                    style="@style/input_gen"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Enter GRN/Transfer Note No."
+                    android:id="@+id/ed_grn_transfer_note"
+                    android:inputType="number"
+                    style="@style/input_gen"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/btn_holdrow"
+            android:weightSum="3"
+            android:layout_marginBottom="0dp">
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/scan_doc_button" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    style="@style/btn_frm_btn"
+                    android:id="@+id/btn_camera"
+                    android:text="Scan Doc." />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_weight="1"
+                style="@style/button_frame">
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/item_observation_btn"/>
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/btn_observation"
+                    style="@style/btn_frm_btn"
+                    android:text="Item Obsr."
+                    />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_weight="1"
+                style="@style/button_frame">
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/nextpointbtn"/>
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    style="@style/btn_frm_btn"
+                    android:id="@+id/btn_next"
+                    android:text="Finish &amp; Move to Next Item"
+                    />
+            </FrameLayout>
+
+        </LinearLayout>
+    <LinearLayout
+        style="@style/btn_holdrow"
+        android:weightSum="3"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="20dp">
+        <FrameLayout
+            android:layout_weight="1"
+            android:background="@drawable/btn_frm_bg_finish"
+            style="@style/button_frame">
+            <ImageView
+                style="@style/btn_frm_img"
+                android:src="@drawable/finish_button"/>
+            <com.dc_walk.CustomClasses.CustomTextButton
+                android:id="@+id/btn_finish"
+                style="@style/btn_frm_btn"
+                android:text="Finish"
+                />
+        </FrameLayout>
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

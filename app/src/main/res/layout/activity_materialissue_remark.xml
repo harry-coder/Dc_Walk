@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/pageWrap">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/backpageId2"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="13dp"
+            android:background="@android:color/transparent"
+            />
+
+        <LinearLayout
+            style="@style/inhead">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:background="@drawable/material_issued_logo"
+                style="@style/inhead_ico"/>
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/inhead_ttl"
+                android:text="Material Transfer"/>
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/inhead_subttl"
+                android:text="Observation"/>
+        </LinearLayout>
+
+        <FrameLayout
+            style="@style/remarkFrame">
+            <View
+                android:id="@+id/lineimgid"
+                style="@style/lineView1"></View>
+
+            <View
+                android:id="@+id/lineimg"
+                style="@style/lineView2"></View>
+
+            <ImageButton
+                android:layout_below="@+id/editextidrem"
+                android:id="@+id/next_btn"
+                style="@style/btn_submit"
+                android:layout_gravity="center_horizontal|bottom"/>
+
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:id="@+id/editextid"
+                android:hint="Start Your observations here"
+                style="@style/inputRemark"
+                />
+        </FrameLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/met"
+        style="@style/met" />
+</FrameLayout>

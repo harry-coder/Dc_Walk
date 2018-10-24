@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#ece1d0">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/page_body"
+        android:orientation="vertical">
+
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:id="@+id/back_btn"/>
+
+        <!-- <ImageButton
+             android:layout_width="18dp"
+             android:layout_height="18dp"
+             android:layout_marginTop="13dp"
+             android:layout_marginLeft="12dp"
+             android:layout_alignParentTop="true"
+             android:layout_alignParentLeft="true"
+             android:background="@drawable/backbutton"
+             android:id="@+id/back_btn"/>
+     -->
+
+        <LinearLayout
+            style="@style/inhead">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:background="@drawable/notification_logo"
+                style="@style/inhead_ico"/>
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/inhead_ttl"
+                android:text="Raid Lists"/>
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/inhead_subttl"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <LinearLayout
+                android:clickable="true"
+                style="@style/list_tab">
+                <TextView  android:text="Goutam Singh"
+                    style="@style/list_tabtitle"/>
+                <TextView  android:text="Consm. No. : 328764872364"
+                    style="@style/list_tabtex" />
+                <TextView  android:text="3845/17, Parijat Colony, Rasulgarh, Bhubaneswar"
+                    style="@style/list_tabtex" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/raid1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <LinearLayout
+                android:clickable="true"
+                style="@style/list_tab">
+                <TextView  android:text="Nitin Bhati"
+                    style="@style/list_tabtitle"/>
+                <TextView  android:text="Consm. No. : 328764872364"
+                    style="@style/list_tabtex" />
+                <TextView  android:text="3845/17, Parijat Colony, Rasulgarh, Bhubaneswar"
+                    style="@style/list_tabtex" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/grn2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"/>
+        </FrameLayout>
+
+
+    </LinearLayout>
+</ScrollView>
+

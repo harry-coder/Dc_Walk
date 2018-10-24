@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0"
+    >
+    <LinearLayout
+        style="@style/page_body">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:id="@+id/back_btn"/>
+
+        <LinearLayout
+            style="@style/inhead">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:background="@drawable/ncr_logo"
+                style="@style/inhead_ico"/>
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/inhead_ttl"
+                android:text="Raise Issue"/>
+        </LinearLayout>
+
+        <Spinner
+            android:entries="@array/project_id"
+            style="@style/input_spiner"/>
+        <Spinner
+            android:entries="@array/issue_type"
+            style="@style/input_spiner"/>
+
+        <Spinner
+            android:entries="@array/level_zone"
+            android:id="@+id/spinner_city"
+            style="@style/input_spiner"/>
+
+        <Spinner
+            android:entries="@array/level_city"
+            android:id="@+id/spinner_junction"
+            style="@style/input_spiner"/>
+        <Spinner
+            android:entries="@array/issue_list"
+            style="@style/input_spiner"/>
+
+        <LinearLayout
+            style="@style/btn_holdrow"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
+            android:weightSum="3">
+
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/take_photo_factory_button" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/imageButton5"
+                    style="@style/btn_frm_btn"
+                    android:text="Take Picture" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/item_observation_btn" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/imageButton6"
+                    style="@style/btn_frm_btn"
+                    android:text="Issue Details" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/ico_tik" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/imageButton7"
+                    style="@style/btn_frm_btn"
+                    android:text="Finish" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

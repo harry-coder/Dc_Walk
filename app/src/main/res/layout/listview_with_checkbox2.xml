@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+style="@style/rfi_listtab">
+
+<FrameLayout
+    android:layout_below="@+id/textView1"
+    android:paddingTop="0dp"
+    android:paddingBottom="3dp"
+    android:paddingRight="0dp"
+    android:layout_height="wrap_content"
+    style="@style/listview_checklin">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingRight="100dp"
+        android:layout_height="wrap_content">
+        <com.dc_walk.CustomClasses.CustomTextView
+            android:id="@+id/textView1"
+            android:text=""
+            android:layout_height="60dp"
+            android:layout_width="fill_parent"
+            android:gravity="left|center_vertical"
+            style="@style/listview_text"
+            android:layout_marginRight="120dp"
+            android:paddingRight="60dp"
+            />
+    </RelativeLayout>
+    <LinearLayout
+        style="@style/listview_checklin2"
+        android:layout_width="120dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_gravity="right|center_vertical"
+        android:gravity="right|center_vertical">
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:background="@drawable/custom_checkbox"
+            style="@style/check_roundo"
+            android:layout_marginRight="5dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:background="@drawable/custom_checkbox_ok"
+            style="@style/check_roundo"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="3dp"/>
+        <ImageButton
+            android:id="@+id/inputButton"
+            android:layout_gravity="right|bottom"
+            style="@style/remark_btn"
+            />
+    </LinearLayout>
+
+</FrameLayout>
+<View
+    android:layout_below="@+id/listview_checklin"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:background="#338F6C12"/>
+</LinearLayout>
+
+
+
+
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--style="@style/wrap_listview">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/textView1"-->
+    <!--android:text="New Text"-->
+    <!--style="@style/listview_text" />-->
+
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/listview_checklin"-->
+    <!--android:layout_below="@+id/textView1"-->
+    <!--style="@style/listview_checklin">-->
+    <!--<CheckBox-->
+    <!--android:id="@+id/na"-->
+    <!--android:background="@drawable/custom_nacheckbox"-->
+    <!--style="@style/check_roundo"/>-->
+
+    <!--<CheckBox-->
+    <!--android:id="@+id/checkBox1"-->
+    <!--android:background="@drawable/custom_checkbox"-->
+    <!--style="@style/check_roundo"/>-->
+
+    <!--<CheckBox-->
+    <!--android:id="@+id/checkBox2"-->
+    <!--android:background="@drawable/custom_checkbox_ok"-->
+    <!--style="@style/check_roundo"/>-->
+    <!--<Button-->
+    <!--android:id="@+id/inputButton"-->
+    <!--android:text="value if anyy"-->
+    <!--style="@style/check_btn"/>-->
+    <!--</LinearLayout>-->
+    <!--</RelativeLayout>-->

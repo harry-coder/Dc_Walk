@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Images" id="Images">
+	<SimpleField name="timestamp" type="string"></SimpleField>
+	<SimpleField name="begin" type="string"></SimpleField>
+	<SimpleField name="end" type="string"></SimpleField>
+	<SimpleField name="altitudeMode" type="string"></SimpleField>
+	<SimpleField name="tessellate" type="int"></SimpleField>
+	<SimpleField name="extrude" type="int"></SimpleField>
+	<SimpleField name="visibility" type="int"></SimpleField>
+	<SimpleField name="drawOrder" type="int"></SimpleField>
+	<SimpleField name="icon" type="string"></SimpleField>
+	<SimpleField name="snippet" type="string"></SimpleField>
+</Schema>
+<Folder><name>Images</name>
+  <Placemark>
+	<name>1</name>
+	<description>&lt;img src=&quot;files/o4gukvlrg648.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 190+550 Welcome to Assam&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'29.80&quot;; E92°15'9.55&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.25265372,24.44161167,-12</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>2</name>
+	<description>&lt;img src=&quot;files/8hpg6fs6xpgb.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 190+600 Shiv temple RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'28.77&quot;; E92°15'14.21&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.25394803,24.44132528,-14</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>3</name>
+	<description>&lt;img src=&quot;files/55dcn3qh4j15.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 190+630 Welcome to Karimganj District&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'28.81&quot;; E92°15'15.14&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.25420514,24.44133644,-14</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>4</name>
+	<description>&lt;img src=&quot;files/okh3llnnr32x.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 190+720 Distance sign board&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'29.79&quot;; E92°15'15.95&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.25443172,24.44160803,-1</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>5</name>
+	<description>&lt;img src=&quot;files/t17605efcxe3.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 191+000 Distance sign board&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'29.81&quot;; E92°15'20.42&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.25567144,24.44161442,-27</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>6</name>
+	<description>&lt;img src=&quot;files/mmks0m28x3qs.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 191+380 WMM in progress&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'24.19&quot;; E92°15'32.39&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.25899819,24.44005317,-18</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>7</name>
+	<description>&lt;img src=&quot;files/r93xcxu338k1.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 191+380 WMM in progress1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'24.40&quot;; E92°15'32.41&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.25900394,24.44011103,-17</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>8</name>
+	<description>&lt;img src=&quot;files/6q1ofrh8f5c8.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 191+380 WMM in progress2&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'24.19&quot;; E92°15'32.92&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.259145,24.44005314,-24</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>9</name>
+	<description>&lt;img src=&quot;files/sd99rdw8q5f3.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 191+520 GSB in progress&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'25.28&quot;; E92°15'38.33&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.26064814,24.44035483,13</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>10</name>
+	<description>&lt;img src=&quot;files/es5rr8m79cnu.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 191+750 Geo grid laying in progress&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'27.40&quot;; E92°15'43.28&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.26202311,24.44094353,-41</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>11</name>
+	<description>&lt;img src=&quot;files/to00u1xwruip.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 191+750 Geo grid laying in progress1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'28.97&quot;; E92°15'43.57&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.26210228,24.44137933,-12</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>12</name>
+	<description>&lt;img src=&quot;files/0q6er5p7st6i.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 191+750 Geo grid laying in progress2&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'29.11&quot;; E92°15'43.68&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.26213319,24.44141864,30</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>13</name>
+	<description>&lt;img src=&quot;files/4q3jolqxgk37.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;ch 192+180&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'33.10&quot;; E92°15'57.80&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.26605567,24.44252872,-6</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>14</name>
+	<description>&lt;img src=&quot;files/ke4i54x020p9.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 192+420 Temple LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'24.33&quot;; E92°15'33.62&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.25933939,24.4400905,-18</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>15</name>
+	<description>&lt;img src=&quot;files/qfswptox3kcb.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 192+580 Road CS1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'35.13&quot;; E92°16'8.45&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.26901317,24.44309181,-29</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>16</name>
+	<description>&lt;img src=&quot;files/sfc5kw2u8484.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 192+580 Road CS2&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'35.66&quot;; E92°16'8.61&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.26905964,24.44323978,-19</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>17</name>
+	<description>&lt;img src=&quot;files/ubd75fbg4et7.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 193+050 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'42.81&quot;; E92°16'19.07&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.27196517,24.44522614,-20</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>18</name>
+	<description>&lt;img src=&quot;files/ij3q9ln60m60.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 193+050 Road CS1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'42.80&quot;; E92°16'19.10&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.27197125,24.44522225,-18</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>19</name>
+	<description>&lt;img src=&quot;files/juc8i52m1rbt.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 193+050 Road CS2&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'43.15&quot;; E92°16'19.40&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.27205436,24.44532028,-22</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>20</name>
+	<description>&lt;img src=&quot;files/pclugvqx4iku.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 193+400 Borhatai Village&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'49.96&quot;; E92°16'31.16&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.27532106,24.44721231,-37</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>21</name>
+	<description>&lt;img src=&quot;files/mk55deq0p3wu.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 193+900 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'59.11&quot;; E92°16'43.06&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.27862869,24.44975183,-19</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>22</name>
+	<description>&lt;img src=&quot;files/2vegoh58lu3c.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 193+900 Road CS1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'59.56&quot;; E92°16'43.00&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.27861189,24.44987814,-6</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>23</name>
+	<description>&lt;img src=&quot;files/nrt7jumw7og3.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 193+900 Road CS2&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°26'59.03&quot;; E92°16'43.06&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.27862733,24.44973164,-8</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>24</name>
+	<description>&lt;img src=&quot;files/mml1m7con8s2.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 194+360 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'1.92&quot;; E92°16'58.70&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28297208,24.45053417,8</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>25</name>
+	<description>&lt;img src=&quot;files/5btrfgcr3opt.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 194+360 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'2.14&quot;; E92°16'58.79&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28299689,24.45059517,-22</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>26</name>
+	<description>&lt;img src=&quot;files/v0dpxd47n38w.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 194+360 Road CS WMM&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'2.20&quot;; E92°16'58.72&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28297867,24.45061128,9</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>27</name>
+	<description>&lt;img src=&quot;files/g6283i1ncfmo.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 194+520 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'3.80&quot;; E92°17'4.64&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28462236,24.45105675,-18</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>28</name>
+	<description>&lt;img src=&quot;files/uwictmg7cwem.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 194+520 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'3.52&quot;; E92°17'4.83&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28467514,24.45097853,-19</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>29</name>
+	<description>&lt;img src=&quot;files/nxris11rvv3s.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 194+520 Road CS WMM&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'3.98&quot;; E92°17'4.88&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28468808,24.45110444,-25</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>30</name>
+	<description>&lt;img src=&quot;files/egmi823hdkjg.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 194+800 DBM RHS progress1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'0.66&quot;; E92°17'11.71&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28658508,24.45018378,-37</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>31</name>
+	<description>&lt;img src=&quot;files/ijku850dlnd2.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 194+800 DBM RHS progress2&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'1.04&quot;; E92°17'12.06&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28668233,24.45028881,-8</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>32</name>
+	<description>&lt;img src=&quot;files/7970kv1xhpil.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 195+150 DBM RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'3.57&quot;; E92°17'21.42&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28928422,24.45099064,-5</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>33</name>
+	<description>&lt;img src=&quot;files/o2x0o51n76ku.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 195+150 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'4.07&quot;; E92°17'23.19&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28977497,24.451131,-16</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>34</name>
+	<description>&lt;img src=&quot;files/pjnn7cjghl1g.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 195+150 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'4.32&quot;; E92°17'23.02&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28972892,24.45119911,-14</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>35</name>
+	<description>&lt;img src=&quot;files/p4x54t1qfxtq.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 195+150 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'3.61&quot;; E92°17'22.29&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.28952506,24.45100167,-13</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>36</name>
+	<description>&lt;img src=&quot;files/povqjvkrxd0w.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 195+600 Road CS DBM&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'11.85&quot;; E92°17'34.94&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29303772,24.45329214,-16</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>37</name>
+	<description>&lt;img src=&quot;files/bpixit6u2ev0.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 195+600 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'11.64&quot;; E92°17'34.90&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29302664,24.45323392,-18</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>38</name>
+	<description>&lt;img src=&quot;files/2nnxc8xpes8k.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 195+600 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'11.39&quot;; E92°17'34.78&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29299494,24.45316433,-13</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>39</name>
+	<description>&lt;img src=&quot;files/1kxivxp6n4re.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+000 Hatikhira M V Checkpost&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'8.22&quot;; E92°17'48.13&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29670222,24.45228308,-17</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>40</name>
+	<description>&lt;img src=&quot;files/0i7ivse0mvm2.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+000 Hatikhira M V Checkpost1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'7.99&quot;; E92°17'49.08&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29696761,24.45221922,-20</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>41</name>
+	<description>&lt;img src=&quot;files/3h4oh7chkmpn.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+150 Road CS DBM&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'6.85&quot;; E92°17'54.12&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29836764,24.45190367,-11</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>42</name>
+	<description>&lt;img src=&quot;files/gd68to4h5bsk.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+150 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'7.62&quot;; E92°17'53.77&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29827011,24.45211608,-18</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>43</name>
+	<description>&lt;img src=&quot;files/uxilrnhgqit9.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+150 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'7.15&quot;; E92°17'53.98&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29832908,24.45198539,-19</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>44</name>
+	<description>&lt;img src=&quot;files/io7uguqq5ivg.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+300 GSB RHS progress&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'9.64&quot;; E92°17'56.41&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29900217,24.45267767,-19</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>45</name>
+	<description>&lt;img src=&quot;files/kdlmexx0igsi.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+400 Road CS DBM&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'10.63&quot;; E92°17'59.06&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29973864,24.45295267,-4</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>46</name>
+	<description>&lt;img src=&quot;files/qwrfjnmp3ulw.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+400 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'11.40&quot;; E92°17'59.66&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29990583,24.45316583,-16</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>47</name>
+	<description>&lt;img src=&quot;files/0s5selvptkfu.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+400 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'11.09&quot;; E92°17'59.67&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.29990881,24.45307919,-13</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>48</name>
+	<description>&lt;img src=&quot;files/inh0m5uix16e.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+760 Road CS DBM&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'19.20&quot;; E92°18'11.60&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30322169,24.45533344,-25</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>49</name>
+	<description>&lt;img src=&quot;files/620mui2fp0m8.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+760 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'19.19&quot;; E92°18'11.61&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30322619,24.45533042,-24</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>50</name>
+	<description>&lt;img src=&quot;files/qv30dtnwgld9.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 196+760 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'19.19&quot;; E92°18'11.61&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30322578,24.45532919,-25</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>51</name>
+	<description>&lt;img src=&quot;files/j35bwv7dutpg.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 197+300 DBM Completed&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'30.63&quot;; E92°18'23.19&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30644125,24.45850819,-32</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>52</name>
+	<description>&lt;img src=&quot;files/03ckc0inb96l.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 198+100 Shiva Temple RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'31.99&quot;; E92°18'45.50&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31263872,24.45888539,-12</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>53</name>
+	<description>&lt;img src=&quot;files/3hbvc4lo6kio.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 198+330 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'38.50&quot;; E92°18'50.75&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31409711,24.46069397,-14</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>54</name>
+	<description>&lt;img src=&quot;files/21kqg289ri4h.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 198+330 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'38.48&quot;; E92°18'50.74&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31409486,24.46069022,-15</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>55</name>
+	<description>&lt;img src=&quot;files/mln87ew3c4ew.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 198+420 Built up RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'41.85&quot;; E92°18'51.67&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31435172,24.46162592,-25</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>56</name>
+	<description>&lt;img src=&quot;files/wwcjcd11vw62.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 198+420 Tea garden LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'40.41&quot;; E92°18'51.06&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.3141835,24.46122531,-35</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>57</name>
+	<description>&lt;img src=&quot;files/ge7487v66cmm.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 198+830 Road Signage&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'53.94&quot;; E92°18'51.90&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31441683,24.46498403,-50</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>58</name>
+	<description>&lt;img src=&quot;files/175sbpmgw49r.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 198+910 Shiva Temple RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'54.89&quot;; E92°18'54.71&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31519767,24.46524675,-9</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>59</name>
+	<description>&lt;img src=&quot;files/33jcs6r3ptvd.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 199+100 Ofc of the BDO, Lowairpoa&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'57.39&quot;; E92°18'59.29&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31646867,24.46594108,-12</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>60</name>
+	<description>&lt;img src=&quot;files/1t81oikwr03l.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 199+100 Ofc of the BDO, Lowairpoa1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°27'58.11&quot;; E92°19'0.09&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31669267,24.46614244,-13</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>61</name>
+	<description>&lt;img src=&quot;files/qls7qhicmj8e.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 199+300 Junction to Kanmun State Road&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°28'2.49&quot;; E92°19'4.32&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31786594,24.46735958,-9</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>62</name>
+	<description>&lt;img src=&quot;files/26fwh1hutkhr.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 199+300 Junction to Kanmun State Road1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°28'2.74&quot;; E92°19'4.55&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31793106,24.46742758,-25</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>63</name>
+	<description>&lt;img src=&quot;files/tlfxgn0nsvfv.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 199+300 Junction to Kanmun State Road2&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°28'2.56&quot;; E92°19'4.93&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31803525,24.46737703,-27</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>64</name>
+	<description>&lt;img src=&quot;files/0ecdfpofgrp1.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 199+300 Junction to Kanmun State Road3&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°28'2.57&quot;; E92°19'4.93&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31803678,24.46738125,-27</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>65</name>
+	<description>&lt;img src=&quot;files/mejoip1dh487.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 200+190 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°28'28.81&quot;; E92°19'5.50&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31819572,24.47467053,-21</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>66</name>
+	<description>&lt;img src=&quot;files/mqkjk7m1hftg.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 200+190 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°28'28.85&quot;; E92°19'5.53&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31820383,24.47468094,-21</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>67</name>
+	<description>&lt;img src=&quot;files/7ptrfi7ugruc.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 200+190 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°28'28.79&quot;; E92°19'5.48&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31819025,24.47466389,-22</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>68</name>
+	<description>&lt;img src=&quot;files/ubx9c9ddgtpq.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 200+800 Hathikhira L P School&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°28'46.48&quot;; E92°19'5.41&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31817025,24.47957706,-10</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>69</name>
+	<description>&lt;img src=&quot;files/nv4b5mw353iu.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 201+480 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°29'6.77&quot;; E92°19'11.25&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31979075,24.48521322,-23</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>70</name>
+	<description>&lt;img src=&quot;files/cq9qpd6g2e2p.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 201+480 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°29'6.80&quot;; E92°19'11.22&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31978414,24.48522203,-24</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>71</name>
+	<description>&lt;img src=&quot;files/q8qm5wlw9lwb.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 201+480 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°29'6.77&quot;; E92°19'11.26&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.319794,24.48521439,-23</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>72</name>
+	<description>&lt;img src=&quot;files/xohrf4xj4gwn.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 202+500 Public ME School, Dengarbond&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°29'37.61&quot;; E92°19'20.95&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32248706,24.49378064,-18</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>73</name>
+	<description>&lt;img src=&quot;files/upnvvoxbihdf.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 202+500 Public ME School, Dengarbond1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°29'38.23&quot;; E92°19'19.86&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32218397,24.49395156,-23</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>74</name>
+	<description>&lt;img src=&quot;files/tebrfcn8r9vb.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 202+600 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°29'39.22&quot;; E92°19'19.59&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32210711,24.49422661,-19</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>75</name>
+	<description>&lt;img src=&quot;files/mrh0fn725pfm.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 202+600 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°29'39.33&quot;; E92°19'19.85&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32218183,24.49425925,-20</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>76</name>
+	<description>&lt;img src=&quot;files/73lmiewfm438.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 202+600 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°29'38.90&quot;; E92°19'19.79&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32216486,24.49413778,-20</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>77</name>
+	<description>&lt;img src=&quot;files/kd5qjenv69ft.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 202+900 Mosque LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°29'50.34&quot;; E92°19'22.36&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32287872,24.49731625,-26</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>78</name>
+	<description>&lt;img src=&quot;files/b1cslrj2cp9s.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 203+750 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°30'15.63&quot;; E92°19'20.85&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32245761,24.50434122,-28</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>79</name>
+	<description>&lt;img src=&quot;files/ckv0bbu2b61h.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 203+750 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°30'15.93&quot;; E92°19'21.09&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32252517,24.50442486,-26</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>80</name>
+	<description>&lt;img src=&quot;files/p03xh7gg4v8o.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 203+750 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°30'15.47&quot;; E92°19'20.76&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32243242,24.50429583,-30</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>81</name>
+	<description>&lt;img src=&quot;files/ri22pkmxk2i7.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 204+100 Solgoi PHC&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°30'25.40&quot;; E92°19'25.23&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32367428,24.50705556,2</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>82</name>
+	<description>&lt;img src=&quot;files/4grtvmjrcwxv.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 205+100 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°30'54.82&quot;; E92°19'36.57&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32682594,24.51522822,-43</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>83</name>
+	<description>&lt;img src=&quot;files/che5u40ut2nk.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 205+100 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°30'54.76&quot;; E92°19'36.77&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32688003,24.51521081,-38</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>84</name>
+	<description>&lt;img src=&quot;files/wn2m7pg63nhh.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 205+100 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°30'54.96&quot;; E92°19'36.59&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32683036,24.51526758,-42</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>85</name>
+	<description>&lt;img src=&quot;files/vs7el53emjv2.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 205+560 KM Stone&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°31'10.45&quot;; E92°19'43.46&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32873983,24.51956861,-41</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>86</name>
+	<description>&lt;img src=&quot;files/gbcqc8ubmi4c.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 205+800 Radhapyari Bazar&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°31'17.03&quot;; E92°19'45.13&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32920331,24.52139725,-24</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>87</name>
+	<description>&lt;img src=&quot;files/vdm9i75fhj6w.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 206+760 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°31'44.48&quot;; E92°19'45.13&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32920361,24.52902353,-47</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>88</name>
+	<description>&lt;img src=&quot;files/3ulo22qc2wx8.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 207+600 Road Signage&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'10.30&quot;; E92°19'45.64&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32934456,24.53619325,-39</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>89</name>
+	<description>&lt;img src=&quot;files/g6mtswikd63f.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 208+000 Baithakhal&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'20.78&quot;; E92°19'41.62&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32822817,24.53910553,-17</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>90</name>
+	<description>&lt;img src=&quot;files/xkxte1jpg337.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 208+240 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'22.73&quot;; E92°19'35.33&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32647928,24.53964856,-32</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>91</name>
+	<description>&lt;img src=&quot;files/lxtrqrtn3bqh.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 208+240 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'22.79&quot;; E92°19'34.75&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32631814,24.53966483,-29</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>92</name>
+	<description>&lt;img src=&quot;files/4ntgp1r71mkb.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 208+240 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'22.69&quot;; E92°19'35.32&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32647853,24.53963656,-36</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>93</name>
+	<description>&lt;img src=&quot;files/0tbg4gwl83dj.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 208+630 Poor road _ Accident prone area&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'25.60&quot;; E92°19'22.23&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32284103,24.54044447,-23</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>94</name>
+	<description>&lt;img src=&quot;files/uu03ib18txj8.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 208+630 Poor road _ Accident prone area1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'24.92&quot;; E92°19'22.44&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.3228995,24.54025586,-21</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>95</name>
+	<description>&lt;img src=&quot;files/8xkuwwt1bkgq.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 208+700 Baithakhal Tea Estate&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'26.43&quot;; E92°19'21.52&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32264339,24.54067544,-27</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>96</name>
+	<description>&lt;img src=&quot;files/e046dwo5m9oe.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 209+400 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'48.29&quot;; E92°19'11.32&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31981233,24.54674842,-25</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>97</name>
+	<description>&lt;img src=&quot;files/uixbxwr52ghm.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 209+400 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'47.58&quot;; E92°19'11.50&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31986056,24.54655125,-17</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>98</name>
+	<description>&lt;img src=&quot;files/ns0ovdeqqco1.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 209+400 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°32'48.23&quot;; E92°19'11.27&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31979717,24.54673169,-21</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>99</name>
+	<description>&lt;img src=&quot;files/phjigomjrohh.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 210+100 Kastuba Gandhi Balika Vidyalaya&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°33'3.45&quot;; E92°18'53.89&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31497017,24.55095747,-39</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>100</name>
+	<description>&lt;img src=&quot;files/7d3w6dou3wi2.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 210+100 Kastuba Gandhi Balika Vidyalaya1&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°33'2.36&quot;; E92°18'54.60&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31516528,24.55065456,-32</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>101</name>
+	<description>&lt;img src=&quot;files/jx0xc1lqe09b.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 210+800 KM stone&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°33'19.29&quot;; E92°18'39.97&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31110294,24.5553585,-29</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>102</name>
+	<description>&lt;img src=&quot;files/h6qegnftp5uh.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 211+280 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°33'32.45&quot;; E92°18'36.72&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31020086,24.55901461,-39</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>103</name>
+	<description>&lt;img src=&quot;files/hmpb3vvvhfr2.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 211+280 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°33'32.43&quot;; E92°18'36.69&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31019283,24.55900881,-42</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>104</name>
+	<description>&lt;img src=&quot;files/dpv18l2cueqc.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 211+280 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°33'32.39&quot;; E92°18'36.75&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31020792,24.55899817,-34</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>105</name>
+	<description>&lt;img src=&quot;files/psfp7ssmi9w1.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 211+400 Deolakhal&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°33'37.51&quot;; E92°18'34.05&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30945739,24.56042006,-39</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>106</name>
+	<description>&lt;img src=&quot;files/7tccistlbklq.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 211+600 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°33'42.18&quot;; E92°18'32.50&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30902689,24.56171658,-12</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>107</name>
+	<description>&lt;img src=&quot;files/we2vjmrx7w2b.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 211+600 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°33'41.95&quot;; E92°18'32.27&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30896467,24.56165228,-42</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>108</name>
+	<description>&lt;img src=&quot;files/7tiqfout5qir.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 211+600 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°33'42.17&quot;; E92°18'32.35&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30898592,24.56171406,27</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>109</name>
+	<description>&lt;img src=&quot;files/09mhbmek1g2r.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 212+400 Chandkhira Timukha&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°34'3.85&quot;; E92°18'20.95&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30582069,24.56773581,-57</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>110</name>
+	<description>&lt;img src=&quot;files/2x178qmtfews.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 212+400 LHS Junction To BOP Lathitilla&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°34'4.25&quot;; E92°18'21.76&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30604431,24.56784783,-40</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>111</name>
+	<description>&lt;img src=&quot;files/k3l50hj96k5h.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 212+980 Road CS LHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°34'18.34&quot;; E92°18'35.52&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30986558,24.57176178,-45</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>112</name>
+	<description>&lt;img src=&quot;files/8juj3rrvhp6b.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 212+980 Road CS RHS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°34'18.44&quot;; E92°18'35.75&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30992931,24.57178753,-45</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>113</name>
+	<description>&lt;img src=&quot;files/v906rc13j5kq.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 212+980 Road CS&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°34'18.29&quot;; E92°18'35.25&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.30979269,24.5717475,-51</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>114</name>
+	<description>&lt;img src=&quot;files/k68cgm5bc2cx.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;Ch 213+100 Poor Road condition&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°34'20.40&quot;; E92°18'37.68&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.31046669,24.57233453,-45</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>115</name>
+	<description>&lt;img src=&quot;files/w1wv70sdti1p.jpg&quot; width=&quot;240&quot; height=&quot;180&quot;&gt;
+&lt;br&gt;&lt;b&gt;IMG_20161119_114900&lt;/b&gt;&lt;hr&gt;&lt;b&gt;Coordinates:&lt;/b&gt;&amp;nbsp;N24°29'54.28&quot;; E92°19'22.63&quot;</description>
+	<ExtendedData><SchemaData schemaUrl="#Images">
+		<SimpleData name="tessellate">-1</SimpleData>
+		<SimpleData name="extrude">0</SimpleData>
+		<SimpleData name="visibility">-1</SimpleData>
+		<SimpleData name="snippet"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>92.32295175,24.49840975,-20</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

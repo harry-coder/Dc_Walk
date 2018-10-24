@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/pageWrap"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <Button
+        android:id="@+id/back_btn"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="13dp"
+        android:background="@android:color/transparent"
+        />
+
+    <LinearLayout
+        style="@style/inhead">
+        <ImageView
+            android:id="@+id/imageView1"
+            android:background="@drawable/complete_and_upload_logo"
+            style="@style/inhead_ico"/>
+        <com.dc_walk.CustomClasses.CustomTextView
+            style="@style/inhead_ttl"
+            android:text="Complete &amp; Upload"/>
+        <!--<TextView-->
+        <!--style="@style/inhead_subttl"-->
+        <!--android:text="Observation"/>-->
+    </LinearLayout>
+
+    <!-- <LinearLayout
+         android:id="@+id/layoutid"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/imageView1"
+         android:layout_marginLeft="35dp"
+         android:layout_marginRight="35dp"
+         android:layout_marginTop="68dp"
+         android:orientation="horizontal"
+         android:weightSum="2">
+
+         <ImageButton
+             android:id="@+id/passId"
+             android:layout_width="wrap_content"
+             android:layout_height="100dp"
+             android:layout_weight="1"
+             android:layout_marginLeft="23dp"
+             android:layout_gravity="center_vertical"
+             android:background="@drawable/pass_button" />
+
+         <ImageButton
+             android:id="@+id/imageButton2"
+             android:layout_width="wrap_content"
+             android:layout_height="100dp"
+             android:layout_marginRight="23dp"
+             android:layout_gravity="center_vertical"
+             android:layout_toRightOf="@+id/passId"
+             android:layout_weight="1"
+             android:background="@drawable/rework_button" />
+     </LinearLayout>
+ -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal"
+        android:paddingTop="80dp">
+        <FrameLayout
+            style="@style/touchupframe">
+
+            <ImageButton
+                android:id="@+id/upload_btn"
+                style="@style/touchup" />
+            <com.dc_walk.CustomClasses.CustomTextView
+                android:text="Touch to Upload Inspection"
+                android:layout_gravity="center_horizontal|center_vertical"
+                style="@style/touchuptext"/>
+            <ImageView
+                android:src="@drawable/cheetah"
+                style="@style/touchupico"/>
+        </FrameLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

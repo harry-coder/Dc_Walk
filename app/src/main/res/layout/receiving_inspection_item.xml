@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0">
+    <LinearLayout
+        style="@style/page_body">
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="13dp"
+            android:background="@android:color/transparent"
+            />
+
+
+        <LinearLayout
+            style="@style/inhead">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:background="@drawable/receiving_inspection_logo"
+                style="@style/inhead_ico"/>
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/inhead_ttl"
+                android:text="Receiving Inspection"/>
+        </LinearLayout>
+
+        <!--<Spinner-->
+            <!--android:id="@+id/edt_item"-->
+            <!--style="@style/input_spiner" />-->
+
+      <!--  <Spinner
+            android:id="@+id/edt_subitem"
+            style="@style/input_spiner" />-->
+
+        <!--<RelativeLayout-->
+            <!--android:theme="@style/TextLabelGen"-->
+            <!--style="@style/input_fieldset">-->
+            <!--<com.dcnine_box.CustomTextInput-->
+                <!--android:id="@+id/edt_fact_insp_id"-->
+                <!--android:hint="Factory Insp. ID"-->
+                <!--style="@style/input_gen"/>-->
+        <!--</RelativeLayout>-->
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:id="@+id/edt_fact_insp_id"
+                android:hint="Item Name"
+                android:text="Pole"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:id="@+id/edt_quantity_ins"
+                android:hint="Quantity Recieved"
+                android:numeric="integer"
+                android:inputType="number"
+                android:text="250"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:id="@+id/edt_quantity_passed"
+                android:hint="Quality Rejected"
+                android:numeric="integer"
+                android:inputType="number"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:layout_height="80dp"
+                android:gravity="top"
+                android:hint="Reason for Rejection"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            style="@style/btn_holdrow"
+            android:weightSum="3">
+            <FrameLayout
+                android:layout_weight="1"
+                style="@style/button_frame">
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/take_photo_factory_button"/>
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/imageButton5"
+                    style="@style/btn_frm_btn"
+                    android:text="Take Picture"
+                    />
+            </FrameLayout>
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/scan_doc_button" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    style="@style/btn_frm_btn"
+                    android:id="@+id/btn_camera"
+                    android:text="Scan Doc." />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_weight="1"
+                android:background="@drawable/btn_frm_bg_finish"
+                style="@style/button_frame">
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/finish_button"/>
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/finishBtn"
+                    style="@style/btn_frm_btn"
+                    android:text="Finish"
+                    />
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+
+        <!-- <ImageButton
+             android:layout_width="115dp"
+             android:layout_height="100dp"
+             android:id="@+id/next_btn"
+
+             android:background="@drawable/finish_button"
+             android:layout_below="@+id/imageButton7"
+             android:layout_toLeftOf="@+id/imageButton7"
+             android:layout_toStartOf="@+id/imageButton7" />
+
+
+         <ImageButton
+             android:layout_width="115dp"
+             android:layout_height="100dp"
+             android:layout_marginLeft="20dp"
+             android:layout_below="@+id/edt_quantity_passed"
+             android:background="@drawable/take_photo_factory_button"
+             android:id="@+id/imageButton5"
+
+             android:layout_alignTop="@+id/imageButton6"
+             android:layout_toLeftOf="@+id/imageButton6"
+             android:layout_toStartOf="@+id/imageButton6" />
+
+
+
+         <ImageButton
+             android:layout_width="115dp"
+             android:layout_height="100dp"
+             android:background="@drawable/item_observation_btn"
+             android:id="@+id/imageButton6"
+
+             android:layout_alignParentBottom="true"
+             android:layout_centerHorizontal="true"
+             android:layout_marginBottom="120dp" />
+
+         <ImageButton
+             android:layout_width="115dp"
+             android:layout_height="100dp"
+             android:layout_marginRight="20dp"
+
+             android:background="@drawable/next_item_button"
+             android:id="@+id/imageButton7"
+             android:layout_alignTop="@+id/imageButton6"
+             android:layout_toRightOf="@+id/imageButton6"
+             android:layout_toEndOf="@+id/imageButton6" />-->
+
+    </LinearLayout>
+</ScrollView>
+    <!--
+
+    </ScrollView>-->

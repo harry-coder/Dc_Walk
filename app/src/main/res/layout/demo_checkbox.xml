@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".5"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:id="@+id/back_btn"/>
+
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageView1"
+            android:background="@drawable/site_inspection_logo"
+            android:layout_weight="0.65"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/imageView1"
+            android:background="@drawable/line_segment"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/lineImgid1">
+        </View>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".4"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/list"
+        android:weightSum="1">
+
+        <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/listview"
+            android:textSize="8px"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10dp"
+            android:choiceMode="multipleChoice"></ListView>
+
+        <!-- <View
+             android:layout_width="match_parent"
+             android:layout_height="0.5dp"
+             android:layout_marginTop="8dp"
+             android:layout_marginLeft="20dp"
+             android:layout_marginRight="20dp"
+             android:layout_below="@+id/listview"
+             android:background="@drawable/line_segment"/>
+ -->
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:background="@drawable/blank"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/list"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight=".6"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            android:weightSum="3">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/item_observation_btn"
+                        android:id="@+id/imageButton5"/>
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/next_item_button"
+                        android:id="@+id/imageButton6"/>
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/finish_button"
+                        android:id="@+id/imageButton7"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

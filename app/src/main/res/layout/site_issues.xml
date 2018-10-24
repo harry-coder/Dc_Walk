@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0"
+    >
+    <LinearLayout
+        style="@style/page_body">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:id="@+id/back_btn"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp">
+            <LinearLayout
+                style="@style/inhead">
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:background="@drawable/ncr_logo"
+                    style="@style/inhead_ico"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/inhead_ttl"
+                    android:text="Issues"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/met"
+                style="@style/met2" />
+        </FrameLayout>
+
+        <Spinner
+
+            android:id="@+id/spinner_issue_type"
+            style="@style/input_spiner"/>
+
+        <Spinner
+            android:id="@+id/spinner_city"
+            style="@style/input_spiner"/>
+
+        <Spinner
+            android:visibility="gone"
+            android:id="@+id/spinner_type"
+            style="@style/input_spiner"/>
+        <Spinner
+
+            android:id="@+id/spinner_junction"
+            style="@style/input_spiner"/>
+        <Spinner
+
+            android:id="@+id/spinner_issue_list"
+            style="@style/input_spiner"/>
+        <RelativeLayout
+            android:id="@+id/ed_other_issue_holder"
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:hint="Issue Details "
+                android:inputType="textMultiLine"
+                android:id="@+id/ed_other_issue"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:hint="Remarks "
+                android:inputType="textMultiLine"
+                android:layout_height="100dp"
+                android:gravity="top"
+                android:id="@+id/ed_remark"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+
+
+        <ImageButton
+            android:id="@+id/btn_finish"
+            style="@style/btn_submit"/>
+
+    </LinearLayout>
+</ScrollView>

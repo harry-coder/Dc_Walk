@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/pageWrap"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/pageWrap"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentLeft="true"
+                android:background="@android:color/transparent"
+                android:id="@+id/back_btn"/>
+
+
+            <LinearLayout
+                style="@style/inhead">
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:background="@drawable/factory_inspection_logo"
+                    style="@style/inhead_ico"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/inhead_ttl"
+                    android:text="Factory Inspection"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    android:id="@+id/text_logo"
+                    style="@style/inhead_subttl"
+                    android:text="Status"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/btn_holdrow"
+                android:layout_marginBottom="20dp"
+                android:weightSum="3">
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/imageButton5"
+                        style="@style/btn_frm_btn"
+                        android:text="Take Picture" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/item_observation_btn" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/imageButton6"
+                        style="@style/btn_frm_btn"
+                        android:text="Item Obsr." />
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_weight="1"
+                    style="@style/button_frame">
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/btn_frm_btn"
+                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="0dp"
+                        android:id="@+id/btn_frm_btn"
+                        android:background="@drawable/btn_frm_btnbg2"
+                        android:text="Upload Report If Any"
+                        />
+                </FrameLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/uom_base"
+                style="@style/rfi_listtab"
+                >
+                <View
+                    android:layout_below="@+id/listview_checklin"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#338F6C12"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="UOM"
+                        android:layout_weight="3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text=""
+                        android:layout_weight="4"
+                        android:gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="Nos"
+                        android:layout_weight="3"
+                        android:gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </LinearLayout>
+                <FrameLayout
+                    android:layout_below="@+id/textView1"
+                    style="@style/listview_checklin3"
+                    android:paddingLeft="0dp"
+                    android:layout_marginBottom="20dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            style="@style/input_gen"
+                            android:id="@+id/ed_vibrator40"
+                            android:layout_weight="1"
+                            android:hint="Total"
+                            android:text="50"
+                            android:layout_marginBottom="3dp"/>
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            style="@style/input_gen"
+                            android:layout_weight="1"
+                            android:id="@+id/ed_no"
+                            android:hint="Completed"
+                            android:inputType="number"
+                            android:layout_marginBottom="3dp"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutid"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView1"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/passId"
+                    style="@style/btn_pass"
+                    android:text="Pass"
+                    android:layout_weight="1"/>
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/reworkId"
+                    style="@style/btn_rework"
+                    android:text="Fail"
+                    android:layout_weight="1"/>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="220dp"
+                style="@style/btn_holdrow"
+                android:weightSum="2"
+                android:layout_marginBottom="20dp">
+
+                <FrameLayout
+                    android:layout_weight="1"
+                    style="@style/button_frame">
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/finish_btn"
+                        style="@style/btn_frm_btn"
+                        android:paddingTop="0dp"
+                        android:background="@drawable/btn_frm_btnbg2"
+                        android:text="Finish"
+                        />
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/alert_pop1"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#33000000"
+            android:gravity="center_vertical|center_horizontal">
+            <FrameLayout
+
+                style="@style/alert_mainframe">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    android:id="@+id/text"
+
+                    android:text="Are you sure you want to pass this Inspection ? "
+
+                    style="@style/alerttext"/>
+                <ImageView
+                    style="@style/alert_ico"/>
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/dialogButtonOK"
+                    style="@style/alert_btn"
+                    android:text="Yes"
+                    />
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/dialogButtonNo"
+                    style="@style/alert_btn_cnl"
+                    android:text="Cancel"/>
+
+
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0"
+    >
+    <LinearLayout
+        style="@style/page_body">
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:id="@+id/back_btn"/>
+
+        <LinearLayout
+            style="@style/inhead">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:background="@drawable/factory_inspection_logo"
+                style="@style/inhead_ico"/>
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/inhead_ttl"
+                android:text="Factory Inspection"/>
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <LinearLayout
+                android:clickable="true"
+                style="@style/list_tab">
+                <TextView  android:text="PO_0010"
+                    style="@style/list_tabtitle"/>
+                <TextView  android:text="ITM09002"
+                    style="@style/list_tabtex" />
+                <TextView  android:text="Module"
+                    style="@style/list_tabtex" />
+                <TextView  android:text="Stage : Assembly"
+                    style="@style/list_tabtex" />
+                <TextView  android:text="Inspection Date : 2017.01.01"
+                    style="@style/list_tabtex" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/factinsp1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <LinearLayout
+                android:clickable="true"
+                style="@style/list_tab">
+                <TextView  android:text="PO_0010"
+                    style="@style/list_tabtitle"/>
+                <TextView  android:text="ITM09002"
+                    style="@style/list_tabtex" />
+                <TextView  android:text="Transformer"
+                    style="@style/list_tabtex" />
+                <TextView  android:text="Stage : Paint"
+                    style="@style/list_tabtex" />
+                <TextView  android:text="Inspection Date : 2017.01.01"
+                    style="@style/list_tabtex" />
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"/>
+        </FrameLayout>
+
+
+        <ImageButton
+            android:id="@+id/next_btn"
+            style="@style/btn_submit"/>
+
+    </LinearLayout>
+</ScrollView>

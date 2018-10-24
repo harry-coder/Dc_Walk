@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/rfi_listtab">
+
+        <FrameLayout style="@style/listview_checklin">
+
+            <RelativeLayout style="@style/text_relative">
+
+                <com.dc_walk.CustomClasses.CustomTextView
+                    android:id="@+id/tv_parameter"
+                    style="@style/listview_text"
+                    android:layout_width="wrap_content"
+                    android:text="Location/ Co-ordinates of drain" />
+
+            </RelativeLayout>
+
+            <LinearLayout style="@style/listview_checklin2">
+
+                <CheckBox
+                    android:id="@+id/cb_check"
+                    style="@style/check_roundo"
+                    android:layout_marginLeft="5dp"
+
+                    android:background="@drawable/custom_checkbox" />
+
+                <Spinner
+                    android:id="@+id/sp_parameter"
+                   android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginLeft="3dp"
+                    android:background="@drawable/btn_drop"
+
+                    android:spinnerMode="dialog"
+
+                     />
+
+
+                <ImageButton
+                    android:id="@+id/im_remarks"
+                    style="@style/remark_btn"
+                    android:layout_gravity="right|bottom" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <View style="@style/lcview" />
+    </LinearLayout>
+
+
+</LinearLayout>
+

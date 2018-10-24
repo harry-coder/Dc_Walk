@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0"
+    android:orientation="vertical">
+<!--
+
+    <FrameLayout
+        style="@style/chainage_box">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                style="@style/chainage_box_linin">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/chainage_ttl"
+                    android:text="Chainage Sequence"/>
+
+                <FrameLayout
+                    style="@style/loc_row">
+                    <ImageButton
+                        style="@style/loc_btn"
+                        android:src="@drawable/btn_loc_actv"/>
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="188km"
+                        style="@style/loc_km"/>
+                    <ImageButton
+                        style="@style/loc_info_btn"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_skip"
+                        android:text="Skip"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_ods"
+                        android:text="Observation"/>
+                </FrameLayout>
+                <FrameLayout
+                    style="@style/loc_row">
+                    <ImageButton
+                        style="@style/loc_btn"
+                        android:src="@drawable/btn_loc_actv"/>
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="188km"
+                        style="@style/loc_km"/>
+                    <ImageButton
+                        style="@style/loc_info_btn"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_skip"
+                        android:text="Skip"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_ods"
+                        android:text="Observation"/>
+                </FrameLayout>
+                <FrameLayout
+                    style="@style/loc_row">
+                    <ImageButton
+                        style="@style/loc_btn"
+                        android:src="@drawable/btn_loc_actv"/>
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="188km"
+                        style="@style/loc_km"/>
+                    <ImageButton
+                        style="@style/loc_info_btn"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_skip"
+                        android:text="Skip"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_ods"
+                        android:text="Observation"/>
+                </FrameLayout>
+                <FrameLayout
+                    style="@style/loc_row">
+                    <ImageButton
+                        style="@style/loc_btn"
+                        android:src="@drawable/btn_loc_actv"/>
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="188km"
+                        style="@style/loc_km"/>
+                    <ImageButton
+                        style="@style/loc_info_btn"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_skip"
+                        android:text="Skip"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_ods"
+                        android:text="Observation"/>
+                </FrameLayout>
+                <FrameLayout
+                    style="@style/loc_row">
+                    <ImageButton
+                        android:id="@+id/pointerId"
+                        style="@style/loc_btn" />
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="189km"
+                        style="@style/loc_km"/>
+                    <ImageButton
+                        android:id="@+id/locInfo_id"
+                        style="@style/loc_info_btn"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_skip"
+                        android:text="Skip"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/locObs_Id"
+                        style="@style/loc_ods"
+                        android:text="Observation"/>
+                </FrameLayout>
+                <FrameLayout
+                    style="@style/loc_row">
+                    <ImageButton
+                        style="@style/loc_btn" />
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="189km"
+                        style="@style/loc_km"/>
+                    <ImageButton
+                        style="@style/loc_info_btn"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_skip"
+                        android:text="Skip"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_ods"
+                        android:text="Observation"/>
+                </FrameLayout>
+                <FrameLayout
+                    style="@style/loc_row">
+                    <ImageButton
+                        style="@style/loc_btn" />
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="189km"
+                        style="@style/loc_km"/>
+                    <ImageButton
+                        style="@style/loc_info_btn"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_skip"
+                        android:text="Skip"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_ods"
+                        android:text="Observation"/>
+                </FrameLayout>
+                <FrameLayout
+                    style="@style/loc_row">
+                    <ImageButton
+                        style="@style/loc_btn" />
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="189km"
+                        style="@style/loc_km"/>
+                    <ImageButton
+                        style="@style/loc_info_btn"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_skip"
+                        android:text="Skip"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_ods"
+                        android:text="Observation"/>
+                </FrameLayout>
+                <FrameLayout
+                    style="@style/loc_row">
+                    <ImageButton
+                        style="@style/loc_btn" />
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="189km"
+                        style="@style/loc_km"/>
+                    <ImageButton
+                        style="@style/loc_info_btn"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_skip"
+                        android:text="Skip"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_ods"
+                        android:text="Observation"/>
+                </FrameLayout>
+                <FrameLayout
+                    style="@style/loc_row">
+                    <ImageButton
+                        style="@style/loc_btn" />
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="189km"
+                        style="@style/loc_km"/>
+                    <ImageButton
+                        style="@style/loc_info_btn"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_skip"
+                        android:text="Skip"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/loc_ods"
+                        android:text="Observation"/>
+                </FrameLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/mapBoxId"
+        style="@style/map_box">
+        <TextView
+            android:text="180 km"
+            style="@style/map_title"/>
+        <ImageButton
+            android:id="@+id/mapCloseId"
+            style="@style/map_close"/>
+
+        <fragment
+            android:id="@+id/map"
+            android:layout_marginTop="40dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            class="com.google.android.gms.maps.MapFragment" />
+
+        <view
+            android:id="@+id/myview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            class="android.view.View" />
+        <Button
+            style="@style/loc_punch"
+            />
+    </FrameLayout>
+    &lt;!&ndash;for Observation popup&ndash;&gt;
+    <ScrollView
+        android:visibility="gone"
+        android:id="@+id/actest"
+        style="@style/scroll_con_load">
+        <LinearLayout
+            style="@style/scroll_con_loadlin">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_title"
+                    android:text="Observtion"
+                    />
+                <ImageButton
+                    android:id="@+id/actest_close"
+                    style="@style/cnd_close"/>
+            </FrameLayout>
+
+            <View
+                android:layout_below="@+id/listview_checklin"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#338F6C12"/>
+
+
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Pointer/KM :"/>
+                <com.dc_walk.CustomTextInput
+                    android:hint=" "
+                    android:text="180km"
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Location :"/>
+                <com.dc_walk.CustomTextInput
+                    android:hint=" "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Obstacle Type :"/>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.dc_walk.CustomTextCheck
+                        android:id="@+id/check_envId"
+                        style="@style/input_check_vert"
+                        android:text="Environment"/>
+                    <com.dc_walk.CustomTextCheck
+                        android:id="@+id/check_builtId"
+                        style="@style/input_check_vert"
+                        android:text="Buit Up"/>
+                    <com.dc_walk.CustomTextCheck
+                        android:id="@+id/check_utilId"
+                        style="@style/input_check_vert"
+                        android:text="Utility"/>
+                    <com.dc_walk.CustomTextCheck
+                        android:id="@+id/check_structId"
+                        style="@style/input_check_vert"
+                        android:text="Structure"/>
+                </RadioGroup>
+
+                <com.dc_walk.CustomTextInput
+                    android:hint="Remarks :"
+                    android:inputType="textMultiLine"
+                    android:gravity="top"
+                    android:layout_height="80dp"
+                    style="@style/input_gen"/>
+            </LinearLayout>
+
+
+            <ImageButton
+                android:id="@+id/actest_done"
+                style="@style/btn_submit"/>
+        </LinearLayout>
+    </ScrollView>
+    &lt;!&ndash;for Level Structure Type popup&ndash;&gt;
+    <ScrollView
+        android:visibility="gone"
+        android:id="@+id/pop_structId"
+        style="@style/scroll_con_load">
+        <LinearLayout
+            style="@style/scroll_con_loadlin">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_title"
+                    android:text="Environment"
+                    />
+                <ImageButton
+                    android:id="@+id/structure_close_id"
+                    style="@style/cnd_close"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="12">
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/structure_id"
+                        style="@style/btn_gen"
+                        android:layout_width="0dp"
+                        android:text="Pond/Lake"
+                        android:layout_weight="4"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/btn_gen"
+                        android:layout_width="0dp"
+                        android:text="Irrigation Tank"
+                        android:layout_weight="4"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/btn_gen"
+                        android:layout_width="0dp"
+                        android:text="Canal"
+                        android:layout_weight="4"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="12">
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/btn_gen"
+                        android:layout_width="0dp"
+                        android:text="Forest/ National park/ Wildlife Sancturies"
+                        android:layout_weight="4"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/btn_gen"
+                        android:layout_width="0dp"
+                        android:text="River"
+                        android:layout_weight="4"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/btn_gen"
+                        android:layout_width="0dp"
+                        android:text="River"
+                        android:layout_weight="4"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="12">
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/btn_gen"
+                        android:layout_width="0dp"
+                        android:text="Forest/ National park/ Wildlife Sancturies"
+                        android:layout_weight="4"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/btn_gen"
+                        android:layout_width="0dp"
+                        android:text="River"
+                        android:layout_weight="4"/>
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        style="@style/btn_gen"
+                        android:layout_width="0dp"
+                        android:text="River"
+                        android:layout_weight="4"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    &lt;!&ndash;for Structure Params popup&ndash;&gt;
+    <ScrollView
+        android:visibility="gone"
+        android:id="@+id/struct_param_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ece1d0">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        style="@style/cnd_title"
+                        android:text="Pond/Lake"
+                        />
+                    <ImageButton
+                        android:id="@+id/struct_param_close_id"
+                        style="@style/cnd_close"/>
+                </FrameLayout>
+                <View
+                    android:layout_below="@+id/listview_checklin"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#338F6C12"/>
+                <LinearLayout
+                    style="@style/input_fieldset">
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:paddingLeft="0dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="LHS"
+                            android:layout_weight="4"/>
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="RHS"
+                            android:layout_weight="6"/>
+                    </RadioGroup>
+                    <View
+                        android:layout_below="@+id/listview_checklin"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#338F6C12"/>
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/rfi_listtab">
+
+                    <FrameLayout
+                        style="@style/listview_checklin">
+                        <RelativeLayout
+                            style="@style/text_relative">
+                            <com.dc_walk.CustomClasses.CustomTextView
+                                style="@style/listview_text"
+                                android:text="Location/ Co-ordinates of drain"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            style="@style/listview_checklin2"
+                            >
+                            <CheckBox
+                                android:background="@drawable/custom_checkbox"
+                                style="@style/check_roundo"
+                                android:layout_marginRight="5dp"/>
+                            <Spinner
+                                android:background="@drawable/drop"
+                                android:drawablePadding="16dp"
+                                style="@style/drop_roundo"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="3dp"
+                                android:entries="@array/item_name"></Spinner>
+                            <ImageButton
+                                android:id="@+id/remButton"
+                                android:layout_gravity="right|bottom"
+                                style="@style/remark_btn"
+                                />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <View
+                        style="@style/lcview"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/rfi_listtab">
+
+                    <FrameLayout
+                        style="@style/listview_checklin">
+                        <RelativeLayout
+                            style="@style/text_relative">
+                            <com.dc_walk.CustomClasses.CustomTextView
+                                style="@style/listview_text"
+                                android:text="Existing Level of drain"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            style="@style/listview_checklin2"
+                            >
+                            <CheckBox
+                                android:background="@drawable/custom_checkbox"
+                                style="@style/check_roundo"
+                                android:layout_marginRight="5dp"/>
+                            <Spinner
+                                android:background="@drawable/drop"
+                                android:drawablePadding="16dp"
+                                style="@style/drop_roundo"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="3dp"
+                                android:entries="@array/item_name"></Spinner>
+                            <ImageButton
+                                android:layout_gravity="right|bottom"
+                                style="@style/remark_btn"
+                                />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <View
+                        style="@style/lcview"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/rfi_listtab">
+
+                    <FrameLayout
+                        style="@style/listview_checklin">
+                        <RelativeLayout
+                            style="@style/text_relative">
+                            <com.dc_walk.CustomClasses.CustomTextView
+                                style="@style/listview_text"
+                                android:text="Dimensions of drain"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            style="@style/listview_checklin2"
+                            >
+                            <CheckBox
+                                android:background="@drawable/custom_checkbox"
+                                style="@style/check_roundo"
+                                android:layout_marginRight="5dp"/>
+                            <Spinner
+                                android:background="@drawable/drop"
+                                android:drawablePadding="16dp"
+                                style="@style/drop_roundo"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="3dp"
+                                android:entries="@array/item_name"></Spinner>
+                            <ImageButton
+                                android:layout_gravity="right|bottom"
+                                style="@style/remark_btn"
+                                />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <View
+                        style="@style/lcview"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/rfi_listtab">
+
+                    <FrameLayout
+                        style="@style/listview_checklin">
+                        <RelativeLayout
+                            style="@style/text_relative">
+                            <com.dc_walk.CustomClasses.CustomTextView
+                                style="@style/listview_text"
+                                android:text="Bottom Level of drain"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            style="@style/listview_checklin2"
+                            >
+                            <CheckBox
+                                android:background="@drawable/custom_checkbox"
+                                style="@style/check_roundo"
+                                android:layout_marginRight="5dp"/>
+                            <Spinner
+                                android:background="@drawable/drop"
+                                android:drawablePadding="16dp"
+                                style="@style/drop_roundo"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="3dp"
+                                android:entries="@array/item_name"></Spinner>
+                            <ImageButton
+                                android:layout_gravity="right|bottom"
+                                style="@style/remark_btn"
+                                />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <View
+                        style="@style/lcview"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/rfi_listtab">
+
+                    <FrameLayout
+                        style="@style/listview_checklin">
+                        <RelativeLayout
+                            style="@style/text_relative">
+                            <com.dc_walk.CustomClasses.CustomTextView
+                                style="@style/listview_text"
+                                android:text="Cleaning/Dressing up of drain "/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            style="@style/listview_checklin2"
+                            >
+                            <CheckBox
+                                android:background="@drawable/custom_checkbox"
+                                style="@style/check_roundo"
+                                android:layout_marginRight="5dp"/>
+                            <Spinner
+                                android:background="@drawable/drop"
+                                android:drawablePadding="16dp"
+                                style="@style/drop_roundo"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="3dp"
+                                android:entries="@array/item_name"></Spinner>
+                            <ImageButton
+                                android:layout_gravity="right|bottom"
+                                style="@style/remark_btn"
+                                />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <View
+                        style="@style/lcview"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/rfi_listtab">
+
+                    <FrameLayout
+                        style="@style/listview_checklin">
+                        <RelativeLayout
+                            style="@style/text_relative">
+                            <com.dc_walk.CustomClasses.CustomTextView
+                                style="@style/listview_text"
+                                android:text="Top slab/ cover of drain(where ever required)"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            style="@style/listview_checklin2"
+                            >
+                            <CheckBox
+                                android:background="@drawable/custom_checkbox"
+                                style="@style/check_roundo"
+                                android:layout_marginRight="5dp"/>
+                            <Spinner
+                                android:background="@drawable/drop"
+                                android:drawablePadding="16dp"
+                                style="@style/drop_roundo"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="3dp"
+                                android:entries="@array/item_name"></Spinner>
+                            <ImageButton
+                                android:layout_gravity="right|bottom"
+                                style="@style/remark_btn"
+                                />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <View
+                        style="@style/lcview"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/rfi_listtab">
+
+                    <FrameLayout
+                        style="@style/listview_checklin">
+                        <RelativeLayout
+                            style="@style/text_relative">
+                            <com.dc_walk.CustomClasses.CustomTextView
+                                style="@style/listview_text"
+                                android:text="Finished top Level of drain"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            style="@style/listview_checklin2"
+                            >
+                            <CheckBox
+                                android:background="@drawable/custom_checkbox"
+                                style="@style/check_roundo"
+                                android:layout_marginRight="5dp"/>
+                            <Spinner
+                                android:background="@drawable/drop"
+                                android:drawablePadding="16dp"
+                                style="@style/drop_roundo"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="3dp"
+                                android:entries="@array/item_name"></Spinner>
+                            <ImageButton
+                                android:layout_gravity="right|bottom"
+                                style="@style/remark_btn"
+                                />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <View
+                        style="@style/lcview"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/rfi_listtab">
+
+                    <FrameLayout
+                        style="@style/listview_checklin">
+                        <RelativeLayout
+                            style="@style/text_relative">
+                            <com.dc_walk.CustomClasses.CustomTextView
+                                style="@style/listview_text"
+                                android:text="Quality of material(Sand, Cement, Aggregate, reinforcement &amp; Pipes)"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            style="@style/listview_checklin2"
+                            >
+                            <CheckBox
+                                android:background="@drawable/custom_checkbox"
+                                style="@style/check_roundo"
+                                android:layout_marginRight="5dp"/>
+                            <Spinner
+                                android:background="@drawable/drop"
+                                android:drawablePadding="16dp"
+                                style="@style/drop_roundo"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="3dp"
+                                android:entries="@array/item_name"></Spinner>
+                            <ImageButton
+                                android:layout_gravity="right|bottom"
+                                style="@style/remark_btn"
+                                />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <View
+                        style="@style/lcview"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/rfi_listtab">
+
+                    <FrameLayout
+                        style="@style/listview_checklin">
+                        <RelativeLayout
+                            style="@style/text_relative">
+                            <com.dc_walk.CustomClasses.CustomTextView
+                                style="@style/listview_text"
+                                android:text="Dimensions of Collection pit"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            style="@style/listview_checklin2"
+                            >
+                            <CheckBox
+                                android:id="@+id/checkBox1"
+                                android:background="@drawable/custom_checkbox"
+                                style="@style/check_roundo"
+                                android:layout_marginRight="5dp"/>
+                            <Spinner
+                                android:background="@drawable/drop"
+                                android:drawablePadding="16dp"
+                                style="@style/drop_roundo"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="3dp"
+                                android:entries="@array/item_name"></Spinner>
+                            <ImageButton
+                                android:id="@+id/inputButton"
+                                android:layout_gravity="right|bottom"
+                                style="@style/remark_btn"
+                                />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <View
+                        style="@style/lcview"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/rfi_listtab">
+
+                    <FrameLayout
+                        style="@style/listview_checklin">
+                        <RelativeLayout
+                            style="@style/text_relative">
+                            <com.dc_walk.CustomClasses.CustomTextView
+                                style="@style/listview_text"
+                                android:text="Depth of Collection pit"/>
+                        </RelativeLayout>
+                        <LinearLayout
+                            style="@style/listview_checklin2"
+                            >
+                            <CheckBox
+                                android:background="@drawable/custom_checkbox"
+                                style="@style/check_roundo"
+                                android:layout_marginRight="5dp"/>
+                            <Spinner
+                                android:background="@drawable/drop"
+                                android:drawablePadding="16dp"
+                                style="@style/drop_roundo"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="3dp"
+                                android:entries="@array/item_name"></Spinner>
+                            <ImageButton
+                                android:layout_gravity="right|bottom"
+                                style="@style/remark_btn"
+                                />
+                        </LinearLayout>
+
+                    </FrameLayout>
+                    <View
+                        style="@style/lcview"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/btn_holdrow"
+                android:layout_marginBottom="15dp"
+                android:weightSum="3">
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/imageButton5"
+                        style="@style/btn_frm_btn"
+                        android:text="Take Picture" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/ico_next" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/struct_param_done_id"
+                        style="@style/btn_frm_btn"
+                        android:text="Next Structure" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/ico_next" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/jump_obstacle_id"
+                        style="@style/btn_frm_btn"
+                        android:text="Next Obstacle" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                style="@style/btn_holdrow"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="20dp"
+                android:weightSum="3">
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/ico_tik" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/next_btn"
+                        style="@style/btn_frm_btn"
+                        android:text="Done" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+    &lt;!&ndash;for alert popup&ndash;&gt;
+    <LinearLayout
+        android:id="@+id/rem_pop1"
+        android:visibility="gone"
+        style="@style/alert_pop">
+        <LinearLayout
+            style="@style/alert_popin">
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/alert_pop_ttl"
+                android:text="Location/Co-ordinates of drain"/>
+            <View
+                style="@style/lcview"
+                />
+
+            &lt;!&ndash;<RelativeLayout&ndash;&gt;
+            &lt;!&ndash;style="@style/input_fieldset">&ndash;&gt;
+            &lt;!&ndash;<com.dc_walk.CustomTextInput&ndash;&gt;
+            &lt;!&ndash;android:hint="Current Status"&ndash;&gt;
+            &lt;!&ndash;android:inputType="number"&ndash;&gt;
+            &lt;!&ndash;style="@style/input_gen"/>&ndash;&gt;
+            &lt;!&ndash;</RelativeLayout>&ndash;&gt;
+
+            <RelativeLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomTextInput
+                    android:hint="Remarks if any"
+                    android:gravity="top"
+                    android:id="@+id/ed_qty_doc"
+                    style="@style/input_gen"
+                    android:layout_height="100dp"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                style="@style/alert_pop_btn_set">
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/rem_pop1_cancel"
+                    android:text="CANCEL"
+                    style="@style/alert_pop_cancel"/>
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/rem_pop1_ok"
+                    style="@style/alert_pop_ok"
+                    android:text="OK"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    &lt;!&ndash;for information popup&ndash;&gt;
+    <ScrollView
+        android:id="@+id/infobox_id"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#ece1d0"
+        android:visibility="gone">
+        <LinearLayout
+            style="@style/page_body"
+            android:orientation="vertical">
+
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:background="@android:color/transparent"
+                android:id="@+id/back_btn"/>
+
+            &lt;!&ndash; <ImageButton
+                 android:layout_width="18dp"
+                 android:layout_height="18dp"
+                 android:layout_marginTop="13dp"
+                 android:layout_marginLeft="12dp"
+                 android:layout_alignParentTop="true"
+                 android:layout_alignParentLeft="true"
+                 android:background="@drawable/backbutton"
+                 android:id="@+id/back_btn"/>
+         &ndash;&gt;
+
+            <LinearLayout
+                style="@style/inhead">
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:background="@drawable/ncr_logo"
+                    style="@style/inhead_ico"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/inhead_ttl"
+                    android:text="Point Information"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/inhead_subttl"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/linear_body">
+                <TableLayout
+                    style="@style/table_gen">
+                    <TableRow
+                        style="@style/table_gen_row">
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="9"
+                            android:text="District :"
+                            style="@style/table_gen_td"
+                            android:paddingRight="10dp"
+                            android:gravity="right"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="11"
+                            android:text="Uttar Pradesh"
+                            style="@style/table_gen_td"/>
+                    </TableRow>
+                    <TableRow
+                        style="@style/table_gen_row">
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="9"
+                            android:text="Block :"
+                            style="@style/table_gen_td"
+                            android:paddingRight="10dp"
+                            android:gravity="right"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="11"
+                            android:text="Block 1"
+                            style="@style/table_gen_td"/>
+                    </TableRow>
+                    <TableRow
+                        style="@style/table_gen_row">
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="9"
+                            android:text="Chainage :"
+                            style="@style/table_gen_td"
+                            android:paddingRight="10dp"
+                            android:gravity="right"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="11"
+                            android:text="188km - 399km"
+                            style="@style/table_gen_td"/>
+                    </TableRow>
+                    <TableRow
+                        style="@style/table_gen_row">
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="9"
+                            android:text="District :"
+                            style="@style/table_gen_td"
+                            android:paddingRight="10dp"
+                            android:gravity="right"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="11"
+                            android:text="Uttar Pradesh"
+                            style="@style/table_gen_td"/>
+                    </TableRow>
+                    <TableRow
+                        style="@style/table_gen_row">
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="9"
+                            android:text="Block :"
+                            style="@style/table_gen_td"
+                            android:paddingRight="10dp"
+                            android:gravity="right"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="11"
+                            android:text="Block 1"
+                            style="@style/table_gen_td"/>
+                    </TableRow>
+                    <TableRow
+                        style="@style/table_gen_row">
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="9"
+                            android:text="Chainage :"
+                            style="@style/table_gen_td"
+                            android:paddingRight="10dp"
+                            android:gravity="right"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            android:layout_weight="11"
+                            android:text="188km - 399km"
+                            style="@style/table_gen_td"/>
+                    </TableRow>
+                </TableLayout>
+                <ImageButton
+                    android:id="@+id/info_id"
+                    style="@style/btn_submit"/>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+-->
+
+</FrameLayout>

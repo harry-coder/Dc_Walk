@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0"
+    android:orientation="vertical">
+
+    <FrameLayout
+        style="@style/chainage_box"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/chainage_box_linin"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/chainage_ttl"
+                android:text="Chainage Sequence" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_routeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </FrameLayout>
+    <!--this is the map pop up-->
+    <FrameLayout
+        android:id="@+id/mapBoxId"
+        style="@style/map_box"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/map_title"
+            android:text="180 km" />
+
+        <ImageButton
+            android:id="@+id/mapCloseId"
+            style="@style/map_close" />
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            tools:context="com.dc_walk.walk.Walk_Activity" />
+
+        <view
+            android:id="@+id/myview"
+            class="android.view.View"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <Button style="@style/loc_punch" />
+    </FrameLayout>
+    <!--for Observation popup-->
+    <!--This is the pop that opens when observation clicked-->
+    <ScrollView
+        android:id="@+id/actest"
+        style="@style/scroll_con_load"
+        android:visibility="gone">
+
+        <LinearLayout style="@style/scroll_con_loadlin">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_title"
+                    android:text="Observtion" />
+
+                <ImageButton
+                    android:id="@+id/actest_close"
+                    style="@style/cnd_close" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/listview_checklin"
+                android:background="#338F6C12" />
+
+
+            <LinearLayout style="@style/input_fieldset">
+
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Pointer/KM :" />
+
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:id="@+id/et_pointer"
+                    style="@style/input_gen"
+                    android:hint=" "
+                    android:text="180km" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/input_fieldset">
+
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Tap To Enter Location :" />
+
+                <com.dc_walk.CustomClasses.CustomTextView
+                    android:id="@+id/tv_location"
+                    style="@style/input_gen"
+                    android:hint=" " />
+            </LinearLayout>
+
+            <LinearLayout style="@style/input_fieldset">
+
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Obstacle Type :" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_checkboxContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+                <!-- <RadioGroup
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical">
+
+
+                     <com.dc_walk.CustomClasses.CustomTextCheck
+                         android:id="@+id/check_envId"
+                         style="@style/input_check_vert"
+                         android:text="Environment" />
+
+                     <com.dc_walk.CustomClasses.CustomTextCheck
+                         android:id="@+id/check_builtId"
+                         style="@style/input_check_vert"
+                         android:text="Buit Up" />
+
+                     <com.dc_walk.CustomClasses.CustomTextCheck
+                         android:id="@+id/check_utilId"
+                         style="@style/input_check_vert"
+                         android:text="Utility" />
+
+                     <com.dc_walk.CustomClasses.CustomTextCheck
+                         android:id="@+id/check_structId"
+                         style="@style/input_check_vert"
+                         android:text="Structure" />
+
+
+                 </RadioGroup>
+ -->
+                <!--<com.dc_walk.CustomClasses.CustomTextInput
+                    android:id="@+id/et_remarks"
+                    style="@style/input_gen"
+                    android:layout_height="80dp"
+                    android:gravity="top"
+                    android:hint="Remarks :"
+                    android:inputType="textMultiLine" />-->
+            </LinearLayout>
+
+
+            <!-- <ImageButton
+                 android:id="@+id/actest_done"
+                 style="@style/btn_submit" />-->
+        </LinearLayout>
+    </ScrollView>
+    <!--for Level Structure Type popup-->
+    <!--This is env,canal,river etc popup-->
+    <ScrollView
+        android:id="@+id/pop_structId"
+        style="@style/scroll_con_load"
+        android:visibility="gone">
+
+        <LinearLayout style="@style/scroll_con_loadlin">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_title"
+                    android:text="Environment" />
+
+                <ImageButton
+                    android:id="@+id/structure_close_id"
+                    style="@style/cnd_close" />
+            </FrameLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_structureContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </ScrollView>
+    <!--for Structure Params popup-->
+    <!--This is ponk/lake popup-->
+    <FrameLayout
+        android:id="@+id/struct_param_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ece1d0"
+        android:visibility="gone">
+
+        <ScrollView
+            style="@style/scroll_con_load"
+            android:layout_marginBottom="111dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        style="@style/cnd_title"
+                        android:text="Pond/Lake" />
+
+                    <ImageButton
+                        android:id="@+id/struct_param_close_id"
+                        style="@style/cnd_close" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/listview_checklin"
+                    android:background="#338F6C12" />
+
+                <LinearLayout style="@style/input_fieldset">
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="0dp"
+                        android:paddingTop="10dp"
+                        android:weightSum="10">
+
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:layout_weight="4"
+                            android:text="LHS" />
+
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:layout_weight="6"
+                            android:text="RHS" />
+                    </RadioGroup>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/listview_checklin"
+                        android:background="#338F6C12" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_parameterContainer"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            style="@style/btn_holdrow"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="15dp"
+            android:weightSum="2">
+
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/take_photo_factory_button" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/bt_takePicture"
+                    style="@style/btn_frm_btn"
+                    android:text="Take Picture" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/item_observation_btn" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/imageButton6"
+                    style="@style/btn_frm_btn"
+                    android:text="Item Obsr." />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <!--<ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/ico_tik" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/struct_param_done_id"
+                    style="@style/btn_frm_btn"
+                    android:text="Done" />-->
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <!--for Structure Params popup-->
+
+    <!--this is the popup for inputs-->
+    <LinearLayout
+        android:id="@+id/rem_pop1"
+        style="@style/alert_pop"
+        android:visibility="gone">
+
+        <LinearLayout style="@style/alert_popin">
+
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/alert_pop_ttl"
+                android:text="Location/Co-ordinates of drain" />
+
+            <View style="@style/lcview" />
+
+            <!--<RelativeLayout-->
+            <!--style="@style/input_fieldset">-->
+            <!--<com.dc_walk.CustomClasses.CustomTextInput-->
+            <!--android:hint="Current Status"-->
+            <!--android:inputType="number"-->
+            <!--style="@style/input_gen"/>-->
+            <!--</RelativeLayout>-->
+
+            <RelativeLayout style="@style/input_fieldset">
+
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:id="@+id/ed_qty_doc"
+                    style="@style/input_gen"
+                    android:layout_height="100dp"
+                    android:gravity="top"
+                    android:hint="Remarks if any" />
+            </RelativeLayout>
+
+            <LinearLayout style="@style/alert_pop_btn_set">
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/rem_pop1_cancel"
+                    style="@style/alert_pop_cancel"
+                    android:text="CANCEL" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/rem_pop1_ok"
+                    style="@style/alert_pop_ok"
+                    android:text="OK" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_pictureLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:background="#ece1d0"
+
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+
+            <LinearLayout
+                style="@style/btn_holdrow"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="15dp"
+                android:weightSum="3">
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/bt_takePicture1"
+                        style="@style/btn_frm_btn"
+                        android:text="Take Picture 1" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/bt_takePicture2"
+                        style="@style/btn_frm_btn"
+                        android:text="Take Picture 2" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/bt_takePicture3"
+                        style="@style/btn_frm_btn"
+                        android:text="Take Picture 3" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/btn_holdrow"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="15dp"
+                android:weightSum="3">
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/bt_takePicture4"
+                        style="@style/btn_frm_btn"
+                        android:text="Take Picture 4" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/bt_takePicture5"
+                        style="@style/btn_frm_btn"
+                        android:text="Take Picture 5" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/bt_takePicture6"
+                        style="@style/btn_frm_btn"
+                        android:text="Take Picture 6" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/btn_holdrow"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="15dp"
+                android:weightSum="3">
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/bt_video1"
+                        style="@style/btn_frm_btn"
+                        android:text="Video 1" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/bt_video2"
+                        style="@style/btn_frm_btn"
+                        android:text="Video2" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/bt_video3"
+                        style="@style/btn_frm_btn"
+                        android:text="Video 3" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/btn_holdrow"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="15dp"
+            android:weightSum="3">
+
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/info_icon" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/bt_moreObstacle"
+                    style="@style/btn_frm_btn"
+                    android:text="For More Obstacle" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/info_icon" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/bt_forMoreInfo"
+                    style="@style/btn_frm_btn"
+                    android:text="For More Information" />
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
+
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/check_icon" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/bt_finish"
+                    style="@style/btn_frm_btn"
+                    android:text="finish" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</FrameLayout>
+

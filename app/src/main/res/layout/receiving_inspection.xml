@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0"
+    >
+    <LinearLayout
+        style="@style/page_body">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:id="@+id/back_btn"/>
+
+        <LinearLayout
+            style="@style/inhead">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:background="@drawable/receiving_inspection_logo"
+                style="@style/inhead_ico"/>
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/inhead_ttl"
+                android:text="Receiving Inspection"/>
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/projectid"
+            style="@style/input_spiner"/>
+
+        <Spinner
+            android:id="@+id/factory_open_id"
+            style="@style/input_spiner"/>
+
+        <Spinner
+            android:id="@+id/store_id"
+            style="@style/input_spiner"/>
+
+        <Spinner
+            android:id="@+id/tkc_id"
+            style="@style/input_spiner"/>
+
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:hint="Other General Purcahse "
+                android:id="@+id/other_id"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:hint="Contractor Rep"
+                android:id="@+id/vendorname"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:hint="Other Rep."
+                android:id="@+id/otherresp_id"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:hint="Store Resp Name."
+                android:id="@+id/supllierresp"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:hint="Vehicle Number"
+                android:id="@+id/vehicle_num"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:theme="@style/TextLabelGen"
+            style="@style/input_fieldset">
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:hint="Receiving Document N0."
+                android:id="@+id/receipt_number"
+                style="@style/input_gen"/>
+        </RelativeLayout>
+
+
+        <ImageButton
+            android:id="@+id/next_btn"
+            style="@style/btn_submit"/>
+
+    </LinearLayout>
+</ScrollView>

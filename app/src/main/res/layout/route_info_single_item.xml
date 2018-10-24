@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginBottom="5dp">
+
+    <ImageButton
+        android:id="@+id/im_location"
+        style="@style/loc_btn"
+        android:src="@drawable/btn_loc" />
+
+    <com.dc_walk.CustomClasses.CustomTextView
+        android:id="@+id/tv_route"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:gravity="center"
+
+        android:text="188km" />
+
+    <ImageView
+        android:id="@+id/im_info"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/btn_info"
+
+
+        android:text="Info" />
+
+    <com.dc_walk.CustomClasses.CustomTextButton
+        android:id="@+id/bt_skip"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+
+        android:background="@drawable/btn_gen_bg"
+        android:text="Skip" />
+
+    <com.dc_walk.CustomClasses.CustomTextButton
+        android:id="@+id/bt_observation"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginStart="5dp"
+
+        android:background="@drawable/btn_gen_bg"
+        android:text="Obs." />
+</LinearLayout>

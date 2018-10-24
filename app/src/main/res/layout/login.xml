@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/loginwrap">
+
+
+    <Button
+        android:id="@+id/backpage_id"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="13dp"
+        android:background="@android:color/transparent"
+        />
+
+    <LinearLayout
+        style="@style/inhead">
+        <ImageView
+            android:id="@+id/imageView1"
+            android:background="@drawable/login_logo"
+            style="@style/inhead_ico"/>
+        <com.dc_walk.CustomClasses.CustomTextView
+            style="@style/inhead_ttl"
+            android:text="Log In"/>
+        <!--<TextView-->
+        <!--style="@style/inhead_subttl"-->
+        <!--android:text="Observation"/>-->
+    </LinearLayout>
+    <RelativeLayout
+        android:visibility="gone"
+        android:theme="@style/TextLabelGen"
+        style="@style/input_fieldset">
+        <com.dc_walk.CustomClasses.CustomTextInput
+            android:id="@+id/enter_code_id"
+            android:hint="User Code"
+            android:maxLength="10"
+            android:text="0123456789"
+            android:inputType="number"
+            android:numeric="integer"
+            style="@style/input_gen"/>
+    </RelativeLayout>
+    <FrameLayout
+        style="@style/pin_input_fieldset">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <View
+                style="@style/login_viewblock"/>
+            <View
+                style="@style/login_viewblock"/>
+            <View
+                style="@style/login_viewblock"/>
+            <View
+                style="@style/login_viewblock"/>
+            <View
+                style="@style/login_viewblock"/>
+            <View
+                style="@style/login_viewblock"/>
+        </LinearLayout>
+        <com.dc_walk.CustomClasses.CustomTextInput
+            android:id="@+id/enter_pin_id"
+            android:hint="Pin"
+
+            android:maxLength="6"
+            android:inputType="number"
+            android:numeric="integer"
+            style="@style/input_gen_login"/>
+    </FrameLayout>
+    <ImageButton
+        android:id="@+id/button_id"
+        style="@style/btn_submit" />
+</LinearLayout>

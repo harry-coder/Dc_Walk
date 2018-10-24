@@ -1,0 +1,4 @@
+<com.dc_walk.CustomClasses.CustomTextCheck xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cb_obstacle"
+    style="@style/input_check_vert"
+    android:text="Environment" />

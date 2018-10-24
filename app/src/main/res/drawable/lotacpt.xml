@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:state_enabled="true"
+        android:state_pressed="true">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:thickness="0dp"
+            android:shape="rectangle">
+            <stroke android:width="0.5dp"
+                android:color="#d1c2a9"/>
+            <corners android:radius="0dp" />
+            <solid android:color="#B5C3AE"/>
+        </shape>
+    </item>
+    <item android:state_enabled="true"
+        android:state_checked="true">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:thickness="0dp"
+            android:shape="rectangle">
+            <stroke android:width="0.5dp"
+                android:color="#d1c2a9"/>
+            <corners android:radius="0dp" />
+            <solid android:color="#B5C3AE"/>
+        </shape>
+    </item>
+    <item android:state_enabled="true">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:thickness="0dp"
+            android:shape="rectangle">
+            <stroke android:width="0.5dp"
+                android:color="#d1c2a9"/>
+            <corners android:radius="0dp" />
+            <solid android:color="#C9DBC1"/>
+        </shape>
+    </item>
+</selector>
+<!--<?xml version="1.0" encoding="utf-8" ?>-->
+
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:thickness="0dp"-->
+    <!--android:shape="rectangle">-->
+    <!--<stroke android:width="0.5dp"-->
+        <!--android:color="#d1c2a9"/>-->
+    <!--<corners android:radius="0dp" />-->
+    <!--<solid android:color="#C9DBC1"/>-->
+<!--</shape>-->

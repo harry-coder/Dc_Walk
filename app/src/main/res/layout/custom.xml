@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+style="@style/alert_mainframe"
+android:layout_gravity="center">
+
+<com.dc_walk.CustomClasses.CustomTextView
+    android:id="@+id/text"
+
+    android:text="ATTENDANCE MARKED YOU HAVE COMPLETED # SITES TODAY"
+
+    style="@style/alerttext"/>
+<ImageView
+    style="@style/alert_ico"/>
+
+<com.dc_walk.CustomClasses.CustomTextButton
+    android:id="@+id/dialogButtonOK"
+    style="@style/alert_btn"
+    android:text="Got It"
+    />
+<com.dc_walk.CustomClasses.CustomTextButton
+    android:id="@+id/dialogButtonNo"
+    android:visibility="gone"
+    style="@style/alert_btn_cnl"
+    android:text="Cancel"
+    />
+
+</FrameLayout>

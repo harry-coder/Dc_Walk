@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0"
+    android:orientation="vertical">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#ece1d0">
+        <LinearLayout
+            style="@style/page_body"
+            android:orientation="vertical">
+
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:background="@android:color/transparent"
+                android:id="@+id/back_btn"/>
+
+            <!-- <ImageButton
+                 android:layout_width="18dp"
+                 android:layout_height="18dp"
+                 android:layout_marginTop="13dp"
+                 android:layout_marginLeft="12dp"
+                 android:layout_alignParentTop="true"
+                 android:layout_alignParentLeft="true"
+                 android:background="@drawable/backbutton"
+                 android:id="@+id/back_btn"/>
+         -->
+
+            <LinearLayout
+                style="@style/inhead">
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:background="@drawable/notification_logo"
+                    style="@style/inhead_ico"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/inhead_ttl"
+                    android:text="Physical Verification Report"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/inhead_subttl"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/btn_holdrow"
+                android:layout_width="match_parent"
+                android:weightSum="2">
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/szlistId"
+                    style="@style/btn_rework"
+                    android:text="Seizure List"
+                    android:textSize="16dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/zmnamaId"
+                    style="@style/btn_rework"
+                    android:text="Zima Nama"
+                    android:textSize="16dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/btn_holdrow"
+                android:layout_width="match_parent">
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/finalScanId"
+                    style="@style/btn_pass"
+                    android:text="Scan reports with signature"
+                    android:textSize="16dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/next_btn"
+                style="@style/btn_submit"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

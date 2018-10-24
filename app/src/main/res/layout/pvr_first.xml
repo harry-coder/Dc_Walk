@@ -1,0 +1,1779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0"
+    android:orientation="vertical">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#ece1d0">
+        <LinearLayout
+            style="@style/page_body"
+            android:orientation="vertical">
+
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:background="@android:color/transparent"
+                android:id="@+id/back_btn"/>
+
+            <!-- <ImageButton
+                 android:layout_width="18dp"
+                 android:layout_height="18dp"
+                 android:layout_marginTop="13dp"
+                 android:layout_marginLeft="12dp"
+                 android:layout_alignParentTop="true"
+                 android:layout_alignParentLeft="true"
+                 android:background="@drawable/backbutton"
+                 android:id="@+id/back_btn"/>
+         -->
+
+            <LinearLayout
+                style="@style/inhead">
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:background="@drawable/notification_logo"
+                    style="@style/inhead_ico"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/inhead_ttl"
+                    android:text="Physical Verification Report"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/inhead_subttl"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/input_fieldset">
+                <View
+                    android:layout_below="@+id/listview_checklin"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#338F6C12"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Present Occupier :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Name "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Existing C.D (kw) :"/>
+                <Spinner
+                    style="@style/input_spiner"
+                    android:entries="@array/cdk"></Spinner>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Tariff :"/>
+                <Spinner
+                    style="@style/input_spiner"
+                    android:entries="@array/tariff"></Spinner>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:text="Billing Status :"
+                        style="@style/input_label"/>
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        android:layout_weight="3">
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="ACT"
+                            android:layout_weight="1"/>
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="AVG"
+                            android:layout_weight="1"/>
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="PRO"
+                            android:layout_weight="1"/>
+
+                    </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    android:text="Remarks on Service Connection :"
+                    style="@style/input_label"/>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_weight="3">
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Ok"
+                        android:layout_weight="1"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Jointed"
+                        android:layout_weight="1"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="tempered"
+                        android:layout_weight="1"/>
+
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:theme="@style/TextLabelGen"
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Remarks "
+                    android:inputType="textMultiLine"
+                    android:layout_height="60dp"
+                    android:gravity="top"
+                    android:id="@+id/ed_remark"
+                    style="@style/input_gen"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/cldId"
+                    style="@style/btn_rework"
+                    android:text="Connected Load Details"
+                    android:layout_weight="1"/>
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/mdId"
+                    style="@style/btn_rework"
+                    android:text="Meter Details"
+                    android:layout_weight="1"/>
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/actestId"
+                    style="@style/btn_rework"
+                    android:text="Accuracy Testing"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+            <LinearLayout
+                style="@style/btn_holdrow"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="20dp"
+                android:weightSum="3">
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/take_photo_factory_button" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/imageButton5"
+                        style="@style/btn_frm_btn"
+                        android:text="Take Picture" />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/item_observation_btn" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/imageButton6"
+                        style="@style/btn_frm_btn"
+                        android:text="Item Obsr." />
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/button_frame"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        style="@style/btn_frm_img"
+                        android:src="@drawable/ico_tik" />
+
+                    <com.dc_walk.CustomClasses.CustomTextButton
+                        android:id="@+id/next_btn"
+                        style="@style/btn_frm_btn"
+                        android:text="Done" />
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/alert_pop1"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33000000"
+        android:gravity="center_vertical|center_horizontal">
+        <FrameLayout
+
+            style="@style/alert_mainframe">
+            <com.dc_walk.CustomClasses.CustomTextView
+                android:id="@+id/text"
+
+                android:text="Are you sure you want to pass this Inspection ? "
+
+                style="@style/alerttext"/>
+            <ImageView
+                style="@style/alert_ico"/>
+            <com.dc_walk.CustomClasses.CustomTextButton
+                android:id="@+id/dialogButtonOK"
+                style="@style/alert_btn"
+                android:text="Yes"
+                />
+            <com.dc_walk.CustomClasses.CustomTextButton
+                android:id="@+id/dialogButtonNo"
+                style="@style/alert_btn_cnl"
+                android:text="Cancel"/>
+
+
+        </FrameLayout>
+    </LinearLayout>
+    <ScrollView
+        android:visibility="gone"
+        android:id="@+id/cnd"
+        style="@style/scroll_con_load">
+        <LinearLayout
+            style="@style/scroll_con_loadlin">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_title"
+                    android:text="Connected Load"
+                    />
+                <ImageButton
+                    android:id="@+id/cnd_close"
+                    style="@style/cnd_close"/>
+            </FrameLayout>
+
+            <View
+                android:layout_below="@+id/listview_checklin"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#338F6C12"/>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Light"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:layout_marginTop="3dp"
+                    android:hint="Other Connections "
+                    style="@style/input_gen"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:layout_marginTop="3dp"
+                    android:hint="Other Connections "
+                    style="@style/input_gen"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Load "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="w"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Qnty "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="nos"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:layout_width="0dp"
+                        android:layout_weight="6"
+                        android:layout_height="wrap_content"
+                        android:text="Total :"
+                        android:gravity="right"
+                        android:paddingRight="10dp"
+                        />
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Total "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="watts"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <View
+                    android:layout_below="@+id/listview_checklin"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#338F6C12"/>
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Connected Load :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=""
+                    android:inputType="number"
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="New Tariff :"/>
+                <Spinner
+                    style="@style/input_spiner"
+                    android:entries="@array/tariff"></Spinner>
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/cnd_done"
+                style="@style/btn_submit"/>
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView
+        android:visibility="gone"
+        android:id="@+id/metdets"
+        style="@style/scroll_con_load">
+        <LinearLayout
+            style="@style/scroll_con_loadlin">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_title"
+                    android:text="Meter Details"
+                    />
+                <ImageButton
+                    android:id="@+id/metdets_close"
+                    style="@style/cnd_close"/>
+            </FrameLayout>
+
+            <View
+                android:layout_below="@+id/listview_checklin"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#338F6C12"/>
+
+
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="T.P box present :"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="16">
+                    <RadioGroup
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10"
+                        android:layout_weight="7">
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="yes"
+                            android:layout_weight="5"/>
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="No"
+                            android:layout_weight="5"/>
+
+
+                    </RadioGroup>
+                    <RadioGroup
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10"
+                        android:layout_weight="9">
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="Sealed"
+                            android:layout_weight="4"/>
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="Not Sealed"
+                            android:layout_weight="6"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Seal No. 1"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Seal No. "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Type "
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Dated "
+                            android:inputType="date"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                </LinearLayout>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Condition "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Seal No. 2"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Seal No. "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Type "
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Dated "
+                            android:inputType="date"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                </LinearLayout>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Condition "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Fur Further Inspection :"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="Seal removed"
+                            android:layout_weight="5"/>
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="Seal not removed"
+                            android:layout_weight="5"/>
+
+
+                    </RadioGroup>
+
+
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Meter terminal cover present :"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="16">
+                    <RadioGroup
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10"
+                        android:layout_weight="7">
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="yes"
+                            android:layout_weight="5"/>
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="No"
+                            android:layout_weight="5"/>
+
+
+                    </RadioGroup>
+                    <RadioGroup
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10"
+                        android:layout_weight="9">
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="Sealed"
+                            android:layout_weight="4"/>
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="Not Sealed"
+                            android:layout_weight="6"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Seal No. 1"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Seal No. "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Type "
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Dated "
+                            android:inputType="date"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                </LinearLayout>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Condition "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Fur Further Inspection :"/>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Seal removed"
+                        android:layout_weight="5"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Seal not removed"
+                        android:layout_weight="5"/>
+                </RadioGroup>
+
+
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Meter body seal present :"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="16">
+                    <RadioGroup
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10"
+                        android:layout_weight="7">
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="yes"
+                            android:layout_weight="5"/>
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="No"
+                            android:layout_weight="5"/>
+                    </RadioGroup>
+                    <RadioGroup
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10"
+                        android:layout_weight="9">
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="Ok"
+                            android:layout_weight="4"/>
+                        <RadioButton
+                            style="@style/input_radio_hor"
+                            android:text="broken"
+                            android:layout_weight="6"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Seal No. 1"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Seal No. "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Type "
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Dated "
+                            android:inputType="date"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                </LinearLayout>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Condition "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Seal No. 2"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Seal No. "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Type "
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Dated "
+                            android:inputType="date"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                </LinearLayout>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint="Condition "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Fur Further Inspection :"/>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Seal removed"
+                        android:layout_weight="5"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Seal not removed"
+                        android:layout_weight="5"/>
+                </RadioGroup>
+
+
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Meter Serial No./Make"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="6">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Serial No. "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Make "
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Capacity, no. of digit :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=""
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Meter Reading :"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="6">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Current "
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Voltage in volts :"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="V1"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="V2"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="V3"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Phase current in apms :"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="I1"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="I2"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="I3"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Tong tester results :"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="I1"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="I2"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="I3"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="Tong tester results at pole :"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="9">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="Ip1"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="Ip2"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint=" "
+                            android:inputType="number"
+                            style="@style/input_gen"/>
+                        <com.dc_walk.CustomClasses.CustomTextView
+                            style="@style/cnd_input_unit"
+                            android:text="Ip3"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/cnd_row">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_row_title"
+                    android:text="FIDDLE/Temper Data"/>
+                <LinearLayout
+                    style="@style/cnd_input_holder"
+                    android:weightSum="6">
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Date 1 "
+                            android:inputType="datetime"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_weight="3"
+                        style="@style/cnd_input_frame">
+                        <com.dc_walk.CustomClasses.CustomTextInput
+                            android:hint="Date 2 "
+                            android:inputType="datetime"
+                            style="@style/input_gen"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="meter Functioning :"/>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9">
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Normal(OK)"
+                        android:layout_weight="3"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Slow"
+                        android:layout_weight="3"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Fast"
+                        android:layout_weight="3"/>
+                </RadioGroup>
+                <View
+                    android:layout_below="@+id/listview_checklin"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#338F6C12"/>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="9">
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Stopped"
+                        android:layout_weight="3"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Burnt"
+                        android:layout_weight="3"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Doudtful"
+                        android:layout_weight="3"/>
+                </RadioGroup>
+                <View
+                    android:layout_below="@+id/listview_checklin"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#338F6C12"/>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Tempered"
+                        android:layout_weight="3"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Bypassed"
+                        android:layout_weight="3"/>
+                </RadioGroup>
+                <View
+                    android:layout_below="@+id/listview_checklin"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#338F6C12"/>
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/metdets_done"
+                style="@style/btn_submit"/>
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView
+        android:visibility="visible"
+        android:id="@+id/actest"
+        style="@style/scroll_con_load">
+        <LinearLayout
+            style="@style/scroll_con_loadlin">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/cnd_title"
+                    android:text="Accuracy Testing"
+                    />
+                <ImageButton
+                    android:id="@+id/actest_close"
+                    style="@style/cnd_close"/>
+            </FrameLayout>
+
+            <View
+                android:layout_below="@+id/listview_checklin"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#338F6C12"/>
+
+
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="AccuCheck Sr. No. :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=" "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Load(KW) :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=" "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Test Details :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=" "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Test"
+                        android:layout_weight="1"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Revolutions"
+                        android:layout_weight="1"/>
+                    <RadioButton
+                        style="@style/input_radio_hor"
+                        android:text="Pulse"
+                        android:layout_weight="1"/>
+
+                </RadioGroup>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=" "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Energy Recorded by Consumer meter(A) :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=" "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Consumer meter sr. no. :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=" "
+                    android:inputType="number"
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Meter Constant :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=" "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Test Duration :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=" "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="%Error=A-B/B*100 :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=" "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+            <LinearLayout
+                style="@style/input_fieldset">
+                <com.dc_walk.CustomClasses.CustomTextView
+                    style="@style/input_label"
+                    android:text="Energy Recorded by AccuCheck (B) :"/>
+                <com.dc_walk.CustomClasses.CustomTextInput
+                    android:hint=" "
+                    style="@style/input_gen"/>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/actest_done"
+                style="@style/btn_submit"/>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

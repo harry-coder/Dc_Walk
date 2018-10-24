@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                style="@style/page_body">
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+
+                    android:layout_marginTop="13dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@android:color/transparent"
+                    android:id="@+id/back_btn"/>
+
+                <LinearLayout
+                    style="@style/inhead">
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:background="@drawable/site_inspection_logo"
+                        style="@style/inhead_ico"/>
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        style="@style/inhead_ttl"
+                        android:text="Site Inspection"/>
+                    <com.dc_walk.CustomClasses.CustomTextView
+                        android:id="@+id/text_logo"
+                        style="@style/inhead_subttl"
+                        android:text=""/>
+                </LinearLayout>
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/text_logo"-->
+                <!--android:text="Pole"-->
+                <!--android:layout_below="@+id/imageView1"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
+                <!--android:fontFamily="sans-serif"-->
+                <!--android:textSize="20sp"-->
+                <!--android:textColor="#0f2433" />-->
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:id="@+id/list"
+                style="@style/remarkFrame">
+
+                <View
+                    android:id="@+id/lineimgid"
+                    style="@style/lineView1"></View>
+
+                <ListView
+                    android:id="@+id/listView"
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0px"
+                    android:layout_marginBottom="123dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="22dp"
+                    android:choiceMode="multipleChoice"
+                    android:divider="@android:color/transparent"
+
+                    android:textSize="8px" />
+
+
+
+                <View
+
+                    android:id="@+id/lineimg"
+                    style="@style/lineView2"></View>
+
+                <LinearLayout
+                    style="@style/btn_holdrow"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:weightSum="3">
+
+                    <FrameLayout
+                        style="@style/button_frame"
+                        android:visibility="gone"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            style="@style/btn_frm_img"
+                            android:src="@drawable/take_photo_factory_button" />
+
+                        <Button
+                            android:id="@+id/imageButton5"
+                            style="@style/btn_frm_btn"
+                            android:text="Take Picture" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        style="@style/button_frame"
+                        android:visibility="gone"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            style="@style/btn_frm_img"
+                            android:src="@drawable/item_observation_btn" />
+
+                        <Button
+                            android:id="@+id/imageButton6"
+                            style="@style/btn_frm_btn"
+
+                            android:text="Item Obsr." />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        style="@style/button_frame"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            style="@style/btn_frm_img"
+                            android:src="@drawable/ico_next" />
+
+                        <Button
+                            android:id="@+id/imageButton7"
+                            style="@style/btn_frm_btn"
+                            android:text="Next" />
+                    </FrameLayout>
+
+
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#88000000">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+            <com.dc_walk.CustomClasses.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_marginBottom="10dp"
+                android:textSize="16dp"
+                android:text="Parameter Name here"/>
+            <com.dc_walk.CustomClasses.CustomTextInput
+                android:layout_width="match_parent"
+                android:hint="Type here"
+                android:layout_height="100dp"
+                android:gravity="top"
+                android:textSize="12dp"
+                android:padding="5dp"
+                android:background="@drawable/edittextstyle"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="right">
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#B7A5CC"
+                    android:layout_gravity="right"
+                    android:text="Cancel"/>
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#B3EE98"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="5dp"
+                    android:text="Send"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

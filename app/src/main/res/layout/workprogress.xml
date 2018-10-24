@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ece1d0"
+    >
+    <LinearLayout
+        style="@style/page_body">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:id="@+id/back_btn"/>
+
+        <LinearLayout
+            style="@style/inhead">
+            <ImageView
+                android:id="@+id/imageView1"
+                android:background="@drawable/workprogress"
+                style="@style/inhead_ico"/>
+            <com.dc_walk.CustomClasses.CustomTextView
+                style="@style/inhead_ttl"
+                android:text="Work Progress"/>
+        </LinearLayout>
+
+        <Spinner
+            android:entries="@array/project_id"
+            style="@style/input_spiner"/>
+
+        <Spinner
+            android:entries="@array/progress_work"
+            style="@style/input_spiner"/>
+        <Spinner
+            android:entries="@array/progress_activity"
+            style="@style/input_spiner"/>
+        <Spinner
+            android:entries="@array/progress_subactivity"
+            style="@style/input_spiner"/>
+        <ImageButton
+            android:id="@+id/next_btn"
+            style="@style/btn_submit"/>
+
+    </LinearLayout>
+</ScrollView>
