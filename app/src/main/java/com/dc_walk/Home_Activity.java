@@ -346,7 +346,7 @@ public class Home_Activity extends AppCompatActivity {
             public void getJsonResponse(JSONObject response) throws JSONException {
 
 
-                System.out.println ("This is the para dropDown response "+response );
+                System.out.println ( "This is the para dropDown response " + response );
                 boolean success = response.getBoolean ( "success" );
 
                 if (success) {
@@ -414,7 +414,7 @@ public class Home_Activity extends AppCompatActivity {
             Para_DropDown para_dropDown = new Para_DropDown ( );
 
 
-            para_dropDown.setParaDropName ( responseObject.getString ( "para_drop_id" ) );
+            para_dropDown.setParaDropId ( responseObject.getString ( "para_drop_id" ) );
             para_dropDown.setParaId ( responseObject.getString ( "para_id" ) );
             para_dropDown.setParaDropName ( responseObject.getString ( "para_drop_name" ) );
             itemList.add ( para_dropDown );

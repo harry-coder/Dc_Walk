@@ -32,6 +32,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -73,7 +74,7 @@ public class VollyMediaRequest {
 
     }
 
-    public void uploadMedia(final Context context, final String mediaType, final String url, final Uri uri, final Map map) {
+    public void uploadMedia(final Context context, final String url, final Map <String, String> map, final Map <String, VolleyMultipartRequest.DataPart> mediaMap) {
 
 
         //mNotifyManager.notify ( 0, mBuilder.build ( ) );
@@ -157,7 +158,7 @@ public class VollyMediaRequest {
                     }
                 } ) {
                     @Override
-                    protected Map <String, String> getParams() {
+                    protected Map getParams() {
 
 
                         return map;
@@ -165,39 +166,9 @@ public class VollyMediaRequest {
 
                     @Override
                     protected Map <String, DataPart> getByteData() throws IOException {
-                        Map <String, DataPart> params = new HashMap <> ( );
-
-                        byteFile = Walk_Activity.getBytes ( Objects.requireNonNull ( context.getContentResolver ( ).openInputStream ( uri ) ) );
-
-                        if (byteFile != null) {
-                            if (mediaType.equalsIgnoreCase ( "audio" )) {
-                                // byteFile = Walk_Activity.getBytes ( Objects.requireNonNull ( context.getContentResolver ( ).openInputStream ( uri ) ) );
-
-                                params.put ( "audioData", new DataPart ( "" + uri.getLastPathSegment ( ), byteFile, "video/mp4" ) );
-
-                            } else if (mediaType.equalsIgnoreCase ( "video" )) {
-                                // byteFile = Walk_Activity.getBytes ( Objects.requireNonNull ( context.getContentResolver ( ).openInputStream ( uri ) ) );
-
-                                params.put ( "videoData", new DataPart ( "" + uri.getLastPathSegment ( ), byteFile, "video/mp4" ) );
 
 
-                            } else if (mediaType.equalsIgnoreCase ( "image" )) {
-                                //params.put("image1", new DataPart("" + uri.getLastPathSegment(), byteFile));
-                                params.put ( "image1", new DataPart ( "" + System.currentTimeMillis ( ), byteFile ) );
-
-                            }
-
-
-                        } else {
-
-                            Toast.makeText ( context, "No data to send", Toast.LENGTH_SHORT ).show ( );
-
-
-                        }
-
-
-                        System.out.println ( "This is the image map " + params );
-                        return params;
+                        return mediaMap;
                     }
 
                 };
@@ -229,6 +200,48 @@ public class VollyMediaRequest {
     }
 
 
+    public Map <String, VolleyMultipartRequest.DataPart> sendMultipleMediaToServer(ArrayList <MediaPojo> mediaTypeList, String imageUploadUrl, Map <String, String> map) throws IOException {
+
+        Map <String, VolleyMultipartRequest.DataPart> params = new HashMap <> ( );
+
+        int imageCount = 0, videoCount = 0;
+
+        for (int i = 0; i < mediaTypeList.size ( ); i++) {
+            String mediaType = mediaTypeList.get ( i ).getMediaType ( );
+            Uri uri = mediaTypeList.get ( i ).getMediaUri ( );
+            if (mediaType.equalsIgnoreCase ( "image" )) {
+
+                byteFile = Walk_Activity.getBytes ( Objects.requireNonNull ( context.getContentResolver ( ).openInputStream ( uri ) ) );
+                params.put ( "imageData1", new VolleyMultipartRequest.DataPart ( "" + System.currentTimeMillis ( ), byteFile ) );
+
+                imageCount += +1;
+                map.put ( "imageName" + imageCount, uri.getLastPathSegment ( ) );
+
+                System.out.println ( "image count " + imageCount );
+
+            } else {
+
+                byteFile = Walk_Activity.getBytes ( Objects.requireNonNull ( context.getContentResolver ( ).openInputStream ( uri ) ) );
+                params.put ( "videoData1", new VolleyMultipartRequest.DataPart ( "" + uri.getLastPathSegment ( ), byteFile, "video/mp4" ) );
+
+
+                videoCount += 1;
+                map.put ( "videoName" + videoCount, uri.getLastPathSegment ( ) );
+
+                System.out.println ( "image count " + videoCount );
+
+            }
+
+        }
+
+        uploadMedia ( context, imageUploadUrl, map, params );
+
+
+        return params;
+
+
+    }
+
     private void settingUpIndeterminateNotification() {
         mNotifyManager =
                 (NotificationManager) context.getSystemService ( Context.NOTIFICATION_SERVICE );
@@ -241,32 +254,35 @@ public class VollyMediaRequest {
     }
 
 
-    public void uploadMultipleImages(ArrayList <MediaPojo> mediaTypeList, String imageUploadUrl, Map <String, String> map) throws InterruptedException {
-        Uri uri;
+    /* public void uploadMultipleImages(ArrayList <MediaPojo> mediaTypeList, String imageUploadUrl, Map <String, String> map) throws InterruptedException {
+         Uri uri;
 
-        for (int i = 0; i < mediaTypeList.size ( ); i++) {
-            if (mediaTypeList.get ( i ).getMediaType ( ).equalsIgnoreCase ( "image" )) {
+         for (int i = 0; i < mediaTypeList.size ( ); i++) {
+             if (mediaTypeList.get ( i ).getMediaType ( ).equalsIgnoreCase ( "image" )) {
 
-                uri = mediaTypeList.get ( i ).getMediaUri ( );
-                map.put ( "imageName1", uri.getLastPathSegment ( ) );
-                uploadMedia ( context, "image", imageUploadUrl, uri, map );
-
-                System.out.println ("Inside image" );
-
-            } else {
-                uri = mediaTypeList.get ( i ).getMediaUri ( );
-                map.put ( "videoName", uri.getLastPathSegment ( ) );
-                uploadMedia ( context, "video", imageUploadUrl, mediaTypeList.get ( i ).getMediaUri ( ), map );
-
-                System.out.println ("Inside video" );
-
-            }
-
-        }
+                 uri = mediaTypeList.get ( i ).getMediaUri ( );
+                 //  System.out.println ( "imageName" + (i + 1) );
+                 map.put ( "imageName" + (i + 1), uri.getLastPathSegment ( ) );
+                 uploadMedia ( context, "image", imageUploadUrl, uri, map, "imageData" + (i + 1) );
 
 
-    }
+                 System.out.println ( "This is the map " + map );
 
+             } else {
+                 uri = mediaTypeList.get ( i ).getMediaUri ( );
+                 map.put ( "videoName" + (i + 1), uri.getLastPathSegment ( ) );
+                 uploadMedia ( context, "video", imageUploadUrl, mediaTypeList.get ( i ).getMediaUri ( ), map, "videoData" + (i + 1) );
+
+                 System.out.println ( "This is the map " + map );
+
+
+             }
+
+         }
+
+
+     }
+ */
     public void JsonRequest(final Context context, final String url, final Map map) {
 
         requestListener.onPreRequest ( );

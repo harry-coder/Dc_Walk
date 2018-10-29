@@ -230,6 +230,7 @@
                     android:layout_height="wrap_content">
 
                     <com.dc_walk.CustomClasses.CustomTextView
+                        android:id="@+id/tv_structureTitle"
                         style="@style/cnd_title"
                         android:text="Pond/Lake" />
 
@@ -256,11 +257,13 @@
                         android:weightSum="10">
 
                         <RadioButton
+                            android:id="@+id/rb_lhs"
                             style="@style/input_radio_hor"
                             android:layout_weight="4"
                             android:text="LHS" />
 
                         <RadioButton
+                            android:id="@+id/rb_rhs"
                             style="@style/input_radio_hor"
                             android:layout_weight="6"
                             android:text="RHS" />
@@ -293,6 +296,22 @@
             <FrameLayout
                 style="@style/button_frame"
                 android:layout_weight="1">
+                <ImageView
+                    style="@style/btn_frm_img"
+                    android:src="@drawable/item_observation_btn" />
+
+                <com.dc_walk.CustomClasses.CustomTextButton
+                    android:id="@+id/bt_itemObserver"
+                    style="@style/btn_frm_btn"
+                    android:text="Item Obsr." />
+
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/button_frame"
+                android:layout_weight="1">
 
                 <ImageView
                     style="@style/btn_frm_img"
@@ -302,20 +321,6 @@
                     android:id="@+id/bt_takePicture"
                     style="@style/btn_frm_btn"
                     android:text="Take Picture" />
-            </FrameLayout>
-
-            <FrameLayout
-                style="@style/button_frame"
-                android:layout_weight="1">
-
-                <ImageView
-                    style="@style/btn_frm_img"
-                    android:src="@drawable/item_observation_btn" />
-
-                <com.dc_walk.CustomClasses.CustomTextButton
-                    android:id="@+id/imageButton6"
-                    style="@style/btn_frm_btn"
-                    android:text="Item Obsr." />
             </FrameLayout>
 
             <FrameLayout
@@ -349,7 +354,7 @@
 
             <com.dc_walk.CustomClasses.CustomTextView
                 style="@style/alert_pop_ttl"
-                android:text="Location/Co-ordinates of drain" />
+                android:text="Parameters Remarks" />
 
             <View style="@style/lcview" />
 
@@ -364,7 +369,7 @@
             <RelativeLayout style="@style/input_fieldset">
 
                 <com.dc_walk.CustomClasses.CustomTextInput
-                    android:id="@+id/ed_qty_doc"
+                    android:id="@+id/et_parameterRemark"
                     style="@style/input_gen"
                     android:layout_height="100dp"
                     android:gravity="top"
@@ -374,12 +379,12 @@
             <LinearLayout style="@style/alert_pop_btn_set">
 
                 <com.dc_walk.CustomClasses.CustomTextButton
-                    android:id="@+id/rem_pop1_cancel"
+                    android:id="@+id/bt_cancel"
                     style="@style/alert_pop_cancel"
                     android:text="CANCEL" />
 
                 <com.dc_walk.CustomClasses.CustomTextButton
-                    android:id="@+id/rem_pop1_ok"
+                    android:id="@+id/bt_ok"
                     style="@style/alert_pop_ok"
                     android:text="OK" />
             </LinearLayout>

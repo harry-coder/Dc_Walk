@@ -23,6 +23,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -38,6 +39,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -112,7 +114,7 @@ import retrofit2.Response;
 public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
 
 
-    Button raid_btn, locobs_btn, struct_param_done_btn, structure_btn, rem_cancel, rem_ok;
+    Button raid_btn, locobs_btn, struct_param_done_btn, structure_btn, bt_cancel, bt_ok;
     ImageButton pointer_btn, mapclose_btn, actestclose_btn, actest_btn, struct_param_close_btn, structure_close_btn, remBtn;
     FrameLayout mapbox, struct_param_box;
     ScrollView actest, struct_box;
@@ -143,6 +145,9 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     EditText et_pointer, et_remarks;
     TextView tv_location;
 
+    private AlertDialog otpDialog;
+
+
     private static final int PLACE_PICKER_REQUEST = 1000;
     private static final int IMAGE_TAKEN_REQUEST = 2000;
     private static final int REQUEST_VIDEO_CAPTURE = 3000;
@@ -151,10 +156,13 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     private GoogleApiClient mClient;
     double lat, lon;
     RequestQueue queue;
-    Button bt_picture;
+    Button bt_picture, bt_itemObserver;
     ArrayList <UserCoordinatesPojo> userCoordinatesArrayList;
 
     ArrayList <MediaPojo> mediaList;
+    ArrayList <String> parameterIdList;
+    ArrayList <String> paraDropIdList;
+    ArrayList <String> remarksIdList;
 
     Uri fileUri;
 
@@ -165,12 +173,20 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     private GoogleMap googleMap;
     private FrameLayout fl_pictureLayout;
 
+    RadioButton rb_lhs, rb_rhs;
+
     private Button bt_forMoreInfo, bt_forMoreObstacle, bt_finish;
 
     private Button bt_takePicture1, bt_takePicture2, bt_takePicture3, bt_takePicture4, bt_takePicture5, bt_takePicture6, bt_takeVideo1, bt_takeVideo2, bt_takeVideo3;
 
+    private String lhs = "unselected", rhs = "unselected";
+
+    private String remark;
+
+    EditText et_parameterRemark;
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate ( savedInstanceState );
         setContentView ( R.layout.walk_details );
@@ -215,21 +231,12 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
 
         bt_picture = findViewById ( R.id.bt_takePicture );
+        bt_itemObserver = findViewById ( R.id.bt_itemObserver );
 
         bt_forMoreInfo = findViewById ( R.id.bt_forMoreInfo );
         bt_forMoreObstacle = findViewById ( R.id.bt_moreObstacle );
         bt_finish = findViewById ( R.id.bt_finish );
 
-        bt_finish.setOnClickListener ( new View.OnClickListener ( ) {
-            @Override
-            public void onClick(View view) {
-                try {
-                    sendImageToServer ( );
-                } catch (Exception e) {
-                    e.printStackTrace ( );
-                }
-            }
-        } );
 
         bt_takePicture1 = findViewById ( R.id.bt_takePicture1 );
         bt_takePicture2 = findViewById ( R.id.bt_takePicture2 );
@@ -252,10 +259,21 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         bt_takeVideo3.setOnClickListener ( this );
 
 
+        bt_ok = findViewById ( R.id.bt_ok );
+        bt_cancel = findViewById ( R.id.bt_cancel );
+
+
         mediaList = new ArrayList <> ( );
+        parameterIdList = new ArrayList <> ( );
+        paraDropIdList = new ArrayList <> ( );
+        remarksIdList = new ArrayList <> ( );
 
 
-//        et_remarks = findViewById ( R.id.et_remarks );
+        rb_lhs = findViewById ( R.id.rb_lhs );
+        rb_rhs = findViewById ( R.id.rb_rhs );
+
+
+        et_parameterRemark = findViewById ( R.id.et_parameterRemark );
 
 
         queue = vollySingleton.getInstance ( ).getRequestQueue ( );
@@ -286,10 +304,25 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             }
         } );
 
+
         bt_picture.setOnClickListener ( new View.OnClickListener ( ) {
             @Override
             public void onClick(View v) {
 
+                if (rb_rhs.isSelected ( )) {
+
+                    System.out.println ( "Inside this rhs" );
+                    rb_rhs.toggle ( );
+                } else if (rb_lhs.isSelected ( )) {
+                    System.out.println ( "Inside this lhs" );
+
+                    rb_lhs.toggle ( );
+
+                }
+                //   rb_lhs.setSelected ( false );
+                // rb_rhs.setSelected ( false );
+                lhs = "unselected";
+                rhs = "unselected";
                 fl_pictureLayout.setVisibility ( View.VISIBLE );
 
                 struct_param_box.setVisibility ( View.GONE );
@@ -321,7 +354,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         struct_box = findViewById ( R.id.pop_structId );
 
         struct_param_close_btn = findViewById ( R.id.struct_param_close_id );
-        struct_param_done_btn = findViewById ( R.id.struct_param_done_id );
+        //struct_param_done_btn = findViewById ( R.id.struct_param_done_id );
         struct_param_box = findViewById ( R.id.struct_param_id );
 
         //remBtn = findViewById(R.id.remButton);
@@ -356,7 +389,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         });
         */
 
-        /*actest_btn.setOnClickListener ( new View.OnClickListener ( ) {
+       /* actest_btn.setOnClickListener ( new View.OnClickListener ( ) {
             @Override
             public void onClick(View v) {
                 actest.setVisibility ( View.GONE );
@@ -385,13 +418,17 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
             }
 
-        } );
-        */
+        } );*/
 
         actestclose_btn.setOnClickListener ( new View.OnClickListener ( ) {
             @Override
             public void onClick(View v) {
+
+                //this is to close the obstacle part
+                System.out.println ( "This is ac test" );
+
                 actest.setVisibility ( View.GONE );
+
             }
 
         } );
@@ -420,7 +457,12 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         structure_close_btn.setOnClickListener ( new View.OnClickListener ( ) {
             @Override
             public void onClick(View v) {
+
+                //this is to close structure button.
+                System.out.println ( "This is struct close" );
+
                 struct_box.setVisibility ( View.GONE );
+
             }
 
         } );
@@ -446,10 +488,73 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         struct_param_close_btn.setOnClickListener ( new View.OnClickListener ( ) {
             @Override
             public void onClick(View v) {
+
+                //this is to close the param
+                System.out.println ( "This is param close" );
+
                 struct_param_box.setVisibility ( View.GONE );
             }
         } );
 
+
+        bt_finish.setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick(View view) {
+                try {
+
+                    sendImageToServer ( );
+                    updateServerLatLonDb ( );
+                    tv_location.setText ( "" );
+                    lat = 0;
+                    lon = 0;
+
+
+                    struct_param_box.setVisibility ( View.GONE );
+                    struct_box.setVisibility ( View.GONE );
+                    actest.setVisibility ( View.GONE );
+                    fl_pictureLayout.setVisibility ( View.GONE );
+
+
+                } catch (Exception e) {
+                    e.printStackTrace ( );
+                }
+            }
+        } );
+
+
+        rb_lhs.setOnCheckedChangeListener ( new CompoundButton.OnCheckedChangeListener ( ) {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+
+                    lhs = "selected";
+                } else {
+                    lhs = "not selected";
+                }
+            }
+        } );
+
+        rb_rhs.setOnCheckedChangeListener ( new CompoundButton.OnCheckedChangeListener ( ) {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+
+                    rhs = "selected";
+
+                } else {
+                    rhs = "not selected";
+                }
+
+            }
+        } );
+
+        bt_itemObserver.setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick(View view) {
+
+                showRemarkDialog ( Walk_Activity.this );
+            }
+        } );
 
     }
 
@@ -858,18 +963,18 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
     }
 
-    public void sendImageToServer() throws InterruptedException {
+    public void sendImageToServer() throws InterruptedException, IOException {
 
         String url = "http://monitorpm.feedbackinfra.com/dcnine_highways/embc_app/insert_map";
 
 
-        Map <String, String> map = prepareMapToSend ( );
+        Map <String,String>map = prepareMapToSend ( );
 
         request.setOnRequestListner ( new RequestListener ( ) {
             @Override
             public void onPreRequest() {
 
-                progressDialog.setMessage ( "Sending image to server.." );
+                progressDialog.setMessage ( "Sending Data to server.." );
                 progressDialog.show ( );
             }
 
@@ -897,28 +1002,65 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             @Override
             public void getJsonResponse(JSONObject response) throws JSONException {
 
-                mediaList.clear ();
+                mediaList.clear ( );
 
             }
         } );
 
 
         // request.uploadMedia ( this, "video", url, uri, map );
-        request.uploadMultipleImages ( mediaList, url, map );
+        request.sendMultipleMediaToServer ( mediaList, url, map );
 
     }
 
-    public Map <String, String> prepareMapToSend() {
+    public Map <String,String>prepareMapToSend() {
+
+        JSONArray parameterArray = new JSONArray ( );
+        JSONArray paraDropArray = new JSONArray ( );
+        JSONArray remarkArray = new JSONArray ( );
 
         Map <String, String> map = new HashMap <> ( );
+
         map.put ( "lat", "" + lat );
         map.put ( "longg", "" + lon );
         map.put ( "route_no", et_pointer.getText ( ).toString ( ) );
 
         map.put ( "obstacle_type", obstacleId );
         map.put ( "structure_type", structureId );
-        map.put ( "parameter_type", parameterId );
-        map.put ( "paraDrop_type", paraDropId );
+
+        if (lhs.equalsIgnoreCase ( "selected" )) {
+            map.put ( "side", "2" );
+        } else if (rhs.equalsIgnoreCase ( "selected" )) {
+            map.put ( "side", "1" );
+        }
+
+
+        if (parameterIdList.size ( ) != 0) {
+            for (int i = 0; i < parameterIdList.size ( ); i++) {
+                parameterArray.put ( parameterIdList.get ( i ) );
+
+            }
+
+        }
+        if (paraDropIdList.size ( ) != 0) {
+            for (int i = 0; i < paraDropIdList.size ( ); i++) {
+                parameterArray.put ( paraDropIdList.get ( i ) );
+
+            }
+
+        }
+        if (remarksIdList.size ( ) != 0) {
+            for (int i = 0; i < remarksIdList.size ( ); i++) {
+                parameterArray.put ( remarksIdList.get ( i ) );
+
+            }
+
+        }
+
+        map.put ( "parameter_type", "" + parameterArray );
+        map.put ( "paraDrop_type", "" + paraDropArray );
+        map.put ( "paraRemark", "" + remarkArray );
+        map.put ( "obs", remark );
 
 
         //map.put ( "imageName1", fileUri.getLastPathSegment ( ) );
@@ -969,6 +1111,52 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     }
 
 
+
+    /* < ----------------------------------------------------------------------------------------------------------->*/
+
+    /* THIS IS THE BEGINNING OF Dialog section */
+
+
+    public void showRemarkDialog(final Context context) {
+
+
+        final AlertDialog.Builder malert = new AlertDialog.Builder ( context );
+        LayoutInflater inflater = LayoutInflater.from ( context );
+        View view1 = inflater.inflate ( R.layout.remarks_dialog, null );
+        TextView tv_cancel = view1.findViewById ( R.id.tv_cancel );
+        TextView tv_submit = view1.findViewById ( R.id.tv_submit );
+        final EditText et_remark = view1.findViewById ( R.id.et_remark );
+
+
+        tv_cancel.setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick(View v) {
+
+                otpDialog.dismiss ( );
+            }
+        } );
+
+
+        tv_submit.setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick(View v) {
+
+                remark = et_remark.getText ( ).toString ( );
+                if (TextUtils.isEmpty ( remark )) {
+                    et_remark.setError ( "Please enter remark" );
+                }
+                otpDialog.dismiss ( );
+            }
+        } );
+
+
+        malert.setView ( view1 );
+
+        otpDialog = malert.create ( );
+        otpDialog.setCanceledOnTouchOutside ( false );
+        otpDialog.show ( );
+
+    }
 
 
 
@@ -1334,7 +1522,6 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             @Override
             protected void onPostExecute(ArrayList <UserCoordinatesPojo> userCoordinatesPojos) {
 
-                System.out.println ( "This is very size " + userCoordinatesPojos.size ( ) );
 
                 if (userCoordinatesPojos.size ( ) != 0) {
                     drawUserCoordinatesPolyLineOnMap ( googleMap, userCoordinatesPojos );
@@ -1652,7 +1839,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 if (currentRoute == 1) {
                     list = UserCoordinatesDB.getInstance ( context ).myDao ( ).getFirstRouteNoList ( currentRoute );
                 } else {
-                    list = UserCoordinatesDB.getInstance ( context ).myDao ( ).getrouteNoList ( (currentRoute - 1), currentRoute );
+                    list = UserCoordinatesDB.getInstance ( context ).myDao ( ).getrouteNoList ( currentRoute, (currentRoute + 1) );
                 }
                 System.out.println ( "This is list size " + list.size ( ) );
                 if (list.size ( ) != 0) {
@@ -1671,6 +1858,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
 
             }
+
 
             public double getProperRouteNo(List <Double> list) {
 
@@ -1729,8 +1917,11 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                     if (isChecked) {
 
                         obstacleId = obstacleInfoList.get ( position ).getObstacleId ( );
+                        holder.cb_obstacle.toggle ( );
+
 
                         getStructureData ( );
+
 
                     }
                 }
@@ -1816,6 +2007,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 public void onClick(View v) {
 
                     structureId = structureList.get ( position ).getStructureId ( );
+
 
                     getParameterData ( );
                 }
@@ -1946,6 +2138,17 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 cb_check = itemView.findViewById ( R.id.cb_check );
                 im_remarks = itemView.findViewById ( R.id.im_remarks );
 
+                cb_check.setOnCheckedChangeListener ( new CompoundButton.OnCheckedChangeListener ( ) {
+                    @Override
+                    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                        if (b) {
+                            parameterId = parameterList.get ( getAdapterPosition ( ) ).getParaId ( );
+
+                            parameterIdList.add ( parameterId );
+
+                        }
+                    }
+                } );
 
                 sp_items.setOnTouchListener ( new View.OnTouchListener ( ) {
                     @Override
@@ -1953,7 +2156,6 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
                         if (event.getAction ( ) == MotionEvent.ACTION_DOWN) {
 
-                            parameterId = parameterList.get ( getAdapterPosition ( ) ).getParaId ( );
 
                             showParameterDropDown ( parameterList.get ( getAdapterPosition ( ) ).getParaId ( ) );
 
@@ -1971,18 +2173,31 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                         remark_pop.setVisibility ( View.VISIBLE );
                     }
                 } );
-                /*rem_ok.setOnClickListener(new View.OnClickListener() {
+
+                bt_ok.setOnClickListener ( new View.OnClickListener ( ) {
                     @Override
                     public void onClick(View v) {
-                        remark_pop.setVisibility(View.GONE);
+
+                        remark_pop.setVisibility ( View.GONE );
+
+                        String remark = et_parameterRemark.getText ( ).toString ( );
+
+                        if (!TextUtils.isEmpty ( remark )) {
+
+                            remarksIdList.add ( remark );
+
+                        } else {
+                            et_parameterRemark.setError ( "Please Provide a remark" );
+                        }
+
                     }
-                });
-                rem_cancel.setOnClickListener(new View.OnClickListener() {
+                } );
+                bt_cancel.setOnClickListener ( new View.OnClickListener ( ) {
                     @Override
                     public void onClick(View v) {
-                        remark_pop.setVisibility(View.GONE);
+                        remark_pop.setVisibility ( View.GONE );
                     }
-                });*/
+                } );
 
             }
 
@@ -2000,7 +2215,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
                                 paraDropId = paraDropDownList.get ( selectedIndex ).getParaDropId ( );
 
-                                System.out.println ( "THIS IS para drop id " + paraDropId );
+                                paraDropIdList.add ( paraDropId );
                             }
                         } )
                         .setPositiveButton ( "Ok", null )
@@ -2058,7 +2273,6 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
                 paraDropDownList = (ArrayList <Para_DropDown>) ObstacleDB.getInstance ( context ).obstacleDao ( ).getParameterDropItems ( parameterId );
 
-                System.out.println ( "This is the list of size return " + paraDropDownList.size ( ) );
                 return paraDropDownList;
 
 
@@ -2067,12 +2281,10 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             public ArrayList <String> getParaDropDownName(String parameterId) {
 
                 ArrayList <Para_DropDown> list = getDropDownParameters ( parameterId );
-                System.out.println ( "This is the list size  " + list.size ( ) );
 
                 ArrayList <String> items = new ArrayList <> ( );
                 for (Para_DropDown para : list) {
 
-                    System.out.println ( "This is the name " + para.getParaDropName ( ) );
                     items.add ( para.getParaDropName ( ) );
                 }
 

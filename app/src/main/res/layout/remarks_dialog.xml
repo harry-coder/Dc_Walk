@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_shape"
+
+    >
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+
+        android:text="Enter Remarks"
+
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/et_remark"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView7"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:drawableEnd="@drawable/remark_icon"
+        android:ems="10"
+        android:hint="Enter Remark"
+        android:inputType="number"
+        android:textSize="15sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/textView7"
+
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:background="#c9c9c9"
+
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_remark"
+        android:layout_marginTop="30dp"
+        android:background="#f1f1f1">
+
+        <TextView
+
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:layout_marginEnd="60dp"
+            android:layout_toStartOf="@+id/tv_submit"
+            android:text="Cancel"
+            android:textColor="@color/colorBg"
+
+
+            android:textSize="20sp"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/tv_cancel"
+
+            android:layout_marginEnd="40dp"
+            android:text="Submit"
+            android:textColor="@color/colorBg"
+
+
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
