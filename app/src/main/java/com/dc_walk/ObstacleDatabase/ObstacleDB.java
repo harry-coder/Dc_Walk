@@ -9,8 +9,9 @@ import com.dc_walk.Model.ObstaclePojo;
 import com.dc_walk.Model.Para_DropDown;
 import com.dc_walk.Model.ParameterPojo;
 import com.dc_walk.Model.StructurePojo;
+import com.dc_walk.Model.UserEntriesPojo;
 
-@Database(entities = {ObstaclePojo.class, ParameterPojo.class, StructurePojo.class, Para_DropDown.class}, version = 1, exportSchema = false)
+@Database(entities = {ObstaclePojo.class, ParameterPojo.class, StructurePojo.class, Para_DropDown.class, UserEntriesPojo.class}, version = 1, exportSchema = false)
 public abstract class ObstacleDB extends RoomDatabase {
 
     public abstract ObstacleDao obstacleDao();

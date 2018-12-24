@@ -1,7 +1,5 @@
 package com.dc_walk.CustomClasses;
 
-import android.net.Uri;
-
 public class MediaPojo {
 
     String mediaType;
@@ -14,13 +12,13 @@ public class MediaPojo {
         this.mediaType = mediaType;
     }
 
-    public Uri getMediaUri() {
+    public String getMediaUri() {
         return mediaUri;
     }
 
-    public void setMediaUri(Uri mediaUri) {
+    public void setMediaUri(String mediaUri) {
         this.mediaUri = mediaUri;
     }
 
-    Uri mediaUri;
+    String mediaUri;
 }

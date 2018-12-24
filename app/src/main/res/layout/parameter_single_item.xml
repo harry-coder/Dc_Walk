@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+
     <LinearLayout style="@style/rfi_listtab">
 
         <FrameLayout style="@style/listview_checklin">
@@ -15,6 +16,7 @@
                     style="@style/listview_text"
                     android:layout_width="wrap_content"
                     android:text="Location/ Co-ordinates of drain" />
+
 
             </RelativeLayout>
 
@@ -29,7 +31,7 @@
 
                 <Spinner
                     android:id="@+id/sp_parameter"
-                   android:layout_width="25dp"
+                    android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginLeft="3dp"
@@ -37,20 +39,60 @@
 
                     android:spinnerMode="dialog"
 
-                     />
+                    />
 
 
                 <ImageButton
                     android:id="@+id/im_remarks"
                     style="@style/remark_btn"
                     android:layout_gravity="right|bottom" />
+
             </LinearLayout>
+
 
         </FrameLayout>
 
+
         <View style="@style/lcview" />
+
+
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+        >
+
+        <TextView
+            android:id="@+id/tv_noParameter"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_gravity="start|top"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+
+            android:text="Please select Parameter "
+            android:textColor="#FF0000"
+            android:visibility="gone" />
+
+        <Button
+
+            android:id="@+id/bt_add"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorBg"
+
+            android:text="Add"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
 
 </LinearLayout>
 

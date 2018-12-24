@@ -78,6 +78,7 @@
                 android:layout_height="wrap_content">
 
                 <com.dc_walk.CustomClasses.CustomTextView
+                    android:id="@+id/tv_observationTitle"
                     style="@style/cnd_title"
                     android:text="Observtion" />
 
@@ -122,7 +123,7 @@
 
                 <com.dc_walk.CustomClasses.CustomTextView
                     style="@style/input_label"
-                    android:text="Obstacle Type :" />
+                    android:text="Feature Category :" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv_checkboxContainer"
@@ -190,6 +191,7 @@
                 android:layout_height="wrap_content">
 
                 <com.dc_walk.CustomClasses.CustomTextView
+                    android:id="@+id/tv_environmentTitle"
                     style="@style/cnd_title"
                     android:text="Environment" />
 
@@ -248,6 +250,7 @@
                 <LinearLayout style="@style/input_fieldset">
 
                     <RadioGroup
+                        android:id="@+id/rg_radioGroup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -296,6 +299,7 @@
             <FrameLayout
                 style="@style/button_frame"
                 android:layout_weight="1">
+
                 <ImageView
                     style="@style/btn_frm_img"
                     android:src="@drawable/item_observation_btn" />
@@ -304,7 +308,6 @@
                     android:id="@+id/bt_itemObserver"
                     style="@style/btn_frm_btn"
                     android:text="Item Obsr." />
-
 
 
             </FrameLayout>
@@ -574,12 +577,12 @@
 
                 <ImageView
                     style="@style/btn_frm_img"
-                    android:src="@drawable/info_icon" />
+                    map:srcCompat="@drawable/info_icon" />
 
                 <com.dc_walk.CustomClasses.CustomTextButton
-                    android:id="@+id/bt_moreObstacle"
+                    android:id="@+id/bt_moreFeature"
                     style="@style/btn_frm_btn"
-                    android:text="For More Obstacle" />
+                    android:text="For More Features" />
             </FrameLayout>
 
             <FrameLayout
@@ -588,12 +591,12 @@
 
                 <ImageView
                     style="@style/btn_frm_img"
-                    android:src="@drawable/info_icon" />
+                    map:srcCompat="@drawable/info_icon" />
 
                 <com.dc_walk.CustomClasses.CustomTextButton
-                    android:id="@+id/bt_forMoreInfo"
+                    android:id="@+id/bt_moreType"
                     style="@style/btn_frm_btn"
-                    android:text="For More Information" />
+                    android:text="Features Types" />
             </FrameLayout>
 
             <FrameLayout
@@ -602,7 +605,7 @@
 
                 <ImageView
                     style="@style/btn_frm_img"
-                    android:src="@drawable/check_icon" />
+                    map:srcCompat="@drawable/check_icon" />
 
                 <com.dc_walk.CustomClasses.CustomTextButton
                     android:id="@+id/bt_finish"

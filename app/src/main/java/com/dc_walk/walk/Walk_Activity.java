@@ -6,9 +6,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,14 +43,18 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
+import com.dc_walk.CustomClasses.LocationItem;
 import com.dc_walk.CustomClasses.MediaPojo;
+import com.dc_walk.CustomClasses.UserData;
 import com.dc_walk.CustomInterfaces.RequestListener;
+import com.dc_walk.Home_Activity;
 import com.dc_walk.KmlDatabase.KmlDB;
 import com.dc_walk.KmlDatabase.KmlItems;
 import com.dc_walk.Model.ObstaclePojo;
@@ -56,6 +63,7 @@ import com.dc_walk.Model.ParameterPojo;
 import com.dc_walk.Model.PlaceInfoPojo;
 import com.dc_walk.Model.StructurePojo;
 import com.dc_walk.Model.UserCoordinatesPojo;
+import com.dc_walk.Model.UserEntriesPojo;
 import com.dc_walk.ObstacleDatabase.ObstacleDB;
 import com.dc_walk.R;
 import com.dc_walk.RetrofitService.RetrofitServiceGenerator;
@@ -74,11 +82,17 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.Dot;
+import com.google.android.gms.maps.model.Gap;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PatternItem;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.maps.android.clustering.ClusterManager;
 import com.google.maps.android.data.kml.KmlContainer;
 import com.google.maps.android.data.kml.KmlLayer;
 import com.google.maps.android.data.kml.KmlPlacemark;
@@ -97,10 +111,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
@@ -121,9 +137,9 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     //AppCompatRadioButton checkStruct_btn, checkEnv_btn, checkBuilt_btn, checkUtil_btn;
     LinearLayout remark_pop;
 
-    boolean isObservationDialogOpen, isMapDialogOpen;
+    boolean isObservationDialogOpen, isMapDialogOpen, isStructureDialogOpen, isParameterDialogOpen, isPictureDialogOpen;
 
-    public static String obstacleId, structureId, parameterId, paraDropId;
+    public static String obstacleId, structureId;
 
     public int routeNo = 0;
 
@@ -164,7 +180,13 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     ArrayList <String> paraDropIdList;
     ArrayList <String> remarksIdList;
 
+    ArrayList <UserData> userDataList;
+
+    ArrayList <PlaceInfoPojo> kmlLatLonList;
+
     Uri fileUri;
+
+    RadioGroup rg_radioGroup;
 
     Bitmap combileBitmap, bitmapTest;
     Handler handler;
@@ -175,15 +197,21 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
     RadioButton rb_lhs, rb_rhs;
 
-    private Button bt_forMoreInfo, bt_forMoreObstacle, bt_finish;
+    private Button bt_moreType, bt_moreFeature, bt_finish;
 
     private Button bt_takePicture1, bt_takePicture2, bt_takePicture3, bt_takePicture4, bt_takePicture5, bt_takePicture6, bt_takeVideo1, bt_takeVideo2, bt_takeVideo3;
 
     private String lhs = "unselected", rhs = "unselected";
 
-    private String remark;
+    private String obsRemark;
 
     EditText et_parameterRemark;
+
+    String paraRemark;
+
+    int[] side;
+
+    TextView tv_environmentTitle, tv_structureTitle;
 
     @Override
 
@@ -233,8 +261,8 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         bt_picture = findViewById ( R.id.bt_takePicture );
         bt_itemObserver = findViewById ( R.id.bt_itemObserver );
 
-        bt_forMoreInfo = findViewById ( R.id.bt_forMoreInfo );
-        bt_forMoreObstacle = findViewById ( R.id.bt_moreObstacle );
+        bt_moreType = findViewById ( R.id.bt_moreType );
+        bt_moreFeature = findViewById ( R.id.bt_moreFeature );
         bt_finish = findViewById ( R.id.bt_finish );
 
 
@@ -268,6 +296,8 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         paraDropIdList = new ArrayList <> ( );
         remarksIdList = new ArrayList <> ( );
 
+        kmlLatLonList = new ArrayList <> ( );
+
 
         rb_lhs = findViewById ( R.id.rb_lhs );
         rb_rhs = findViewById ( R.id.rb_rhs );
@@ -279,6 +309,11 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         queue = vollySingleton.getInstance ( ).getRequestQueue ( );
         handler = new android.os.Handler ( );
 
+
+        tv_environmentTitle = findViewById ( R.id.tv_environmentTitle );
+        tv_structureTitle = findViewById ( R.id.tv_structureTitle );
+
+        rg_radioGroup = findViewById ( R.id.rg_radioGroup );
 
         //connecting the app with google client for place picker
         mClient = new GoogleApiClient
@@ -305,20 +340,32 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         } );
 
 
+        bt_moreFeature.setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick(View v) {
+
+                System.out.println ( "Inside more feature" );
+                actest.setVisibility ( View.VISIBLE );
+                fl_pictureLayout.setVisibility ( View.GONE );
+
+            }
+        } );
+
+        bt_moreType.setOnClickListener ( new View.OnClickListener ( ) {
+            @Override
+            public void onClick(View v) {
+                System.out.println ( "Inside more types" );
+
+                fl_pictureLayout.setVisibility ( View.GONE );
+
+                struct_box.setVisibility ( View.VISIBLE );
+            }
+        } );
         bt_picture.setOnClickListener ( new View.OnClickListener ( ) {
             @Override
             public void onClick(View v) {
 
-                if (rb_rhs.isSelected ( )) {
 
-                    System.out.println ( "Inside this rhs" );
-                    rb_rhs.toggle ( );
-                } else if (rb_lhs.isSelected ( )) {
-                    System.out.println ( "Inside this lhs" );
-
-                    rb_lhs.toggle ( );
-
-                }
                 //   rb_lhs.setSelected ( false );
                 // rb_rhs.setSelected ( false );
                 lhs = "unselected";
@@ -326,6 +373,9 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 fl_pictureLayout.setVisibility ( View.VISIBLE );
 
                 struct_param_box.setVisibility ( View.GONE );
+
+
+                isPictureDialogOpen = true;
 
 
                 // invokeCamera ( );
@@ -493,6 +543,8 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 System.out.println ( "This is param close" );
 
                 struct_param_box.setVisibility ( View.GONE );
+
+                //struct_param_box.inv
             }
         } );
 
@@ -502,7 +554,10 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             public void onClick(View view) {
                 try {
 
-                    sendImageToServer ( );
+                    //Here we are saving data to sqlite instead to sending data directly and then taking all data of the day and then sending all together all data at once
+                    //sendImageToServer ( );
+                    saveUserEntriesDataToDb ( );
+
                     updateServerLatLonDb ( );
                     tv_location.setText ( "" );
                     lat = 0;
@@ -513,6 +568,40 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                     struct_box.setVisibility ( View.GONE );
                     actest.setVisibility ( View.GONE );
                     fl_pictureLayout.setVisibility ( View.GONE );
+
+
+                    isPictureDialogOpen = false;
+                    isMapDialogOpen = false;
+                    isObservationDialogOpen = false;
+                    isParameterDialogOpen = false;
+                    isStructureDialogOpen = false;
+
+                    enableCameraButtons ( );
+
+
+                    rg_radioGroup.clearCheck ( );
+
+                    if (rb_rhs.isSelected ( )) {
+
+                        System.out.println ( "Inside this rhs" );
+                        rb_rhs.toggle ( );
+                    } else if (rb_lhs.isSelected ( )) {
+                        System.out.println ( "Inside this lhs" );
+
+                        rb_lhs.toggle ( );
+
+                    }
+
+                    finish ( );
+                    handler.postDelayed ( new Runnable ( ) {
+                        @Override
+                        public void run() {
+                            Intent i = new Intent ( Walk_Activity.this, Walk_Activity.class );
+                            startActivity ( i );
+                            overridePendingTransition ( R.anim.right_in, R.anim.left_out );
+
+                        }
+                    }, 500 );
 
 
                 } catch (Exception e) {
@@ -526,10 +615,17 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
+                    System.out.println ( "On lhs selected" );
 
-                    lhs = "selected";
+                    side[0] = 2;
+
                 } else {
-                    lhs = "not selected";
+
+                    side[0] = 0;
+
+                    System.out.println ( "On  not lhs selected" );
+
+
                 }
             }
         } );
@@ -538,11 +634,12 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-
-                    rhs = "selected";
+                    side[0] = 1;
 
                 } else {
-                    rhs = "not selected";
+
+                    side[0] = 0;
+
                 }
 
             }
@@ -556,8 +653,21 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             }
         } );
 
+        side = new int[1];
+
     }
 
+    public void enableCameraButtons() {
+        bt_takePicture1.setEnabled ( true );
+        bt_takePicture2.setEnabled ( true );
+        bt_takePicture3.setEnabled ( true );
+        bt_takePicture4.setEnabled ( true );
+        bt_takePicture5.setEnabled ( true );
+        bt_takePicture6.setEnabled ( true );
+        bt_takeVideo1.setEnabled ( true );
+        bt_takeVideo2.setEnabled ( true );
+        bt_takeVideo3.setEnabled ( true );
+    }
 
     @Override
     public void onClick(View view) {
@@ -566,48 +676,48 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         switch (id) {
 
             case R.id.bt_takePicture1: {
-                invokeCamera ( );
+                invokeCamera ( bt_takePicture1 );
                 bt_takePicture1.setTextColor ( Color.parseColor ( "#c3c3c3" ) );
                 break;
 
             }
             case R.id.bt_takePicture2: {
-                invokeCamera ( );
+                invokeCamera ( bt_takePicture2 );
                 bt_takePicture2.setTextColor ( Color.parseColor ( "#c3c3c3" ) );
                 break;
             }
             case R.id.bt_takePicture3: {
-                invokeCamera ( );
+                invokeCamera ( bt_takePicture3 );
                 bt_takePicture3.setTextColor ( Color.parseColor ( "#c3c3c3" ) );
                 break;
             }
             case R.id.bt_takePicture4: {
-                invokeCamera ( );
+                invokeCamera ( bt_takePicture4 );
                 bt_takePicture4.setTextColor ( Color.parseColor ( "#c3c3c3" ) );
                 break;
             }
             case R.id.bt_takePicture5: {
-                invokeCamera ( );
+                invokeCamera ( bt_takePicture5 );
                 bt_takePicture4.setTextColor ( Color.parseColor ( "#c3c3c3" ) );
                 break;
             }
             case R.id.bt_takePicture6: {
-                invokeCamera ( );
+                invokeCamera ( bt_takePicture6 );
                 bt_takePicture4.setTextColor ( Color.parseColor ( "#c3c3c3" ) );
                 break;
             }
             case R.id.bt_video1: {
-                invokeVideoRecorder ( );
+                invokeVideoRecorder ( bt_takeVideo1 );
                 bt_takeVideo1.setTextColor ( Color.parseColor ( "#c3c3c3" ) );
                 break;
             }
             case R.id.bt_video2: {
-                invokeVideoRecorder ( );
+                invokeVideoRecorder ( bt_takeVideo2 );
                 bt_takeVideo2.setTextColor ( Color.parseColor ( "#c3c3c3" ) );
                 break;
             }
             case R.id.bt_video3: {
-                invokeVideoRecorder ( );
+                invokeVideoRecorder ( bt_takeVideo3 );
                 bt_takeVideo3.setTextColor ( Color.parseColor ( "#c3c3c3" ) );
                 break;
             }
@@ -625,24 +735,71 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         if (isMapDialogOpen) {
             if (keyCode == KeyEvent.KEYCODE_BACK) {
 
-                if (action == KeyEvent.ACTION_DOWN) {
+                // if (action == KeyEvent.ACTION_DOWN) {
 
-                    mapbox.setVisibility ( View.GONE );
-                    isMapDialogOpen = false;
-                    return true;
-                }
+                mapbox.setVisibility ( View.GONE );
+                isMapDialogOpen = false;
+                return true;
+                // }
 
             }
-        } else if (isObservationDialogOpen) {
+        }
+        if (isObservationDialogOpen) {
             if (keyCode == KeyEvent.KEYCODE_BACK) {
 
-                if (action == KeyEvent.ACTION_DOWN) {
+                // if (action == KeyEvent.ACTION_DOWN) {
 
-                    tv_location.setText ( "" );
-                    isObservationDialogOpen = false;
-                    actest.setVisibility ( View.GONE );
-                    return true;
-                }
+                tv_location.setText ( "" );
+                isObservationDialogOpen = false;
+                actest.setVisibility ( View.GONE );
+                return true;
+                // }
+
+            }
+        }
+        if (isStructureDialogOpen) {
+            System.out.println ( "Inside struct" );
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+                // if (action == KeyEvent.ACTION_DOWN) {
+                System.out.println ( "Inside struct1" );
+
+                isStructureDialogOpen = false;
+                struct_box.setVisibility ( View.GONE );
+
+                //}
+
+            }
+        }
+        if (isParameterDialogOpen) {
+            System.out.println ( "Inside param" );
+
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+                //if (action == KeyEvent.ACTION_DOWN) {
+
+                isParameterDialogOpen = false;
+                struct_param_box.setVisibility ( View.GONE );
+
+                rg_radioGroup.clearCheck ( );
+
+                return true;
+                //}
+
+            }
+        }
+        if (isPictureDialogOpen) {
+            System.out.println ( "Inside pic" );
+
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+                //     if (action == KeyEvent.ACTION_DOWN) {
+
+                isPictureDialogOpen = false;
+                fl_pictureLayout.setVisibility ( View.GONE );
+
+                return true;
+                //   }
 
             }
         }
@@ -657,16 +814,17 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     /* THIS IS THE BEGINNING OF METHODS REQUIRED FOR CAMARE TO OPEN AND PREPARE IMAGE TO SEND TO SERVER*/
 
 
-    private void invokeVideoRecorder() {
+    private void invokeVideoRecorder(Button button) {
         Intent takeVideoIntent = new Intent ( MediaStore.ACTION_VIDEO_CAPTURE );
         takeVideoIntent.putExtra ( android.provider.MediaStore.EXTRA_VIDEO_QUALITY, 0 );
         if (takeVideoIntent.resolveActivity ( getPackageManager ( ) ) != null) {
 
             startActivityForResult ( takeVideoIntent, REQUEST_VIDEO_CAPTURE );
+            button.setEnabled ( false );
         }
     }
 
-    private void invokeCamera() {
+    private void invokeCamera(Button button) {
 
         Intent camIntent = new Intent ( "android.media.action.IMAGE_CAPTURE" );
         fileUri = Uri.fromFile ( getOutputMediaFile ( ) );
@@ -680,6 +838,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
         startActivityForResult ( camIntent, IMAGE_TAKEN_REQUEST );
 
+        button.setEnabled ( false );
 
     }
 
@@ -732,6 +891,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     private void launchPlacePickerDialog() {
 
         PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder ( );
+
         try {
 
             startActivityForResult ( builder.build ( Walk_Activity.this ), PLACE_PICKER_REQUEST );
@@ -754,6 +914,9 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 lon = place.getLatLng ( ).longitude;
 
 
+                System.out.println ( "This is lat " + lat );
+                System.out.println ( "This is lon " + lon );
+
                 String address = Objects.requireNonNull ( place.getAddress ( ) ).toString ( );
 
 
@@ -765,8 +928,12 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
                 userCoordinatesArrayList.add ( userCoordinatesPojo );
 
-                tv_location.setText ( address );
 
+                if (TextUtils.isEmpty ( address )) {
+                    tv_location.setText ( " " + lat + " , " + lon );
+                } else {
+                    tv_location.setText ( address );
+                }
 
                 insertUserCoordinatesToDatabase ( userCoordinatesPojo );
 
@@ -774,9 +941,8 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         } else if (requestCode == IMAGE_TAKEN_REQUEST) {
             if (resultCode == RESULT_OK) {
 
-                setMediaUri ( fileUri, "image" );
 
-                /*Bitmap background = null;
+                Bitmap background = null;
 
 
                 try {
@@ -786,10 +952,13 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 }
                 System.out.println ( "This is file uri " + background );
 
-                bitmapTest = combineBitMap ( background );*/
+                Bitmap bitmapTest = combineBitMap ( background, getCurrentDate ( ), "" + lat + ", " + lon );
+                //     Bitmap bitmapTest = combineBitMap ( background, "4-12-108", "28.123 78.5425" );
 
 
                 Toast.makeText ( this, "Image ready to send", Toast.LENGTH_SHORT ).show ( );
+
+                setMediaUri ( getImageUri ( this, bitmapTest ), "image" );
 
                 //  sendImageToServer ( );
             }
@@ -808,9 +977,18 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         }
     }
 
+    public String getCurrentDate() {
+
+        SimpleDateFormat formatter = new SimpleDateFormat ( "dd/MM/yyyy HH:mm:ss", Locale.getDefault ( ) );
+        Date date = new Date ( );
+
+        return formatter.format ( date );
+    }
+
+
     public void setMediaUri(Uri uri, String mediaType) {
         MediaPojo mediaPojo = new MediaPojo ( );
-        mediaPojo.setMediaUri ( uri );
+        mediaPojo.setMediaUri ( String.valueOf ( uri ) );
         mediaPojo.setMediaType ( mediaType );
 
         mediaList.add ( mediaPojo );
@@ -818,23 +996,39 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     }
 
 
-    public Bitmap combineBitMap(Bitmap src) {
+    public Bitmap combineBitMap(Bitmap src, String Date, String latlon) {
 
         // Bitmap src = BitmapFactory.decodeResource(getResources(), R.drawable.yourimage); // the original file yourimage.jpg i added in resources
         Bitmap dest = Bitmap.createBitmap ( src.getWidth ( ), src.getHeight ( ), Bitmap.Config.ARGB_8888 );
+        // Bitmap dest = Bitmap.createScaledBitmap ( src,src.getWidth ( ), src.getHeight ( ),false );
 
-        String yourText = "This is lat lon with time";
+        String date = "Date " + Date;
 
+        String loc = "Location " + latlon;
         Canvas cs = new Canvas ( dest );
         Paint tPaint = new Paint ( );
-        tPaint.setTextSize ( 35 );
-        tPaint.setColor ( Color.BLUE );
-        tPaint.setStyle ( Paint.Style.FILL );
-        cs.drawBitmap ( src, 0f, 0f, null );
+        tPaint.setTextSize ( 100 );
+        tPaint.setColor ( Color.WHITE );
+        tPaint.setStyle ( Paint.Style.FILL_AND_STROKE );
+        cs.drawBitmap ( src, 0f, 100f, null );
         float height = tPaint.measureText ( "yY" );
-        float width = tPaint.measureText ( yourText );
-        float x_coord = (src.getWidth ( ) - width) / 2;
-        cs.drawText ( yourText, x_coord, height + 15f, tPaint ); // 15f is to put space between top edge and the text, if you want to change it, you can
+        float width = tPaint.measureText ( date );
+        float locWidth = tPaint.measureText ( loc );
+
+
+        float x_coord = 100;
+
+        float y_coord = (src.getHeight ( ) - 300);
+        // cs.drawText ( yourText, x_coord, height + 30f, tPaint ); // 15f is to put space between top edge and the text, if you want to change it, you can
+        cs.drawText ( date, x_coord, y_coord, tPaint ); // 15f is to put space between top edge and the text, if you want to change it, you can
+        cs.drawText ( loc, x_coord, y_coord + 100, tPaint ); // 15f is to put space between top edge and the text, if you want to change it, you can
+
+        /*float x_coord = (src.getWidth ( ) - (locWidth + 150));
+        float y_coord = (src.getHeight ( ) - 300);
+        // cs.drawText ( yourText, x_coord, height + 30f, tPaint ); // 15f is to put space between top edge and the text, if you want to change it, you can
+        cs.drawText ( date, x_coord, y_coord, tPaint ); // 15f is to put space between top edge and the text, if you want to change it, you can
+        cs.drawText ( loc, x_coord, y_coord + 200, tPaint ); // 15f is to put space between top edge and the text, if you want to change it, you can
+*/
         try {
             dest.compress ( Bitmap.CompressFormat.JPEG, 100, new FileOutputStream ( getOutputMediaFile ( ) ) );
             // dest is Bitmap, if you want to preview the final image, you can display it on screen also before saving
@@ -845,23 +1039,34 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         return dest;
     }
 
-    /*public Bitmap combineImages(Bitmap background, Bitmap foreground) {
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream ( );
+        inImage.compress ( Bitmap.CompressFormat.JPEG, 100, bytes );
+        String path = MediaStore.Images.Media.insertImage ( inContext.getContentResolver ( ), inImage, "Converted Image", null );
 
-        int width = 0, height = 0;
+
+        return Uri.parse ( path );
+    }
 
 
-        width = getWindowManager ( ).getDefaultDisplay ( ).getWidth ( );
-        height = getWindowManager ( ).getDefaultDisplay ( ).getHeight ( );
+    class FetchCoordinatesFromDB extends AsyncTask <Void, Void, Void> {
 
-        combileBitmap = Bitmap.createBitmap ( width ,height, Bitmap.Config.ARGB_8888 );
-        Canvas comboImage = new Canvas ( combileBitmap );
-        background = Bitmap.createScaledBitmap ( background, width, height, true );
-        comboImage.drawBitmap ( background, 0, 0, null );
-        comboImage.drawBitmap ( foreground, 0, 0, null );
 
-        return combileBitmap;
-    }*/
+        @Override
+        protected Void doInBackground(Void... voids) {
 
+            placeInfoAadapter.setSource ( getKmlPointsFromServer ( ) );
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            initialiseMap ( );
+            progressDialog.dismiss ( );
+
+        }
+    }
 
     /* < ----------------------------------------------------------------------------------------------------------->*/
     /* THIS IS THE BEGINNING OF ACTIVITY LIFECYCLE METHODS*/
@@ -871,7 +1076,11 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         super.onStart ( );
 
 
-        initialiseMap ( );
+        progressDialog.setMessage ( "Fetching data" );
+        progressDialog.show ( );
+        new FetchCoordinatesFromDB ( ).execute ( );
+
+
 
         /*if (!Paper.book().exist("FirstTimeDownload")) {
             //  getPlaceLatLon();
@@ -906,69 +1115,24 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     }
 
 
+    public ArrayList <PlaceInfoPojo> getKmlPointsFromServer() {
+
+        return kmlLatLonList = (ArrayList <PlaceInfoPojo>) LocationDB.getInstance ( this ).myDao ( ).getUserList ( );
+
+    }
+
 
 
     /* < ----------------------------------------------------------------------------------------------------------->*/
     /* THIS IS THE BEGINNING OF METHODS REQUIRED FOR VARIOUS SERVER REQUESTS*/
 
 
-    public void getPlaceLatLon() {
-
-        String url = "http://monitorpm.feedbackinfra.com/dcnine_highways/embc_app/map";
-
-        Map <String, String> map = new HashMap <> ( );
-        map.put ( "request_by", "FEDCO" );
-
-        request.setOnRequestListner ( new RequestListener ( ) {
-            @Override
-            public void onPreRequest() {
-
-                progressDialog.setMessage ( "Getting Requested Points" );
-                progressDialog.show ( );
-
-            }
-
-            @Override
-            public void onPostRequest() {
-
-            }
-
-            @Override
-            public void isRequestSuccessful(boolean result) {
-
-                progressDialog.dismiss ( );
-            }
-
-            @Override
-            public void getJsonResponse(JSONObject response) throws JSONException {
-
-                if (response.length ( ) != 0) {
-
-
-                    serverLatLonList = parseResponse ( response );
-
-                    insertDataToDataBase ( serverLatLonList );
-
-                    // placeInfoAadapter.setSource(serverLatLonList);
-
-
-                    //   initialiseMap();
-
-
-                }
-            }
-        } );
-
-        request.JsonRequest ( this, url, map );
-
-    }
-
     public void sendImageToServer() throws InterruptedException, IOException {
 
         String url = "http://monitorpm.feedbackinfra.com/dcnine_highways/embc_app/insert_map";
 
 
-        Map <String,String>map = prepareMapToSend ( );
+        Map <String, String> map = prepareMapToSend ( );
 
         request.setOnRequestListner ( new RequestListener ( ) {
             @Override
@@ -1013,7 +1177,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
     }
 
-    public Map <String,String>prepareMapToSend() {
+    public Map <String, String> prepareMapToSend() {
 
         JSONArray parameterArray = new JSONArray ( );
         JSONArray paraDropArray = new JSONArray ( );
@@ -1029,8 +1193,12 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         map.put ( "structure_type", structureId );
 
         if (lhs.equalsIgnoreCase ( "selected" )) {
+
+            System.out.println ( "Inside side lhs" );
             map.put ( "side", "2" );
         } else if (rhs.equalsIgnoreCase ( "selected" )) {
+            System.out.println ( "Inside side rhs" );
+
             map.put ( "side", "1" );
         }
 
@@ -1060,7 +1228,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         map.put ( "parameter_type", "" + parameterArray );
         map.put ( "paraDrop_type", "" + paraDropArray );
         map.put ( "paraRemark", "" + remarkArray );
-        map.put ( "obs", remark );
+        //   map.put ( "obs", remark );
 
 
         //map.put ( "imageName1", fileUri.getLastPathSegment ( ) );
@@ -1068,6 +1236,67 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
 
         return map;
+
+    }
+
+
+    public void saveUserEntriesDataToDb() throws IOException, InterruptedException {
+
+        progressDialog.setMessage ( "Saving Data" );
+        progressDialog.show ( );
+
+        UserEntriesPojo userEntries = new UserEntriesPojo ( );
+        userEntries.setLat ( "" + lat );
+        userEntries.setLon ( "" + lon );
+        userEntries.setRoute_no ( et_pointer.getText ( ).toString ( ) );
+        userEntries.setObstacleTypeId ( obstacleId );
+        userEntries.setStructureId ( structureId );
+
+        userEntries.setObsRemark ( obsRemark );
+
+        System.out.println ( "This is the side " + side[0] );
+        userEntries.setSide ( "" + side[0] );
+        /*if (lhs.equalsIgnoreCase ( "selected" )) {
+            userEntries.setSide ( "2" );
+        } else if (rhs.equalsIgnoreCase ( "selected" )) {
+            userEntries.setSide ( "1" );
+        }
+*/
+        //  userEntries.setParaList ( parameterIdList );
+        //userEntries.setParaDropList ( paraDropIdList );
+        userEntries.setUriList ( mediaList );
+        // userEntries.setParaRemarkList ( remarksIdList );
+
+
+        userEntries.setUserDataList ( userDataList );
+
+
+        ObstacleDB.getInstance ( this ).obstacleDao ( ).insertUserEntries ( userEntries );
+
+
+        progressDialog.dismiss ( );
+
+
+        userDataList.clear ( );
+
+//        getUserEntries ( );
+
+    }
+
+
+    public void getUserEntries() throws IOException, InterruptedException {
+
+        ArrayList <UserEntriesPojo> userEntryList = (ArrayList <UserEntriesPojo>) ObstacleDB.getInstance ( this ).obstacleDao ( ).getAllUserEntries ( );
+
+        System.out.println ( "This is the size " + userEntryList.size ( ) );
+
+
+        for (UserEntriesPojo pojo : userEntryList) {
+
+            System.out.println ( pojo.getUriList ( ).get ( 0 ).getMediaUri ( ) );
+
+        }
+
 
     }
 
@@ -1118,8 +1347,6 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
 
     public void showRemarkDialog(final Context context) {
-
-
         final AlertDialog.Builder malert = new AlertDialog.Builder ( context );
         LayoutInflater inflater = LayoutInflater.from ( context );
         View view1 = inflater.inflate ( R.layout.remarks_dialog, null );
@@ -1141,11 +1368,10 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             @Override
             public void onClick(View v) {
 
-                remark = et_remark.getText ( ).toString ( );
-                if (TextUtils.isEmpty ( remark )) {
+                obsRemark = et_remark.getText ( ).toString ( );
+                if (TextUtils.isEmpty ( obsRemark )) {
                     et_remark.setError ( "Please enter remark" );
-                }
-                otpDialog.dismiss ( );
+                } else otpDialog.dismiss ( );
             }
         } );
 
@@ -1164,26 +1390,6 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     /* < ----------------------------------------------------------------------------------------------------------->*/
 
     /* THIS IS THE BEGINNING OF MAP RELATED METHODS FOR PARSING KML AND PLOTTING COORDINATES*/
-    public ArrayList <PlaceInfoPojo> parseResponse(JSONObject response) throws JSONException {
-        JSONArray locationArray = response.getJSONArray ( "success" );
-        ArrayList <PlaceInfoPojo> placeList = new ArrayList <> ( );
-        for (int i = 0; i < locationArray.length ( ); i++) {
-
-            JSONObject locationObject = locationArray.getJSONObject ( i );
-            PlaceInfoPojo placeInfoPojo = new PlaceInfoPojo ( );
-            placeInfoPojo.setLat ( locationObject.getString ( "lat" ) );
-            placeInfoPojo.setLng ( locationObject.getString ( "lon" ) );
-            placeInfoPojo.setRouteNo ( Integer.parseInt ( locationObject.getString ( "route_no" ) ) );
-            placeInfoPojo.setMapped ( false );
-
-            placeList.add ( placeInfoPojo );
-
-
-        }
-
-        return placeList;
-
-    }
 
     public ArrayList <KmlItems> parseKmlCoordinates(KmlLayer layer, GoogleMap googleMap) {
         ArrayList <KmlItems> list = new ArrayList <> ( );
@@ -1229,9 +1435,6 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
 
-        KmlLayer layer = null;
-        ArrayList <KmlItems> kmlCoordinates;
-
 
         googleMap.getUiSettings ( ).setIndoorLevelPickerEnabled ( true );
         googleMap.getUiSettings ( ).setZoomControlsEnabled ( true );
@@ -1246,64 +1449,53 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         googleMap.getUiSettings ( ).setCompassEnabled ( true );
 
 
-        try {
-            layer = new KmlLayer ( googleMap, R.raw.test, getApplicationContext ( ) );
-            layer.addLayerToMap ( );
-
-        } catch (XmlPullParserException | IOException e) {
-            e.printStackTrace ( );
-        }
-
-        if (!Paper.book ( ).exist ( "KmlCoordinatesParsed" )) {
-
-            Paper.book ( ).write ( "KmlCoordinatesParsed", "yes" );
-            System.out.println ( "Inside very" );
-
-            parseKmlCoordinates ( layer, googleMap );
-
-            kmlCoordinates = (ArrayList <KmlItems>) getKmlCoordinatres ( );
-
-            placeInfoAadapter.setSource ( kmlCoordinates );
-
-        } else {
-
-
-            System.out.println ( "Regular" );
-            kmlCoordinates = (ArrayList <KmlItems>) getKmlCoordinatres ( );
-
-            placeInfoAadapter.setSource ( kmlCoordinates );
-
-        }
-
-/*
-
         final PatternItem DOT = new Dot ( );
         final PatternItem GAP = new Gap ( 5 );
 
         Marker marker = null;
-*/
+        MarkerOptions markerOptions = null;
+       // ClusterManager <LocationItem> mClusterManager = new ClusterManager <LocationItem> ( this, googleMap );
 
-/*
+
         // Create a stroke pattern of a gap followed by a dot.
-        final List <PatternItem> PATTERN_POLYLINE_DOTTED = Arrays.asList ( GAP, DOT );
+        // final List <PatternItem> PATTERN_POLYLINE_DOTTED = Arrays.asList ( GAP, DOT );
 
 
-        ArrayList <LatLng> latLngArrayList = getArrayListOfLatLon ( kmlCoordinates );
+        ArrayList <LatLng> latLngArrayList = getArrayListOfLatLon ( kmlLatLonList );
 
         Polyline polyline;
         PolylineOptions polylineOptions = new PolylineOptions ( ).width ( 8 ).color ( Color.BLUE ).geodesic ( true );
         for (int i = 0; i < latLngArrayList.size ( ); i++) {
 
-            polylineOptions.add ( latLngArrayList.get ( i ) );
+            String type = kmlLatLonList.get ( i ).getType ( );
 
-            MarkerOptions markerOptions = new MarkerOptions ( );
+
+            markerOptions = new MarkerOptions ( );
             markerOptions.position ( latLngArrayList.get ( i ) );
-            markerOptions.title ( "Route " + (i + 1) );
+            markerOptions.title ( kmlLatLonList.get ( i ).getDescription ( ) );
+
+
+            if (type.equalsIgnoreCase ( "linestring" )) {
+                polylineOptions.add ( latLngArrayList.get ( i ) );
+                Objects.requireNonNull ( markerOptions ).icon ( bitmapDescriptorFromVector ( this, R.drawable.line_marker_icon ) );
+
+
+            }
+            else if (type.equalsIgnoreCase ( "point" )) {
+
+                Objects.requireNonNull ( markerOptions ).icon ( bitmapDescriptorFromVector ( this, R.drawable.marker_icon ) );
+
+            }
+
+
+
 
             // markerOptions.snippet("Blah");
 
 
-            if (i == 0) {
+
+
+           /* if (i == 0) {
 
                 markerOptions.icon ( BitmapDescriptorFactory.defaultMarker ( BitmapDescriptorFactory.HUE_BLUE ) );
                 markerOptions.title ( "Route Starting" );
@@ -1317,27 +1509,40 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 markerOptions.icon ( BitmapDescriptorFactory.defaultMarker ( BitmapDescriptorFactory.HUE_GREEN ) );
                 markerOptions.title ( "Route Ending" );
 
-            }
+            }*/
 
-            marker = googleMap.addMarker ( markerOptions );
+           if(markerOptions!=null){
+               marker = googleMap.addMarker ( markerOptions );
+
+           }
+
 
 
         }
 
 
         polyline = googleMap.addPolyline ( polylineOptions );
-        polyline.setPattern ( PATTERN_POLYLINE_DOTTED );*/
+        // polyline.setPattern ( PATTERN_POLYLINE_DOTTED );
 
 
         googleMap.setMapType ( GoogleMap.MAP_TYPE_HYBRID );
 
 
-        googleMap.moveCamera ( CameraUpdateFactory.newLatLngZoom ( new LatLng ( Double.parseDouble ( kmlCoordinates.get ( routeNo ).getLat ( ) ), Double.parseDouble ( kmlCoordinates.get ( routeNo ).getLng ( ) ) ), 17 ) );
+        googleMap.moveCamera ( CameraUpdateFactory.newLatLngZoom ( new LatLng ( Double.parseDouble ( kmlLatLonList.get ( routeNo ).getLng ( ) ), Double.parseDouble ( kmlLatLonList.get ( routeNo ).getLat ( ) ) ), 17 ) );
 
 
         readUserCoordinates ( googleMap );
 
 
+    }
+
+    private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
+        Drawable vectorDrawable = ContextCompat.getDrawable ( context, vectorResId );
+        vectorDrawable.setBounds ( 0, 0, vectorDrawable.getIntrinsicWidth ( ), vectorDrawable.getIntrinsicHeight ( ) );
+        Bitmap bitmap = Bitmap.createBitmap ( vectorDrawable.getIntrinsicWidth ( ), vectorDrawable.getIntrinsicHeight ( ), Bitmap.Config.ARGB_8888 );
+        Canvas canvas = new Canvas ( bitmap );
+        vectorDrawable.draw ( canvas );
+        return BitmapDescriptorFactory.fromBitmap ( bitmap );
     }
 
     public List <KmlItems> getKmlCoordinatres() {
@@ -1395,7 +1600,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         return null;
     }
 
-    public ArrayList <LatLng> getArrayListOfLatLon(ArrayList <KmlItems> kmlItems) {
+    public ArrayList <LatLng> getArrayListOfLatLon(ArrayList <PlaceInfoPojo> kmlItems) {
 
         ArrayList <LatLng> list = new ArrayList <> ( );
         for (int i = 0; i < kmlItems.size ( ); i++) {
@@ -1448,7 +1653,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             public void run() {
                 System.out.println ( "This is item clicked " + itemPositionClicked );
 
-                KmlDB.getInstance ( Walk_Activity.this ).kmlDao ( ).updateKmlItems ( true, (itemPositionClicked + 1) );
+                LocationDB.getInstance ( Walk_Activity.this ).myDao ( ).getUpdatedList ( true, (itemPositionClicked + 1) );
 
                 // placeInfoAadapter.notifyDataSetChanged ( );
 
@@ -1458,7 +1663,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 //      System.out.println("This is route no. "+pojo.getRouteNo());
                 //    System.out.println("This is isMapped. "+pojo.isMapped);
 
-                placeInfoAadapter.setSource ( (ArrayList <KmlItems>) KmlDB.getInstance ( Walk_Activity.this ).kmlDao ( ).getKmlCoordinates ( ) );
+                placeInfoAadapter.setSource ( (ArrayList <PlaceInfoPojo>) LocationDB.getInstance ( Walk_Activity.this ).myDao ( ).getUserList ( ) );
 
 
             }
@@ -1479,35 +1684,6 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
     }
 
-    public void readInfoFromDatabase() {
-
-        new Thread ( new Runnable ( ) {
-            @Override
-            public void run() {
-
-                ///  serverLatLonList = (ArrayList<PlaceInfoPojo>) LocationDB.getInstance(Walk_Activity.this).myDao().getUserList();
-                System.out.println ( "This is return list size " + serverLatLonList.size ( ) );
-
-                //  placeInfoAadapter.setSource(serverLatLonList);
-
-
-            }
-        } ).start ( );
-
-        //      initialiseMap();
-
-    }
-
-    public void insertDataToDataBase(final ArrayList <PlaceInfoPojo> list) {
-        new Thread ( new Runnable ( ) {
-            @Override
-            public void run() {
-                LocationDB.getInstance ( Walk_Activity.this ).myDao ( ).insertData ( list );
-
-            }
-        } ).start ( );
-
-    }
 
     @SuppressLint("StaticFieldLeak")
     public void readUserCoordinates(final GoogleMap googleMap) {
@@ -1694,7 +1870,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
     public class PlaceInfoAadapter extends RecyclerView.Adapter <PlaceInfoAadapter.PlaceHolder> {
 
-        ArrayList <KmlItems> kmlItemsList = new ArrayList <> ( );
+        ArrayList <PlaceInfoPojo> kmlItemsList = new ArrayList <> ( );
 
         LayoutInflater inflater;
         Context context;
@@ -1781,7 +1957,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
         }
 
-        public void setSource(ArrayList <KmlItems> list) {
+        public void setSource(ArrayList <PlaceInfoPojo> list) {
             if (list.size ( ) != 0) {
                 this.kmlItemsList = list;
 
@@ -1919,6 +2095,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                         obstacleId = obstacleInfoList.get ( position ).getObstacleId ( );
                         holder.cb_obstacle.toggle ( );
 
+                        tv_environmentTitle.setText ( obstacleInfoList.get ( position ).getObstacleName ( ) );
 
                         getStructureData ( );
 
@@ -1936,6 +2113,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             struct_box.setVisibility ( View.VISIBLE );
             actest.setVisibility ( View.GONE );
 
+            isStructureDialogOpen = true;
 
         }
 
@@ -2008,6 +2186,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
                     structureId = structureList.get ( position ).getStructureId ( );
 
+                    tv_structureTitle.setText ( structureList.get ( position ).getStructureName ( ) );
 
                     getParameterData ( );
                 }
@@ -2022,6 +2201,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             struct_param_box.setVisibility ( View.VISIBLE );
             struct_box.setVisibility ( View.GONE );
 
+            isParameterDialogOpen = true;
 
         }
 
@@ -2130,6 +2310,14 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
             CheckBox cb_check;
             ImageButton im_remarks;
 
+
+            String paraId, paraDropDownId;
+
+            Button bt_add;
+
+
+            TextView tv_noParameter;
+
             public ParameterHolder(View itemView) {
                 super ( itemView );
 
@@ -2137,15 +2325,24 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 sp_items = itemView.findViewById ( R.id.sp_parameter );
                 cb_check = itemView.findViewById ( R.id.cb_check );
                 im_remarks = itemView.findViewById ( R.id.im_remarks );
+                bt_add = itemView.findViewById ( R.id.bt_add );
+                tv_noParameter = itemView.findViewById ( R.id.tv_noParameter );
+
+
+                userDataList = new ArrayList <> ( );
 
                 cb_check.setOnCheckedChangeListener ( new CompoundButton.OnCheckedChangeListener ( ) {
                     @Override
                     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                         if (b) {
-                            parameterId = parameterList.get ( getAdapterPosition ( ) ).getParaId ( );
 
-                            parameterIdList.add ( parameterId );
 
+                            bt_add.setVisibility ( View.VISIBLE );
+                            paraId = parameterList.get ( getAdapterPosition ( ) ).getParaId ( );
+
+
+                        } else {
+                            bt_add.setVisibility ( View.GONE );
                         }
                     }
                 } );
@@ -2170,7 +2367,9 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 im_remarks.setOnClickListener ( new View.OnClickListener ( ) {
                     @Override
                     public void onClick(View v) {
+
                         remark_pop.setVisibility ( View.VISIBLE );
+
                     }
                 } );
 
@@ -2178,13 +2377,17 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                     @Override
                     public void onClick(View v) {
 
-                        remark_pop.setVisibility ( View.GONE );
 
-                        String remark = et_parameterRemark.getText ( ).toString ( );
+                        paraRemark = et_parameterRemark.getText ( ).toString ( );
 
-                        if (!TextUtils.isEmpty ( remark )) {
+                        System.out.println ( "This is the remark added " + paraRemark );
 
-                            remarksIdList.add ( remark );
+                        if (!TextUtils.isEmpty ( paraRemark )) {
+
+
+                            et_parameterRemark.setText ( "" );
+                            remark_pop.setVisibility ( View.GONE );
+
 
                         } else {
                             et_parameterRemark.setError ( "Please Provide a remark" );
@@ -2199,7 +2402,31 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                     }
                 } );
 
+
+                bt_add.setOnClickListener ( new View.OnClickListener ( ) {
+                    @Override
+                    public void onClick(View view) {
+
+
+                        UserData userData = new UserData ( );
+
+                        userData.setParameterId ( paraId );
+                        userData.setParaDropId ( paraDropDownId );
+
+
+                        userData.setParameterRemark ( paraRemark );
+
+
+                        userDataList.add ( userData );
+
+
+                        bt_add.setVisibility ( View.GONE );
+
+
+                    }
+                } );
             }
+
 
             public void showParameterDropDown(String id) {
 
@@ -2208,14 +2435,17 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 //if(singleChoiceItems.length>0){
                 int itemSelected = 0;
                 new AlertDialog.Builder ( context )
-                        .setTitle ( "Select your Observations" )
+                        .setTitle ( "Select Options" )
                         .setSingleChoiceItems ( singleChoiceItems, itemSelected, new DialogInterface.OnClickListener ( ) {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int selectedIndex) {
 
-                                paraDropId = paraDropDownList.get ( selectedIndex ).getParaDropId ( );
+                                paraDropDownId = paraDropDownList.get ( selectedIndex ).getParaDropId ( );
 
-                                paraDropIdList.add ( paraDropId );
+                                //  paraDropIdList.add ( paraDropId );
+
+
+                                //this is the place to get para drop down..
                             }
                         } )
                         .setPositiveButton ( "Ok", null )
@@ -2226,47 +2456,9 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                     Toast.makeText ( context, "No Items to show", Toast.LENGTH_SHORT ).show ( );
                 }*/
 
-            }
-
-            public void showSpinner() {
-
-                String[] city_list = new String[3];
-                city_list[0] = "New York";
-                city_list[1] = "San Francisco";
-                city_list[2] = "Washington DC";
-
-                ArrayAdapter <String> aa = new ArrayAdapter <String> ( getApplicationContext ( ),
-                        R.layout.spinner_single_item, city_list );
-
-                sp_items = (Spinner) findViewById ( R.id.sp_parameter );
-                sp_items.setAdapter ( aa );
-            }
-
-            public void setItemsToSpinner(String id) {
-
-                ArrayList <String> list = getParaDropDownName ( id );
-
-                System.out.println ( "THis is the final list size " + list.size ( ) );
-                ArrayAdapter <String> adp1 = new ArrayAdapter <> ( context,
-                        android.R.layout.simple_spinner_item, list );
-                adp1.setDropDownViewResource ( android.R.layout.simple_spinner_dropdown_item );
-                sp_items.setAdapter ( adp1 );
-
-                sp_items.setOnItemSelectedListener ( new AdapterView.OnItemSelectedListener ( ) {
-                    @Override
-                    public void onItemSelected(AdapterView <?> adapterView, View view, int i, long l) {
-
-                        System.out.println ( "Item selected is  " + adapterView.getItemAtPosition ( i ) );
-
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView <?> adapterView) {
-
-                    }
-                } );
 
             }
+
 
             public ArrayList <Para_DropDown> getDropDownParameters(String parameterId) {
 

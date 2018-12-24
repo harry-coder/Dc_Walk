@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.logging.Handler;
 
 import okhttp3.MediaType;
 
@@ -64,7 +65,8 @@ public class VollyMediaRequest {
 
         //setting notification...
         settingUpIndeterminateNotification ( );
-        handler = new android.os.Handler ( );
+
+
     }
 
 
@@ -76,6 +78,7 @@ public class VollyMediaRequest {
 
     public void uploadMedia(final Context context, final String url, final Map <String, String> map, final Map <String, VolleyMultipartRequest.DataPart> mediaMap) {
 
+//        handler = new android.os.Handler ( );
 
         //mNotifyManager.notify ( 0, mBuilder.build ( ) );
 
@@ -103,6 +106,10 @@ public class VollyMediaRequest {
 
                             //calling on request successful
 
+                            requestListener.isRequestSuccessful ( status );
+
+
+/*
                             handler.post ( new Runnable ( ) {
                                 @Override
                                 public void run() {
@@ -110,6 +117,7 @@ public class VollyMediaRequest {
 
                                 }
                             } );
+*/
 
 
                             if (status) {
@@ -208,24 +216,23 @@ public class VollyMediaRequest {
 
         for (int i = 0; i < mediaTypeList.size ( ); i++) {
             String mediaType = mediaTypeList.get ( i ).getMediaType ( );
-            Uri uri = mediaTypeList.get ( i ).getMediaUri ( );
+            Uri uri = Uri.parse ( mediaTypeList.get ( i ).getMediaUri ( ) );
             if (mediaType.equalsIgnoreCase ( "image" )) {
-
-                byteFile = Walk_Activity.getBytes ( Objects.requireNonNull ( context.getContentResolver ( ).openInputStream ( uri ) ) );
-                params.put ( "imageData1", new VolleyMultipartRequest.DataPart ( "" + System.currentTimeMillis ( ), byteFile ) );
-
                 imageCount += +1;
+                byteFile = Walk_Activity.getBytes ( Objects.requireNonNull ( context.getContentResolver ( ).openInputStream ( uri ) ) );
+                params.put ( "imageData" + imageCount, new VolleyMultipartRequest.DataPart ( "" + System.currentTimeMillis ( ), byteFile ) );
+
+
                 map.put ( "imageName" + imageCount, uri.getLastPathSegment ( ) );
 
                 System.out.println ( "image count " + imageCount );
 
             } else {
-
-                byteFile = Walk_Activity.getBytes ( Objects.requireNonNull ( context.getContentResolver ( ).openInputStream ( uri ) ) );
-                params.put ( "videoData1", new VolleyMultipartRequest.DataPart ( "" + uri.getLastPathSegment ( ), byteFile, "video/mp4" ) );
-
-
                 videoCount += 1;
+                byteFile = Walk_Activity.getBytes ( Objects.requireNonNull ( context.getContentResolver ( ).openInputStream ( uri ) ) );
+                params.put ( "videoData" + videoCount, new VolleyMultipartRequest.DataPart ( "" + uri.getLastPathSegment ( ), byteFile, "video/mp4" ) );
+
+
                 map.put ( "videoName" + videoCount, uri.getLastPathSegment ( ) );
 
                 System.out.println ( "image count " + videoCount );
@@ -286,6 +293,7 @@ public class VollyMediaRequest {
     public void JsonRequest(final Context context, final String url, final Map map) {
 
         requestListener.onPreRequest ( );
+        handler = new android.os.Handler ( );
 
         System.out.println ( "This is the object sent " + map );
 
@@ -376,6 +384,11 @@ public class VollyMediaRequest {
 
                 };
 */
+
+                request_json.setRetryPolicy ( new DefaultRetryPolicy (
+                        180000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT ) );
                 queue.add ( request_json );
 
 
@@ -397,6 +410,8 @@ public class VollyMediaRequest {
 
                             try {
                                 jsonObject = new JSONObject ( response );
+
+                                System.out.println ( "This is the response i got " + jsonObject );
                                 requestListener.isRequestSuccessful ( jsonObject.getBoolean ( "success" ) );
                                 requestListener.getJsonResponse ( jsonObject );
 

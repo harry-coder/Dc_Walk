@@ -4,6 +4,9 @@ import android.app.Application;
 import android.content.Context;
 import android.os.StrictMode;
 
+import com.dc_walk.CustomClasses.InternetConnectionCheck;
+import com.dc_walk.CustomInterfaces.OnConnectivityListener;
+
 import io.paperdb.Paper;
 
 
@@ -14,14 +17,16 @@ import io.paperdb.Paper;
 public class MyApplication extends Application {
 
     static MyApplication application = null;
+
     @Override
     public void onCreate() {
-        super.onCreate();
-        Paper.init(this);
+        super.onCreate ( );
+        Paper.init ( this );
         application = this;
-        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-        StrictMode.setVmPolicy(builder.build());
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder ( );
+        StrictMode.setVmPolicy ( builder.build ( ) );
     }
+
     public static MyApplication getInstance() {
         return application;
 
@@ -29,10 +34,10 @@ public class MyApplication extends Application {
 
     public static Context getContext() {
 
-        return application.getApplicationContext();
+        return application.getApplicationContext ( );
     }
 
-   /* public void setConnectivityListener(InternetConnectionCheck.ConnectivityReceiverListener listener) {
-        InternetConnectionCheck.connectivityReceiverListener = listener;
-    }*/
+    public static void setConnectivityListener(OnConnectivityListener listener) {
+        InternetConnectionCheck.connectivityListener = listener;
+    }
 }

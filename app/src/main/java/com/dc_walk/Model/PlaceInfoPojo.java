@@ -16,12 +16,32 @@ public class PlaceInfoPojo {
         this.id = id;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String type;
+
     @PrimaryKey(autoGenerate = true)
     @NonNull
     int id;
 
     String lat;
     String lng;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    String description;
 
     public boolean isMapped() {
         return isMapped;
