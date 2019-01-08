@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.dc_walk"
 
     >
@@ -18,11 +19,21 @@
 
 
     <application
+        android:usesCleartextTraffic="true"
         android:name=".MyApplication"
         android:allowBackup="false"
         android:icon="@drawable/pmc_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+
+        android:theme="@style/AppTheme"
+
+
+        >
+
+
+
+
+
         <activity
             android:name="com.dc_walk.Home_Activity"
             android:label="@string/app_name"
@@ -50,6 +61,8 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
     </application>
 
 </manifest>
