@@ -137,6 +137,8 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
     //AppCompatRadioButton checkStruct_btn, checkEnv_btn, checkBuilt_btn, checkUtil_btn;
     LinearLayout remark_pop;
 
+    int selectedRoute;
+
     boolean isObservationDialogOpen, isMapDialogOpen, isStructureDialogOpen, isParameterDialogOpen, isPictureDialogOpen;
 
     public static String obstacleId, structureId;
@@ -604,6 +606,8 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                     }, 500 );
 
 
+
+
                 } catch (Exception e) {
                     e.printStackTrace ( );
                 }
@@ -656,6 +660,8 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         side = new int[1];
 
     }
+
+
 
     public void enableCameraButtons() {
         bt_takePicture1.setEnabled ( true );
@@ -1469,21 +1475,23 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
             String type = kmlLatLonList.get ( i ).getType ( );
 
-
             markerOptions = new MarkerOptions ( );
             markerOptions.position ( latLngArrayList.get ( i ) );
             markerOptions.title ( kmlLatLonList.get ( i ).getDescription ( ) );
 
 
+
             if (type.equalsIgnoreCase ( "linestring" )) {
                 polylineOptions.add ( latLngArrayList.get ( i ) );
-                Objects.requireNonNull ( markerOptions ).icon ( bitmapDescriptorFromVector ( this, R.drawable.line_marker_icon ) );
+                Objects.requireNonNull ( markerOptions ).icon ( bitmapDescriptorFromVector ( this, R.drawable.up_arrow_icon ) );
 
 
             }
             else if (type.equalsIgnoreCase ( "point" )) {
 
-                Objects.requireNonNull ( markerOptions ).icon ( bitmapDescriptorFromVector ( this, R.drawable.marker_icon ) );
+                  Objects.requireNonNull ( markerOptions ).icon ( bitmapDescriptorFromVector ( this, R.drawable.line_marker_icon ) );
+
+//                Objects.requireNonNull ( markerOptions ).icon ( bitmapDescriptorFromVector ( this, R.drawable.marker_icon ) );
 
             }
 
@@ -1538,24 +1546,20 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
     private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
         Drawable vectorDrawable = ContextCompat.getDrawable ( context, vectorResId );
-        vectorDrawable.setBounds ( 0, 0, vectorDrawable.getIntrinsicWidth ( ), vectorDrawable.getIntrinsicHeight ( ) );
+        vectorDrawable.setBounds ( 0, 0, Objects.requireNonNull ( vectorDrawable ).getIntrinsicWidth ( ), vectorDrawable.getIntrinsicHeight ( ) );
         Bitmap bitmap = Bitmap.createBitmap ( vectorDrawable.getIntrinsicWidth ( ), vectorDrawable.getIntrinsicHeight ( ), Bitmap.Config.ARGB_8888 );
         Canvas canvas = new Canvas ( bitmap );
         vectorDrawable.draw ( canvas );
         return BitmapDescriptorFactory.fromBitmap ( bitmap );
     }
 
-    public List <KmlItems> getKmlCoordinatres() {
 
-        return KmlDB.getInstance ( this ).kmlDao ( ).getKmlCoordinates ( );
-    }
 
     public void drawUserCoordinatesPolyLineOnMap(GoogleMap googleMap, ArrayList <UserCoordinatesPojo> coordinatesList) {
 
 
         ArrayList <LatLng> list = getUserCoordinateList ( coordinatesList );
 
-        System.out.println ( "This is usercoordinates size " + list.size ( ) );
 
         if (list.size ( ) != 0) {
             Polyline polyline;
@@ -1651,9 +1655,9 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         new Thread ( new Runnable ( ) {
             @Override
             public void run() {
-                System.out.println ( "This is item clicked " + itemPositionClicked );
+                System.out.println ( "This is item clicked " + selectedRoute );
 
-                LocationDB.getInstance ( Walk_Activity.this ).myDao ( ).getUpdatedList ( true, (itemPositionClicked + 1) );
+                LocationDB.getInstance ( Walk_Activity.this ).myDao ( ).getUpdatedList ( true, selectedRoute );
 
                 // placeInfoAadapter.notifyDataSetChanged ( );
 
@@ -1896,7 +1900,7 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
 
             //   System.out.println ( " This is route " + kmlItemsList.get ( position ).getRouteNo ( ) );
 
-            //  System.out.println("This is the mapped status " + kmlItemsList.get(position).isMapped());
+              System.out.println("This is the mapped status " + kmlItemsList.get(position).isMapped());
             if (kmlItemsList.get ( position ).isMapped ( )) {
 
                 holder.im_location.setImageDrawable ( getResources ( ).getDrawable ( R.drawable.btn_loc_actv ) );
@@ -1953,7 +1957,8 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
         public int getItemCount() {
 
             // System.out.println("This is the size " + kmlItemsList.size());
-            return kmlItemsList.size ( );
+           // return kmlItemsList.size ( );
+            return 10;
 
         }
 
@@ -1985,9 +1990,13 @@ public class Walk_Activity extends AppCompatActivity implements OnMapReadyCallba
                 bt_observation = itemView.findViewById ( R.id.bt_observation );
                 im_info = itemView.findViewById ( R.id.im_info );
 
+
+
                 bt_observation.setOnClickListener ( new View.OnClickListener ( ) {
                     @Override
                     public void onClick(View v) {
+
+                        selectedRoute=kmlItemsList.get (getAdapterPosition ()).getRouteNo ( );
 
 
                         getRouteNumbers ( );

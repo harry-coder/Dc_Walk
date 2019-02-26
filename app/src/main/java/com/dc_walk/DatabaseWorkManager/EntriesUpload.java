@@ -125,6 +125,11 @@ public class EntriesUpload extends Worker {
         } );
 
 
+        for(MediaPojo pojo:userEntries.getUriList ()){
+
+            System.out.println ("Here is the Uri "+pojo.getMediaUri () );
+        }
+
         // request.uploadMedia ( this, "video", url, uri, map );
         request.sendMultipleMediaToServer ( (ArrayList <MediaPojo>) userEntries.getUriList ( ), url, map );
 

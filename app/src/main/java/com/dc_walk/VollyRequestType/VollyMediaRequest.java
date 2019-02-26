@@ -41,6 +41,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.logging.Handler;
 
+import io.paperdb.Paper;
 import okhttp3.MediaType;
 
 
@@ -212,6 +213,8 @@ public class VollyMediaRequest {
 
         Map <String, VolleyMultipartRequest.DataPart> params = new HashMap <> ( );
 
+        String empId = Paper.book ( ).read ( "emp_id" );
+
         int imageCount = 0, videoCount = 0;
 
         for (int i = 0; i < mediaTypeList.size ( ); i++) {
@@ -223,7 +226,9 @@ public class VollyMediaRequest {
                 params.put ( "imageData" + imageCount, new VolleyMultipartRequest.DataPart ( "" + System.currentTimeMillis ( ), byteFile ) );
 
 
-                map.put ( "imageName" + imageCount, uri.getLastPathSegment ( ) );
+                map.put ( "imageName" + imageCount, ""+empId+""+System.currentTimeMillis ()+".jpeg" );
+
+
 
                 System.out.println ( "image count " + imageCount );
 
@@ -240,6 +245,10 @@ public class VollyMediaRequest {
             }
 
         }
+
+
+        System.out.println ("Here is the sent Map of data "+map );
+        System.out.println ("Here is the sent Map of media "+params );
 
         uploadMedia ( context, imageUploadUrl, map, params );
 
